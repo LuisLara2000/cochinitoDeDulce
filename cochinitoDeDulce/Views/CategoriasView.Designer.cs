@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             tpCategoriasAgregarEditar = new TabPage();
+            btnRegresar = new Button();
             txtIdCategoria = new TextBox();
             txtNombreCategoria = new TextBox();
             label3 = new Label();
-            button1 = new Button();
+            btnGuardar = new Button();
             label2 = new Label();
             tpCategoriasVer = new TabPage();
             btnEliminar = new Button();
@@ -50,10 +51,11 @@
             // 
             // tpCategoriasAgregarEditar
             // 
+            tpCategoriasAgregarEditar.Controls.Add(btnRegresar);
             tpCategoriasAgregarEditar.Controls.Add(txtIdCategoria);
             tpCategoriasAgregarEditar.Controls.Add(txtNombreCategoria);
             tpCategoriasAgregarEditar.Controls.Add(label3);
-            tpCategoriasAgregarEditar.Controls.Add(button1);
+            tpCategoriasAgregarEditar.Controls.Add(btnGuardar);
             tpCategoriasAgregarEditar.Controls.Add(label2);
             tpCategoriasAgregarEditar.Location = new Point(4, 24);
             tpCategoriasAgregarEditar.Name = "tpCategoriasAgregarEditar";
@@ -62,6 +64,15 @@
             tpCategoriasAgregarEditar.TabIndex = 2;
             tpCategoriasAgregarEditar.Text = "Editar";
             tpCategoriasAgregarEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.Location = new Point(318, 240);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(308, 23);
+            btnRegresar.TabIndex = 8;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = true;
             // 
             // txtIdCategoria
             // 
@@ -86,14 +97,14 @@
             label3.TabIndex = 6;
             label3.Text = "Id de la categoria";
             // 
-            // button1
+            // btnGuardar
             // 
-            button1.Location = new Point(8, 238);
-            button1.Name = "button1";
-            button1.Size = new Size(616, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            btnGuardar.Location = new Point(6, 240);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(307, 23);
+            btnGuardar.TabIndex = 5;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -205,7 +216,7 @@
         private TextBox txtIdCategoria;
         private TextBox txtNombreCategoria;
         private Label label3;
-        private Button button1;
+        private Button btnGuardar;
         private Label label2;
         private TabPage tpCategoriasVer;
         private Button btnEliminar;
@@ -215,5 +226,6 @@
         private TextBox textBox1;
         private DataGridView dataGridView1;
         private TabControl tbCategorias;
+        private Button btnRegresar;
     }
 }

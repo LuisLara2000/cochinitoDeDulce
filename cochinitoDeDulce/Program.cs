@@ -1,4 +1,9 @@
 using cochinitoDeDulce.Views;
+//
+using cochinitoDeDulce.Presenters;
+using cochinitoDeDulce._DataBase;
+using cochinitoDeDulce.Models;
+using System.Configuration;
 
 namespace cochinitoDeDulce
 {
@@ -13,7 +18,12 @@ namespace cochinitoDeDulce
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new CategoriasView());
+            //
+            string SqlCadenaConexion = ConfigurationManager.ConnectionStrings["SqlCadenaConexion"].ConnectionString;
+            IPrincipalView vista = new PrincipalView();
+            new PrincipalPresenter(vista, SqlCadenaConexion);
+            //
+            Application.Run((Form)vista);
         }
     }
 }

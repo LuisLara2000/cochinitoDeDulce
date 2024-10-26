@@ -14,6 +14,9 @@ namespace cochinitoDeDulce.Views
 
         // eventos
         event EventHandler AgregarNuevaCategoria_Event;
+        event EventHandler Regresar_Event;
 
+        // metodos
+        void Show();
     }
 }
