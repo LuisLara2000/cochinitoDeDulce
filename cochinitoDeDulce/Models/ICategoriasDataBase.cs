@@ -15,6 +15,6 @@ namespace cochinitoDeDulce.Models
         void EditarCategoria(CategoriasModel categoriasModel);
         void EliminarCategoria(CategoriasModel categoriasModel);
         // para ver las categorias
-        IEnumerable<CategoriasModel> VerTodasCategoras();
+        IEnumerable<CategoriasModel> BuscarCategorias(string categoriaNombre);
     }
 }

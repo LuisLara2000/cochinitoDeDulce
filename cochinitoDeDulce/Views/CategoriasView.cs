@@ -35,23 +35,44 @@ namespace cochinitoDeDulce.Views
                 tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
                 tbCategorias.TabPages.Add(tpCategoriasVer);
             };
+
             btnGuardar.Click += delegate{
                 AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);
-                MessageBox.Show("Xd");
+                txtNombreCategoria.Text = "";
             };
+
+            btnBuscar.Click += delegate
+            {
+                BuscarCategorias_Event?.Invoke(this,EventArgs.Empty);
+            };
+
         }
 
         public string IdCategoria {
-            get { return txtIdCategoria.ToString(); }
+            get { return txtIdCategoria.Text.ToString(); }
             set { txtIdCategoria.Text = value; }
         }
         public string NombreCategorias {
-            get { return txtNombreCategoria.ToString(); }
+            get { return txtNombreCategoria.Text.ToString(); }
             set { txtNombreCategoria.Text = value; }
+        }
+
+        public string BuscarCategoriaTxt{ 
+            get { return txtBuscarCategoria.Text.ToString(); } 
+            set { txtBuscarCategoria.Text = value; }
         }
 
         public event EventHandler AgregarNuevaCategoria_Event;
         public event EventHandler Regresar_Event;
+        public event EventHandler BuscarCategorias_Event;
+
+        // metodos
+        public void SetPetListBindingSource(BindingSource categoriasLista)
+        {
+            // Establecesmoe el parametro lista de categorias en el datagrid
+            dgCategorias.DataSource = categoriasLista;
+        }
+
 
         // patron singleton //
         // declaramos un campo privado del mismo tipo de clase
@@ -82,6 +103,16 @@ namespace cochinitoDeDulce.Views
             // regresamos la ventana
             return instancia;
         }
+
+
+
+
+
+
+
+
+
+
 
         // no hacen nada
         private void label1_Click(object sender, EventArgs e)

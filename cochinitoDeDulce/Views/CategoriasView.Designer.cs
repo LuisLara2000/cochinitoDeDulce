@@ -40,12 +40,12 @@
             btnEditar = new Button();
             btnAgregar = new Button();
             btnBuscar = new Button();
-            textBox1 = new TextBox();
-            dataGridView1 = new DataGridView();
+            txtBuscarCategoria = new TextBox();
+            dgCategorias = new DataGridView();
             tbCategorias = new TabControl();
             tpCategoriasAgregarEditar.SuspendLayout();
             tpCategoriasVer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgCategorias).BeginInit();
             tbCategorias.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,8 +121,8 @@
             tpCategoriasVer.Controls.Add(btnEditar);
             tpCategoriasVer.Controls.Add(btnAgregar);
             tpCategoriasVer.Controls.Add(btnBuscar);
-            tpCategoriasVer.Controls.Add(textBox1);
-            tpCategoriasVer.Controls.Add(dataGridView1);
+            tpCategoriasVer.Controls.Add(txtBuscarCategoria);
+            tpCategoriasVer.Controls.Add(dgCategorias);
             tpCategoriasVer.Location = new Point(4, 24);
             tpCategoriasVer.Name = "tpCategoriasVer";
             tpCategoriasVer.Padding = new Padding(3);
@@ -167,20 +167,20 @@
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBuscarCategoria
             // 
-            textBox1.Location = new Point(8, 6);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(534, 23);
-            textBox1.TabIndex = 1;
+            txtBuscarCategoria.Location = new Point(8, 6);
+            txtBuscarCategoria.Name = "txtBuscarCategoria";
+            txtBuscarCategoria.Size = new Size(534, 23);
+            txtBuscarCategoria.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgCategorias
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 35);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(617, 339);
-            dataGridView1.TabIndex = 0;
+            dgCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgCategorias.Location = new Point(6, 35);
+            dgCategorias.Name = "dgCategorias";
+            dgCategorias.Size = new Size(617, 339);
+            dgCategorias.TabIndex = 0;
             // 
             // tbCategorias
             // 
@@ -205,7 +205,7 @@
             tpCategoriasAgregarEditar.PerformLayout();
             tpCategoriasVer.ResumeLayout(false);
             tpCategoriasVer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgCategorias).EndInit();
             tbCategorias.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -223,8 +223,8 @@
         private Button btnEditar;
         private Button btnAgregar;
         private Button btnBuscar;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private TextBox txtBuscarCategoria;
+        private DataGridView dgCategorias;
         private TabControl tbCategorias;
         private Button btnRegresar;
     }

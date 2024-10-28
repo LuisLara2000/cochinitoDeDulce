@@ -14,7 +14,7 @@ namespace cochinitoDeDulce.Models
         private string nombreCategoria;
 
         // propiedades y validaciones
-        [DisplayName("Categoria ID")]
+        [DisplayName("ID")]
         public int IdCategoria {
             get { return idCategoria; }
             set { idCategoria = value; }
