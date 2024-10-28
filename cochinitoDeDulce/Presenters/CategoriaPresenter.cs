@@ -25,8 +25,7 @@ namespace cochinitoDeDulce.Presenters
             viewCategoria = viewC;
             databaseCategoria = databaseC;
             // suscribimos los eventos que se ejecutan en la vista
-            viewCategoria.AgregarNuevaCategoria_Event += AgregarNuevaCategoria;
-            viewCategoria.BuscarCategorias_Event += BuscarCategoria;
+          
             // set categorias binding source
             viewCategoria.SetPetListBindingSource(categoriasBindingSource);
             // cargo todas las categorias
@@ -35,17 +34,41 @@ namespace cochinitoDeDulce.Presenters
             viewC.Show();
         }
 
+        public void suscribirEventos()
+        {
+            // Ventana "Agregar Categoria"
+            viewCategoria.AgregarNuevaCategoria_Event += AgregarNuevaCategoria;
+            viewCategoria.IrVentanaAgregarNuevaCategoria_Event += IrVentanaAgregarNuevaCategoria;
+            viewCategoria.RegresarVentanaAgregarNuevaCategoria_Event += RegresarVentanaAgregarNuevaCategoria;
+            // Ventana "Eliminar Categoria"
+            // Ventana "Editar Categoria"
+            // Ventana "Buscar Categoria"
+            viewCategoria.BuscarCategorias_Event += BuscarCategoria;
+        }
+
+
+        // Ventana "Agregar Categoria"
         private void AgregarNuevaCategoria(object sender, EventArgs e)
         {
             var modeloCategorias = new CategoriasModel();
             modeloCategorias.NombreCategoria = viewCategoria.NombreCategorias;
             databaseCategoria.AgregarCategoria(modeloCategorias);
         }
+        private void IrVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        private void RegresarVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
+        // Ventana "Eliminar Categoria"
+        // Ventana "Editar Categoria"
+        // Ventana "Buscar Categoria"
         private void BuscarCategoria(object sender, EventArgs e)
         {
-            var xd = viewCategoria.BuscarCategoriaTxt;
-            categoriaList = databaseCategoria.BuscarCategorias(xd);
+            categoriaList = databaseCategoria.BuscarCategorias(viewCategoria.BuscarCategoriaTxt);
             categoriasBindingSource.DataSource = categoriaList;
         }
 

@@ -43,10 +43,16 @@
             txtBuscarCategoria = new TextBox();
             dgCategorias = new DataGridView();
             tbCategorias = new TabControl();
+            tpEliminar = new TabPage();
+            btnEliminarCategoriaCancelar = new Button();
+            btnEliminarCategoriaEliminar = new Button();
+            cbEliminarCategoria = new ComboBox();
+            label1 = new Label();
             tpCategoriasAgregarEditar.SuspendLayout();
             tpCategoriasVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgCategorias).BeginInit();
             tbCategorias.SuspendLayout();
+            tpEliminar.SuspendLayout();
             SuspendLayout();
             // 
             // tpCategoriasAgregarEditar
@@ -62,7 +68,7 @@
             tpCategoriasAgregarEditar.Padding = new Padding(3);
             tpCategoriasAgregarEditar.Size = new Size(632, 422);
             tpCategoriasAgregarEditar.TabIndex = 2;
-            tpCategoriasAgregarEditar.Text = "Editar";
+            tpCategoriasAgregarEditar.Text = "/GuardarCategoria";
             tpCategoriasAgregarEditar.UseVisualStyleBackColor = true;
             // 
             // btnRegresar
@@ -186,12 +192,62 @@
             // 
             tbCategorias.Controls.Add(tpCategoriasVer);
             tbCategorias.Controls.Add(tpCategoriasAgregarEditar);
+            tbCategorias.Controls.Add(tpEliminar);
             tbCategorias.Dock = DockStyle.Fill;
             tbCategorias.Location = new Point(0, 0);
             tbCategorias.Name = "tbCategorias";
             tbCategorias.SelectedIndex = 0;
             tbCategorias.Size = new Size(640, 450);
             tbCategorias.TabIndex = 0;
+            // 
+            // tpEliminar
+            // 
+            tpEliminar.Controls.Add(btnEliminarCategoriaCancelar);
+            tpEliminar.Controls.Add(btnEliminarCategoriaEliminar);
+            tpEliminar.Controls.Add(cbEliminarCategoria);
+            tpEliminar.Controls.Add(label1);
+            tpEliminar.Location = new Point(4, 24);
+            tpEliminar.Name = "tpEliminar";
+            tpEliminar.Padding = new Padding(3);
+            tpEliminar.Size = new Size(632, 422);
+            tpEliminar.TabIndex = 3;
+            tpEliminar.Text = "Eliminar categoria";
+            tpEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarCategoriaCancelar
+            // 
+            btnEliminarCategoriaCancelar.Location = new Point(318, 179);
+            btnEliminarCategoriaCancelar.Name = "btnEliminarCategoriaCancelar";
+            btnEliminarCategoriaCancelar.Size = new Size(190, 98);
+            btnEliminarCategoriaCancelar.TabIndex = 7;
+            btnEliminarCategoriaCancelar.Text = "Cancelar";
+            btnEliminarCategoriaCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarCategoriaEliminar
+            // 
+            btnEliminarCategoriaEliminar.Location = new Point(101, 179);
+            btnEliminarCategoriaEliminar.Name = "btnEliminarCategoriaEliminar";
+            btnEliminarCategoriaEliminar.Size = new Size(190, 98);
+            btnEliminarCategoriaEliminar.TabIndex = 6;
+            btnEliminarCategoriaEliminar.Text = "Eliminar";
+            btnEliminarCategoriaEliminar.UseVisualStyleBackColor = true;
+            // 
+            // cbEliminarCategoria
+            // 
+            cbEliminarCategoria.FormattingEnabled = true;
+            cbEliminarCategoria.Location = new Point(20, 150);
+            cbEliminarCategoria.Name = "cbEliminarCategoria";
+            cbEliminarCategoria.Size = new Size(592, 23);
+            cbEliminarCategoria.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(101, 132);
+            label1.Name = "label1";
+            label1.Size = new Size(438, 15);
+            label1.TabIndex = 4;
+            label1.Text = "La categoria \"inserte categoria\" al ser eliminada sera reemplazada por la categoria:";
             // 
             // CategoriasView
             // 
@@ -207,6 +263,8 @@
             tpCategoriasVer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgCategorias).EndInit();
             tbCategorias.ResumeLayout(false);
+            tpEliminar.ResumeLayout(false);
+            tpEliminar.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -227,5 +285,10 @@
         private DataGridView dgCategorias;
         private TabControl tbCategorias;
         private Button btnRegresar;
+        private TabPage tpEliminar;
+        private ComboBox cbEliminarCategoria;
+        private Label label1;
+        private Button btnEliminarCategoriaCancelar;
+        private Button btnEliminarCategoriaEliminar;
     }
 }

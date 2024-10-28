@@ -20,32 +20,40 @@ namespace cochinitoDeDulce.Views
             // asociamos los eventos con las acciones que suceden en la vista
             AsociarEventosDeLaVista();
             tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
+            tbCategorias.TabPages.Remove(tpEliminar);
 
         }
 
         private void AsociarEventosDeLaVista()
         {
-            btnAgregar.Click += delegate{ 
+            // Ventana "Agregar Categoria"
+            btnAgregar.Click += delegate {
                 tbCategorias.TabPages.Remove(tpCategoriasVer);
                 tbCategorias.TabPages.Add(tpCategoriasAgregarEditar);
             };
 
-            btnRegresar.Click += delegate{
+            btnRegresar.Click += delegate {
                 Regresar_Event?.Invoke(this, EventArgs.Empty);
                 tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
                 tbCategorias.TabPages.Add(tpCategoriasVer);
             };
 
-            btnGuardar.Click += delegate{
+            btnGuardar.Click += delegate {
                 AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);
                 txtNombreCategoria.Text = "";
             };
-
+            // Ventana "Eliminar Categoria"
+            btnEliminar.Click += delegate
+            {
+                tbCategorias.TabPages.Remove(tpCategoriasVer);
+                tbCategorias.TabPages.Add(tpEliminar);
+            };
+            // Ventana "Editar Categoria"
+            // Ventana "Buscar Categoria"
             btnBuscar.Click += delegate
             {
-                BuscarCategorias_Event?.Invoke(this,EventArgs.Empty);
+                BuscarCategorias_Event?.Invoke(this, EventArgs.Empty);
             };
-
         }
 
         public string IdCategoria {
@@ -62,9 +70,28 @@ namespace cochinitoDeDulce.Views
             set { txtBuscarCategoria.Text = value; }
         }
 
+        // Ventana "Agregar Categoria"
         public event EventHandler AgregarNuevaCategoria_Event;
-        public event EventHandler Regresar_Event;
+        public event EventHandler IrVentanaAgregarNuevaCategoria_Event;
+        public event EventHandler RegresarVentanaAgregarNuevaCategoria_Event;
+        // Ventana "Eliminar Categoria"
+        public event EventHandler EliminarCategoria_Event;
+        public event EventHandler IrVentanaEliminarCategoria_Event;
+        public event EventHandler RegresarVentanaEliminarCategoria_Event;
+        // Ventana "Editar Categoria"
+        public event EventHandler EditarCategoria_Event;
+        public event EventHandler IrVentanaEditarCategoria_Event;
+        public event EventHandler RegresarVentanaEditarCategoria_Event;
+        // Ventana "Buscar Categoria" (Esta es la ventana que se muestra al presionar "Categorias" en la ventana principal)
         public event EventHandler BuscarCategorias_Event;
+
+        // sera sustituido
+        public event EventHandler Regresar_Event;
+
+        
+
+
+
 
         // metodos
         public void SetPetListBindingSource(BindingSource categoriasLista)
