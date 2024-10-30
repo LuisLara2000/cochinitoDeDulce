@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,11 +10,14 @@ namespace cochinitoDeDulce.Views
     public interface ICategoriasView
     {
         // propiedades GETTERS
+        // MODELO
         string IdCategoria { get; set; }
         string NombreCategorias { get; set; }
-        // 
+        // VISTA
         string BuscarCategoriaTxt { get; set; }
-
+        string EditarAgregarLbl { get; set; }
+        string ElimnarLbl { get; set; }
+        string CatagoriaEliminarCb {  get;  }
         // eventos
         /// <summary>
         /// todos los eventos van aqui, por ejemplo 
@@ -41,6 +45,8 @@ namespace cochinitoDeDulce.Views
 
         // metodos
         void SetPetListBindingSource(BindingSource categoriasLista);
+        void SetComboBoxCategoriasEliminar(ComboBox cbCategorias);
+
         void Show();
     }
 }

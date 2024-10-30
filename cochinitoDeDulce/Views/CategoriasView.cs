@@ -26,29 +26,55 @@ namespace cochinitoDeDulce.Views
 
         private void AsociarEventosDeLaVista()
         {
-            // Ventana "Agregar Categoria"
-            btnAgregar.Click += delegate {
+            // Ventana "Agregar Categoria" //
+          
+            btnIrAgregar.Click += delegate {  // ir a la ventana
+                IrVentanaAgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);
+                tpCategoriasAgregarEditar.Text = "Agregar categoria";
                 tbCategorias.TabPages.Remove(tpCategoriasVer);
                 tbCategorias.TabPages.Add(tpCategoriasAgregarEditar);
+                
             };
-
-            btnRegresar.Click += delegate {
+           
+            btnRegresar.Click += delegate { // regresar de categorias
                 Regresar_Event?.Invoke(this, EventArgs.Empty);
                 tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
                 tbCategorias.TabPages.Add(tpCategoriasVer);
             };
-
-            btnGuardar.Click += delegate {
+            
+            btnGuardar.Click += delegate {// guardar nueva categoria
                 AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);
                 txtNombreCategoria.Text = "";
             };
-            // Ventana "Eliminar Categoria"
-            btnEliminar.Click += delegate
+            // Ventana "Eliminar Categoria" //
+            btnIrEliminar.Click += delegate
             {
+                IrVentanaEliminarCategoria_Event?.Invoke(this, EventArgs.Empty);
                 tbCategorias.TabPages.Remove(tpCategoriasVer);
                 tbCategorias.TabPages.Add(tpEliminar);
             };
+            btnEliminarCategoriaCancelar.Click += delegate
+            {
+                tbCategorias.TabPages.Remove(tpEliminar);
+                tbCategorias.TabPages.Add(tpCategoriasVer);
+                cbEliminarCategoria.SelectedItem = null;
+            };
+            btnEliminarCategoriaEliminar.Click += delegate
+            {
+                EliminarCategoria_Event?.Invoke(this, EventArgs.Empty);
+                cbEliminarCategoria.SelectedItem = null;
+                tbCategorias.TabPages.Remove(tpEliminar);
+                tbCategorias.TabPages.Add(tpCategoriasVer);
+
+            };
             // Ventana "Editar Categoria"
+            btnIrEditar.Click += delegate
+            {
+                IrVentanaEditarCategoria_Event?.Invoke(this, EventArgs.Empty);
+                tpCategoriasAgregarEditar.Text = "Editar categoria";
+                tbCategorias.TabPages.Remove(tpCategoriasVer);
+                tbCategorias.TabPages.Add(tpCategoriasAgregarEditar);
+            };
             // Ventana "Buscar Categoria"
             btnBuscar.Click += delegate
             {
@@ -56,9 +82,10 @@ namespace cochinitoDeDulce.Views
             };
         }
 
+        // no se usa
         public string IdCategoria {
-            get { return txtIdCategoria.Text.ToString(); }
-            set { txtIdCategoria.Text = value; }
+            get { return "xd"; }
+            set { var xd = value; }
         }
         public string NombreCategorias {
             get { return txtNombreCategoria.Text.ToString(); }
@@ -68,6 +95,22 @@ namespace cochinitoDeDulce.Views
         public string BuscarCategoriaTxt{ 
             get { return txtBuscarCategoria.Text.ToString(); } 
             set { txtBuscarCategoria.Text = value; }
+        }
+
+        public string EditarAgregarLbl {
+            get { return lblGuardarEditar.Text; }
+            set { lblGuardarEditar.Text = value; }
+        }
+
+        public string ElimnarLbl
+        {
+            get { return lblElimimarCategoria.Text; }
+            set { lblElimimarCategoria.Text = value; }
+        }
+
+        public string CatagoriaEliminarCb
+        {
+            get { return cbEliminarCategoria.SelectedItem.ToString(); }         
         }
 
         // Ventana "Agregar Categoria"
@@ -99,7 +142,17 @@ namespace cochinitoDeDulce.Views
             // Establecesmoe el parametro lista de categorias en el datagrid
             dgCategorias.DataSource = categoriasLista;
         }
-
+        public void SetComboBoxCategoriasEliminar(ComboBox cbCategorias)
+        {
+            // limpio los registros 
+            cbEliminarCategoria.Items.Clear();
+            // asigno los nuevos
+            foreach(var i in cbCategorias.Items)
+            {
+                cbEliminarCategoria.Items.Add(i);
+            }
+           
+        }
 
         // patron singleton //
         // declaramos un campo privado del mismo tipo de clase
@@ -146,5 +199,7 @@ namespace cochinitoDeDulce.Views
         {
 
         }
+
+
     }
 }
