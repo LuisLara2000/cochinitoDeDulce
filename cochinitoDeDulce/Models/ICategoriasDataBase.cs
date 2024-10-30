@@ -12,8 +12,9 @@ namespace cochinitoDeDulce.Models
 
         // para ingresar una categoria necesito un objeto de tipo categoria
         void AgregarCategoria(CategoriasModel categoriasModel);
-        void EditarCategoria(CategoriasModel categoriasModel);
-        void EliminarCategoria(int IdCategoriaEliminar, string IdCategoriaReemplazar);
+        void EditarCategoria(string nombreActualCategoria, string nombreNuevoCategoria);
+        void EliminarCategoria(int IdCategoriaEliminar, string NombreCategoriaReemplazar);
+        int ValidarNoRepetido(string nombreCategoria);
         // para ver las categorias
         IEnumerable<CategoriasModel> BuscarCategorias(string categoriaNombre);
         // para ver la categoria exepto una

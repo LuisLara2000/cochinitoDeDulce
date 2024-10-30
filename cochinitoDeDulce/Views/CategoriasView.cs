@@ -13,6 +13,7 @@ namespace cochinitoDeDulce.Views
 {
     public partial class CategoriasView : Form, ICategoriasView
     {
+        private bool editando;
         public CategoriasView()
         {
             // no se que hace esto jaja
@@ -33,7 +34,7 @@ namespace cochinitoDeDulce.Views
                 tpCategoriasAgregarEditar.Text = "Agregar categoria";
                 tbCategorias.TabPages.Remove(tpCategoriasVer);
                 tbCategorias.TabPages.Add(tpCategoriasAgregarEditar);
-                
+                btnGuardar.Text = "Agregar";
             };
            
             btnRegresar.Click += delegate { // regresar de categorias
@@ -43,7 +44,17 @@ namespace cochinitoDeDulce.Views
             };
             
             btnGuardar.Click += delegate {// guardar nueva categoria
-                AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);
+                // este boton sirve para guardar las nuevas categorias y editar
+                if(!editando)
+                {
+                    AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);            
+                }
+                else
+                {
+                    EditarCategoria_Event?.Invoke(this, EventArgs.Empty);
+                }
+                tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
+                tbCategorias.TabPages.Add(tpCategoriasVer);
                 txtNombreCategoria.Text = "";
             };
             // Ventana "Eliminar Categoria" //
@@ -74,6 +85,7 @@ namespace cochinitoDeDulce.Views
                 tpCategoriasAgregarEditar.Text = "Editar categoria";
                 tbCategorias.TabPages.Remove(tpCategoriasVer);
                 tbCategorias.TabPages.Add(tpCategoriasAgregarEditar);
+                btnGuardar.Text = "Editar";
             };
             // Ventana "Buscar Categoria"
             btnBuscar.Click += delegate
@@ -111,6 +123,12 @@ namespace cochinitoDeDulce.Views
         public string CatagoriaEliminarCb
         {
             get { return cbEliminarCategoria.SelectedItem.ToString(); }         
+        }
+
+        public bool Editando
+        {
+            get { return editando; }
+            set { editando = value; }
         }
 
         // Ventana "Agregar Categoria"

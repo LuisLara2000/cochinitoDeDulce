@@ -18,6 +18,8 @@ namespace cochinitoDeDulce.Views
         string EditarAgregarLbl { get; set; }
         string ElimnarLbl { get; set; }
         string CatagoriaEliminarCb {  get;  }
+        // variables que no tienen viculacion con objetos de la vista
+        bool Editando {get; set; }
         // eventos
         /// <summary>
         /// todos los eventos van aqui, por ejemplo 

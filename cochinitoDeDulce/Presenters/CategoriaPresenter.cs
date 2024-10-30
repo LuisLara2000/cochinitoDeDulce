@@ -49,11 +49,37 @@ namespace cochinitoDeDulce.Presenters
             viewCategoria.IrVentanaEliminarCategoria_Event += IrVentanaEliminarCategoria;
             viewCategoria.RegresarVentanaEliminarCategoria_Event += RegresarVentanaEliminarCategoria;
             // Ventana "Editar Categoria"
+            viewCategoria.EditarCategoria_Event += EditarCategoria;
             viewCategoria.IrVentanaEditarCategoria_Event += IrVentanaEditarCategoria;
+            viewCategoria.RegresarVentanaEditarCategoria_Event += RegresarVentanaEditarCategoria;
             // Ventana "Buscar Categoria"
             viewCategoria.BuscarCategorias_Event += BuscarCategoria;
         }
 
+
+
+
+        // Ventana "Agregar Categoria"
+        private void AgregarNuevaCategoria(object sender, EventArgs e)
+        {
+            var modeloCategorias = new CategoriasModel();
+            modeloCategorias.NombreCategoria = viewCategoria.NombreCategorias;
+            // valido que no este repetido
+            if (databaseCategoria.ValidarNoRepetido(modeloCategorias.NombreCategoria) == 0)
+                databaseCategoria.AgregarCategoria(modeloCategorias);
+            else
+                MessageBox.Show("La categoria ya existe");
+        }
+        private void IrVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
+        {
+            viewCategoria.EditarAgregarLbl = "Ingrese el nombre de la nueva categoria";
+        }
+        private void RegresarVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
+        {
+            viewCategoria.NombreCategorias = "";
+        }
+
+        // Ventana "Eliminar Categoria"
         private void EliminarCategoria(object? sender, EventArgs e)
         {
             // obtengo la categoria a eliminar
@@ -66,29 +92,6 @@ namespace cochinitoDeDulce.Presenters
             CargarCategorias();
         }
 
-
-
-
-
-
-        // Ventana "Agregar Categoria"
-        private void AgregarNuevaCategoria(object sender, EventArgs e)
-        {
-            var modeloCategorias = new CategoriasModel();
-            modeloCategorias.NombreCategoria = viewCategoria.NombreCategorias;
-            databaseCategoria.AgregarCategoria(modeloCategorias);
-        }
-        private void IrVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
-        {
-
-            viewCategoria.EditarAgregarLbl = "Ingrese el nombre de la nueva categoria";
-        }
-        private void RegresarVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
-        {
-            viewCategoria.NombreCategorias = "";
-        }
-
-        // Ventana "Eliminar Categoria"
         private void IrVentanaEliminarCategoria(object? sender, EventArgs e)
         {
             // mostrar mensaje de cual categoria vas a eliminar
@@ -115,12 +118,37 @@ namespace cochinitoDeDulce.Presenters
             throw new NotImplementedException();
         }
         // Ventana "Editar Categoria"
+        private void EditarCategoria(object? sender, EventArgs e)
+        {
+            // obtengo la categoria a editar
+            var categoriaActual = (CategoriasModel)categoriasBindingSource.Current;
+            // valido que no este repetido
+            if (databaseCategoria.ValidarNoRepetido(viewCategoria.NombreCategorias) == 0)
+            {
+                databaseCategoria.EditarCategoria(categoriaActual.NombreCategoria, viewCategoria.NombreCategorias);
+                // muestro mensaje de aviso
+                MessageBox.Show("La categoria " + categoriaActual.NombreCategoria + " a sido editada correctamente");
+                // cargo las categorias para actualizar la tabla
+                CargarCategorias();
+            }
+            else
+            {
+                MessageBox.Show("La categoria ya existe");
+            }
+
+            
+        }
         private void IrVentanaEditarCategoria(object sender, EventArgs e)
         {
             var categoriaActual = (CategoriasModel)categoriasBindingSource.Current;
-            // error aqui
             viewCategoria.EditarAgregarLbl = "La categoria '" + categoriaActual.NombreCategoria + "' sera editada por: ";
+            viewCategoria.Editando = true;
         }
+        private void RegresarVentanaEditarCategoria(object? sender, EventArgs e)
+        {
+            viewCategoria.Editando = false;
+        }
+
         // Ventana "Buscar Categoria"
         private void BuscarCategoria(object sender, EventArgs e)
         {
@@ -134,10 +162,6 @@ namespace cochinitoDeDulce.Presenters
             categoriasBindingSource.DataSource = categoriaList; 
         }
 
-        private void mostrarCategoriasVentanaEliminar()
-        {
-
-        }
-
+  
     }
 }

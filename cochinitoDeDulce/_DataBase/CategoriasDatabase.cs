@@ -17,7 +17,36 @@ namespace cochinitoDeDulce._DataBase
             // obtengo la cadena de conexion
             this.cadenaConexion = cadenaConexion;
         }
-
+        public int ValidarNoRepetido(string nombreCategoria)
+        {
+            int resultado = 2;
+            // crear la conexion
+            using (var conexion = new SqlConnection(cadenaConexion))
+            // creo un objeto comando para poder ejecutar los comandos
+            using (var command = new SqlCommand("spValidarNoRepetido"))
+            {
+                // abrir la conexion
+                conexion.Open();
+                // establecemos la conexion al objeto comando
+                command.Connection = conexion;
+                // determino el tipo de comando
+                command.CommandType = CommandType.StoredProcedure;
+                // pasar parametros
+                command.Parameters.Add("@nombreCategoria", SqlDbType.VarChar).Value = nombreCategoria;
+                 // ejecutar comando
+                command.ExecuteNonQuery();
+                using (var lector = command.ExecuteReader())
+                {
+                    while(lector.Read())
+                    {
+                        resultado = (int)lector[0];
+                    }
+                    
+                }
+                // como uso using la conexion se cierra automaticamente
+            }
+            return resultado;
+        }
         public void AgregarCategoria(CategoriasModel categoriasModel)
         {
             // crear la conexion
@@ -42,12 +71,30 @@ namespace cochinitoDeDulce._DataBase
 
         }
 
-        public void EditarCategoria(CategoriasModel categoriasModel)
+        public void EditarCategoria(string nombreActualCategoria, string nombreNuevoCategoria)
         {
-            throw new NotImplementedException();
+            // crear la conexion
+            using (var conexion = new SqlConnection(cadenaConexion))
+            // creo un objeto comando para poder ejecutar los comandos
+            using (var command = new SqlCommand("spEditarCategoria"))
+            {
+                // abrir la conexion
+                conexion.Open();
+                // establecemos la conexion al objeto comando
+                command.Connection = conexion;
+                // determino el tipo de comando
+                command.CommandType = CommandType.StoredProcedure;
+                // pasar parametros
+                command.Parameters.Add("@nombreActualCategoria", SqlDbType.VarChar).Value = nombreActualCategoria;
+                command.Parameters.Add("@nombreCategoriaNuevo", SqlDbType.VarChar).Value = nombreNuevoCategoria;
+                // ejecutar comando
+                command.ExecuteNonQuery();
+
+                // como uso using la conexion se cierra automaticamente
+            }
         }
 
-        public void EliminarCategoria(int IdCategoriaEliminar,string IdCategoriaReemplazar)
+        public void EliminarCategoria(int IdCategoriaEliminar,string NombreCategoriaReemplazar)
         {
             // crear la conexion
             using (var conexion = new SqlConnection(cadenaConexion))
@@ -62,7 +109,7 @@ namespace cochinitoDeDulce._DataBase
                 command.CommandType = CommandType.StoredProcedure;
                 // pasar parametros
                 command.Parameters.Add("@idCategoriaEliminar", SqlDbType.Int).Value = IdCategoriaEliminar;
-                command.Parameters.Add("@idCategoriaReemplazar", SqlDbType.VarChar).Value = IdCategoriaReemplazar;
+                command.Parameters.Add("@idCategoriaReemplazar", SqlDbType.VarChar).Value = NombreCategoriaReemplazar;
                 // ejecutar comando
                 command.ExecuteNonQuery();
 
@@ -153,5 +200,7 @@ namespace cochinitoDeDulce._DataBase
             // retorno la lista
             return lCategorias;
         }
+
+
     }
 }
