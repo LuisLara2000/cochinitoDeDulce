@@ -39,8 +39,8 @@ namespace cochinitoDeDulce.Presenters
         private void MostrarMarcas(object? sender, EventArgs e)
         {
             IMarcasView vista = MarcasView.ObtenerLaVentanaMarcas((PrincipalView)principalView);
-            // falta la conexion a la base de datos, va en esta linea xd
-            new 
+            IMarcasDataBase database = new MarcasDatabase(sqlCadenaConexion);
+            new MarcaPresenter(vista, database);
         }
 
         private void MostrarLugares(object? sender, EventArgs e)
