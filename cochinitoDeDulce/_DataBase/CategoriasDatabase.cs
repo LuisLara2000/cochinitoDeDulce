@@ -23,7 +23,7 @@ namespace cochinitoDeDulce._DataBase
             // crear la conexion
             using (var conexion = new SqlConnection(cadenaConexion))
             // creo un objeto comando para poder ejecutar los comandos
-            using (var command = new SqlCommand("spValidarNoRepetido"))
+            using (var command = new SqlCommand("spValidarNoRepetidoCategoria"))
             {
                 // abrir la conexion
                 conexion.Open();

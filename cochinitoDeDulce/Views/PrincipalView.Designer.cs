@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnTipos = new Button();
+            btnMarcas = new Button();
+            btnLugares = new Button();
+            btnParametros = new Button();
+            btnIngresos = new Button();
+            btnGastos = new Button();
             button2 = new Button();
             btnCategorias = new Button();
-            btnGastos = new Button();
-            btnIngresos = new Button();
-            btnParametros = new Button();
-            btnLugares = new Button();
-            btnMarcas = new Button();
-            btnTipos = new Button();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -58,6 +58,60 @@
             panel1.Size = new Size(197, 520);
             panel1.TabIndex = 0;
             // 
+            // btnTipos
+            // 
+            btnTipos.Location = new Point(12, 447);
+            btnTipos.Name = "btnTipos";
+            btnTipos.Size = new Size(188, 50);
+            btnTipos.TabIndex = 8;
+            btnTipos.Text = "Tipos";
+            btnTipos.UseVisualStyleBackColor = true;
+            // 
+            // btnMarcas
+            // 
+            btnMarcas.Location = new Point(12, 355);
+            btnMarcas.Name = "btnMarcas";
+            btnMarcas.Size = new Size(188, 50);
+            btnMarcas.TabIndex = 7;
+            btnMarcas.Text = "Marcas";
+            btnMarcas.UseVisualStyleBackColor = true;
+            // 
+            // btnLugares
+            // 
+            btnLugares.Location = new Point(11, 401);
+            btnLugares.Name = "btnLugares";
+            btnLugares.Size = new Size(188, 50);
+            btnLugares.TabIndex = 6;
+            btnLugares.Text = "Lugares";
+            btnLugares.UseVisualStyleBackColor = true;
+            // 
+            // btnParametros
+            // 
+            btnParametros.Location = new Point(3, 264);
+            btnParametros.Name = "btnParametros";
+            btnParametros.Size = new Size(197, 50);
+            btnParametros.TabIndex = 5;
+            btnParametros.Text = "Parametros";
+            btnParametros.UseVisualStyleBackColor = true;
+            // 
+            // btnIngresos
+            // 
+            btnIngresos.Location = new Point(3, 218);
+            btnIngresos.Name = "btnIngresos";
+            btnIngresos.Size = new Size(197, 50);
+            btnIngresos.TabIndex = 4;
+            btnIngresos.Text = "Ingresos";
+            btnIngresos.UseVisualStyleBackColor = true;
+            // 
+            // btnGastos
+            // 
+            btnGastos.Location = new Point(2, 171);
+            btnGastos.Name = "btnGastos";
+            btnGastos.Size = new Size(197, 50);
+            btnGastos.TabIndex = 3;
+            btnGastos.Text = "Gastos";
+            btnGastos.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             button2.Location = new Point(3, 124);
@@ -75,60 +129,6 @@
             btnCategorias.TabIndex = 1;
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = true;
-            // 
-            // btnGastos
-            // 
-            btnGastos.Location = new Point(2, 171);
-            btnGastos.Name = "btnGastos";
-            btnGastos.Size = new Size(197, 50);
-            btnGastos.TabIndex = 3;
-            btnGastos.Text = "Gastos";
-            btnGastos.UseVisualStyleBackColor = true;
-            // 
-            // btnIngresos
-            // 
-            btnIngresos.Location = new Point(3, 218);
-            btnIngresos.Name = "btnIngresos";
-            btnIngresos.Size = new Size(197, 50);
-            btnIngresos.TabIndex = 4;
-            btnIngresos.Text = "Ingresos";
-            btnIngresos.UseVisualStyleBackColor = true;
-            // 
-            // btnParametros
-            // 
-            btnParametros.Location = new Point(3, 264);
-            btnParametros.Name = "btnParametros";
-            btnParametros.Size = new Size(197, 50);
-            btnParametros.TabIndex = 5;
-            btnParametros.Text = "Parametros";
-            btnParametros.UseVisualStyleBackColor = true;
-            // 
-            // btnLugares
-            // 
-            btnLugares.Location = new Point(12, 354);
-            btnLugares.Name = "btnLugares";
-            btnLugares.Size = new Size(188, 50);
-            btnLugares.TabIndex = 6;
-            btnLugares.Text = "Lugares";
-            btnLugares.UseVisualStyleBackColor = true;
-            // 
-            // btnMarcas
-            // 
-            btnMarcas.Location = new Point(12, 401);
-            btnMarcas.Name = "btnMarcas";
-            btnMarcas.Size = new Size(188, 50);
-            btnMarcas.TabIndex = 7;
-            btnMarcas.Text = "Marcas";
-            btnMarcas.UseVisualStyleBackColor = true;
-            // 
-            // btnTipos
-            // 
-            btnTipos.Location = new Point(12, 447);
-            btnTipos.Name = "btnTipos";
-            btnTipos.Size = new Size(188, 50);
-            btnTipos.TabIndex = 8;
-            btnTipos.Text = "Tipos";
-            btnTipos.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 

@@ -9,6 +9,9 @@ namespace cochinitoDeDulce.Views
 {
     public interface IPrincipalView
     {
-        event EventHandler MostrarCategorias;
+        event EventHandler MostrarCategorias_Evento;
+        event EventHandler MostrarMarcas_Evento;
+        event EventHandler MostrarLugares_Evento;
+        event EventHandler MostrarTipos_Evento;
     }
 }

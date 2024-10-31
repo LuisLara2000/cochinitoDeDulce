@@ -17,11 +17,26 @@ namespace cochinitoDeDulce.Views
             InitializeComponent();
             btnCategorias.Click += delegate
             {
-                MostrarCategorias?.Invoke(this,EventArgs.Empty);
+                MostrarCategorias_Evento?.Invoke(this,EventArgs.Empty);
+            };
+            btnMarcas.Click += delegate
+            {
+                MostrarMarcas_Evento?.Invoke(this, EventArgs.Empty);
+            };
+            btnLugares.Click += delegate
+            {
+                MostrarLugares_Evento?.Invoke(this, EventArgs.Empty);
+            };
+            btnTipos.Click += delegate
+            {
+                MostrarTipos_Evento?.Invoke(this, EventArgs.Empty);
             };
           
         }
 
-        public event EventHandler MostrarCategorias;
+        public event EventHandler MostrarCategorias_Evento;
+        public event EventHandler MostrarMarcas_Evento;
+        public event EventHandler MostrarLugares_Evento;
+        public event EventHandler MostrarTipos_Evento;
     }
 }

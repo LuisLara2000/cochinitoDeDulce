@@ -22,8 +22,12 @@ namespace cochinitoDeDulce.Presenters
         {
             this.principalView = principalView;
             this.sqlCadenaConexion = sqlCadenaConexion;
-            this.principalView.MostrarCategorias += MostrarCategorias;
+            this.principalView.MostrarCategorias_Evento += MostrarCategorias;
+            this.principalView.MostrarMarcas_Evento += MostrarMarcas;
+            this.principalView.MostrarLugares_Evento += MostrarLugares;
+            this.principalView.MostrarTipos_Evento += MostrarTipos;
         }
+
 
         private void MostrarCategorias(object sender, EventArgs e)
         {
@@ -31,6 +35,24 @@ namespace cochinitoDeDulce.Presenters
             ICategoriasDataBase database = new CategoriasDatabase(sqlCadenaConexion);
             new CategoriaPresenter(vista,database);
         }
+
+        private void MostrarMarcas(object? sender, EventArgs e)
+        {
+            IMarcasView vista = MarcasView.ObtenerLaVentanaMarcas((PrincipalView)principalView);
+            // falta la conexion a la base de datos, va en esta linea xd
+            new 
+        }
+
+        private void MostrarLugares(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        private void MostrarTipos(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+
 
     }
 }

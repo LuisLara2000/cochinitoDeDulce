@@ -56,9 +56,6 @@ namespace cochinitoDeDulce.Presenters
             viewCategoria.BuscarCategorias_Event += BuscarCategoria;
         }
 
-
-
-
         // Ventana "Agregar Categoria"
         private void AgregarNuevaCategoria(object sender, EventArgs e)
         {
@@ -161,6 +158,7 @@ namespace cochinitoDeDulce.Presenters
 
         }
 
+        // no se usa
         private void RegresarVentanaEliminarCategoria(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
