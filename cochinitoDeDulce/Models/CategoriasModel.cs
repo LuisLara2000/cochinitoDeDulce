@@ -22,7 +22,7 @@ namespace cochinitoDeDulce.Models
 
         [DisplayName("Categoria")]
         [Required(ErrorMessage = "Asignarle un nombre a la categoria es necesario")]
-        [StringLength(100,MinimumLength =1,ErrorMessage ="El nombre de la categoria no debe ser un espacio en blanco")]
+        [StringLength(100,MinimumLength =2,ErrorMessage ="El nombre de la categoria debe contener minimo 2 caracteres y maximo 100 caracteres")]
         public string NombreCategoria {
             get { return nombreCategoria; }
             set { nombreCategoria = value; }

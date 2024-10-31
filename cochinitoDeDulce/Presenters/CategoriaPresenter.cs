@@ -64,15 +64,37 @@ namespace cochinitoDeDulce.Presenters
         {
             var modeloCategorias = new CategoriasModel();
             modeloCategorias.NombreCategoria = viewCategoria.NombreCategorias;
-            // valido que no este repetido
-            if (databaseCategoria.ValidarNoRepetido(modeloCategorias.NombreCategoria) == 0)
-                databaseCategoria.AgregarCategoria(modeloCategorias);
-            else
-                MessageBox.Show("La categoria ya existe");
+            try
+            {
+                // valido el modelo
+                new General.ModelDataValidation().Validar(modeloCategorias);
+                // valido que no este repetido
+                if (databaseCategoria.ValidarNoRepetido(modeloCategorias.NombreCategoria) == 0)
+                {
+                   
+                    databaseCategoria.AgregarCategoria(modeloCategorias);
+                    viewCategoria.Exitoso = true;
+                    CargarCategorias();
+                    viewCategoria.Mensaje = "La categoria '"+ modeloCategorias.NombreCategoria + "' fue creada exitosamente";
+                }  
+                else
+                {
+                    viewCategoria.Exitoso = false;
+                    viewCategoria.Mensaje = "La categoria ya existe";      
+                }
+                   
+            }
+            catch (Exception ex)
+            {
+                viewCategoria.Exitoso = false;
+                viewCategoria.Mensaje = ex.Message;
+            }
+
         }
         private void IrVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
         {
             viewCategoria.EditarAgregarLbl = "Ingrese el nombre de la nueva categoria";
+            viewCategoria.Editando = false;
         }
         private void RegresarVentanaAgregarNuevaCategoria(object? sender, EventArgs e)
         {
@@ -84,12 +106,31 @@ namespace cochinitoDeDulce.Presenters
         {
             // obtengo la categoria a eliminar
             var categoriaActual = (CategoriasModel)categoriasBindingSource.Current;
-            // elimino la categoria                                          le paso la categoria a reemplazar
-            databaseCategoria.EliminarCategoria(categoriaActual.IdCategoria, viewCategoria.CatagoriaEliminarCb);
-            // muestro mensaje de aviso
-            MessageBox.Show("La categoria " + categoriaActual.NombreCategoria + " a sido eliminada correctamente");
-            // cargo las categorias para actualizar la tabla
-            CargarCategorias();
+            // creo un modelo
+            var modeloCategoria = new CategoriasModel();
+
+            modeloCategoria.NombreCategoria = viewCategoria.CatagoriaEliminarCb;
+
+            try
+            {
+                // valido el modelo
+                new General.ModelDataValidation().Validar(modeloCategoria);
+                // elimino la categoria                                          le paso la categoria a reemplazar
+                databaseCategoria.EliminarCategoria(categoriaActual.IdCategoria, viewCategoria.CatagoriaEliminarCb);
+                // cargo las categorias para actualizar la tabla
+                CargarCategorias();
+                viewCategoria.Exitoso = true;
+                viewCategoria.Mensaje = "La categoria '" + categoriaActual.NombreCategoria + "' fue eliminada exitosamente";
+
+
+            }
+            catch (Exception ex)
+            {
+                viewCategoria.Exitoso = false;
+                viewCategoria.Mensaje = ex.Message;
+            }
+
+
         }
 
         private void IrVentanaEliminarCategoria(object? sender, EventArgs e)
@@ -111,6 +152,13 @@ namespace cochinitoDeDulce.Presenters
             }
             // se las mando al combo box que esta en la ventana eliminar
             viewCategoria.SetComboBoxCategoriasEliminar(cb);
+            viewCategoria.PuedoEliminar = true;
+            if (cb.Items.Count == 0)
+            {
+                viewCategoria.PuedoEliminar = false;
+                viewCategoria.Mensaje = "¡NO PUEDES TENER 0 CATEGORIAS!";
+            }
+
         }
 
         private void RegresarVentanaEliminarCategoria(object? sender, EventArgs e)
@@ -120,21 +168,39 @@ namespace cochinitoDeDulce.Presenters
         // Ventana "Editar Categoria"
         private void EditarCategoria(object? sender, EventArgs e)
         {
+            // creo un modelo, el asignare el nuevo nombre con el que quiere sustiruirlo
+            var modeloCategoriaSusutituto = new CategoriasModel();
+            // le paso el parametro al modelo
+            modeloCategoriaSusutituto.NombreCategoria = viewCategoria.NombreCategorias;
             // obtengo la categoria a editar
             var categoriaActual = (CategoriasModel)categoriasBindingSource.Current;
-            // valido que no este repetido
-            if (databaseCategoria.ValidarNoRepetido(viewCategoria.NombreCategorias) == 0)
+           
+            try
             {
-                databaseCategoria.EditarCategoria(categoriaActual.NombreCategoria, viewCategoria.NombreCategorias);
-                // muestro mensaje de aviso
-                MessageBox.Show("La categoria " + categoriaActual.NombreCategoria + " a sido editada correctamente");
-                // cargo las categorias para actualizar la tabla
-                CargarCategorias();
+                // valido el modelo nuevo
+                new General.ModelDataValidation().Validar(modeloCategoriaSusutituto);
+                // valido que no este repetido
+                if (databaseCategoria.ValidarNoRepetido(viewCategoria.NombreCategorias) == 0)
+                {
+                    databaseCategoria.EditarCategoria(categoriaActual.NombreCategoria, viewCategoria.NombreCategorias);
+                    // cargo las categorias para actualizar la tabla
+                    CargarCategorias();
+                    viewCategoria.Exitoso = true;
+                    viewCategoria.Mensaje = "La categoria '" + categoriaActual.NombreCategoria + "' a sido editada correctamente";
+
+                }
+                else
+                {
+                    viewCategoria.Exitoso = false;
+                    viewCategoria.Mensaje = "La categoria ya existe";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("La categoria ya existe");
+                viewCategoria.Exitoso = false;
+                viewCategoria.Mensaje = ex.Message;
             }
+
 
             
         }

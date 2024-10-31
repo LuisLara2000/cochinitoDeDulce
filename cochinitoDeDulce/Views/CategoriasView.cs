@@ -14,6 +14,9 @@ namespace cochinitoDeDulce.Views
     public partial class CategoriasView : Form, ICategoriasView
     {
         private bool editando;
+        private bool exitoso;
+        private string mensaje;
+        private bool puedoEliminar;
         public CategoriasView()
         {
             // no se que hace esto jaja
@@ -45,7 +48,7 @@ namespace cochinitoDeDulce.Views
             
             btnGuardar.Click += delegate {// guardar nueva categoria
                 // este boton sirve para guardar las nuevas categorias y editar
-                if(!editando)
+                if(!Editando)
                 {
                     AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);            
                 }
@@ -53,16 +56,35 @@ namespace cochinitoDeDulce.Views
                 {
                     EditarCategoria_Event?.Invoke(this, EventArgs.Empty);
                 }
-                tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
-                tbCategorias.TabPages.Add(tpCategoriasVer);
-                txtNombreCategoria.Text = "";
+                // valido si la operacion fue exitosa
+                if(Exitoso)
+                {
+                    tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
+                    tbCategorias.TabPages.Add(tpCategoriasVer);
+                    txtNombreCategoria.Text = "";
+                    MessageBox.Show(Mensaje);
+                }
+                else
+                {
+                 
+                    MessageBox.Show(Mensaje);
+                }
+
             };
             // Ventana "Eliminar Categoria" //
             btnIrEliminar.Click += delegate
             {
                 IrVentanaEliminarCategoria_Event?.Invoke(this, EventArgs.Empty);
-                tbCategorias.TabPages.Remove(tpCategoriasVer);
-                tbCategorias.TabPages.Add(tpEliminar);
+                if(PuedoEliminar)
+                {
+                    tbCategorias.TabPages.Remove(tpCategoriasVer);
+                    tbCategorias.TabPages.Add(tpEliminar);
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
+                }
+
             };
             btnEliminarCategoriaCancelar.Click += delegate
             {
@@ -73,9 +95,19 @@ namespace cochinitoDeDulce.Views
             btnEliminarCategoriaEliminar.Click += delegate
             {
                 EliminarCategoria_Event?.Invoke(this, EventArgs.Empty);
-                cbEliminarCategoria.SelectedItem = null;
-                tbCategorias.TabPages.Remove(tpEliminar);
-                tbCategorias.TabPages.Add(tpCategoriasVer);
+                if(Exitoso)
+                {
+                    cbEliminarCategoria.SelectedItem = null;
+                    tbCategorias.TabPages.Remove(tpEliminar);
+                    tbCategorias.TabPages.Add(tpCategoriasVer);
+                    MessageBox.Show(Mensaje);
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
+                }
+
+              
 
             };
             // Ventana "Editar Categoria"
@@ -122,13 +154,31 @@ namespace cochinitoDeDulce.Views
 
         public string CatagoriaEliminarCb
         {
-            get { return cbEliminarCategoria.SelectedItem.ToString(); }         
+            get {return cbEliminarCategoria.SelectedItem.ToString();}
+
         }
 
         public bool Editando
         {
             get { return editando; }
             set { editando = value; }
+        }
+
+        public bool Exitoso
+        {
+            get { return exitoso; }
+            set { exitoso = value; }
+        }
+        public string Mensaje
+        {
+            get { return mensaje; }
+            set { mensaje = value; }
+        }
+
+        public bool PuedoEliminar
+        {
+            get { return puedoEliminar; }
+            set { puedoEliminar = value; }
         }
 
         // Ventana "Agregar Categoria"
@@ -169,7 +219,8 @@ namespace cochinitoDeDulce.Views
             {
                 cbEliminarCategoria.Items.Add(i);
             }
-           
+            // lo inicializo en el primer elemento
+            cbEliminarCategoria.SelectedIndex = cbEliminarCategoria.Items.Count - 1;
         }
 
         // patron singleton //
