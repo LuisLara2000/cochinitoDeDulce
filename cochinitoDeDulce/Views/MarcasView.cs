@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,25 +18,96 @@ namespace cochinitoDeDulce.Views
         // ///////// //
         private bool estoyEditando;
         private bool fueExitoso;
-        private bool puedoEditar;
+        private bool puedoEliminar;
         private string mensaje;
         private static MarcasView instancia;// para el patron singleton
 
         // /////////// //
         // PROPIEDADES //
         // /////////// //
+
+        // Del modelo 
         public string IdMarca { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string NombreMarca { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool EstoyEditando { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool FueExitoso { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool PuedoEliminar { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Mensaje { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        // Solo en codigo
+        public bool EstoyEditando { get => estoyEditando; set => estoyEditando = value; }
+        public bool FueExitoso { get => fueExitoso; set => fueExitoso=value; }
+        public bool PuedoEliminar { get => puedoEliminar; set => puedoEliminar = value; }
+        public string Mensaje { get => mensaje; set => mensaje=value; }
+
+        // De la vista
+        public string TxtBuscarMarca { get => txtBuscarMarca.Text; set => txtBuscarMarca.Text = value; }
+        public string TxtAgregarEditar { get => txtAgregarEditar.Text; set => txtAgregarEditar.Text = value; }
+        public string LblAgregarEditar { get => lblAgregarEditar.Text; set => lblAgregarEditar.Text = value; }
 
         public MarcasView()
         {
             InitializeComponent();
+            // asocio los eventos
+            AsociarEventosDeLaVistaMarca();
+            // oculto las ventanas que no quiero que se vean al inicio
+            tbMarca.TabPages.Remove(tpAgregarEditarMarca);
+            tbMarca.TabPages.Remove(tpEliminarMarca);
         }
 
+        private void AsociarEventosDeLaVistaMarca()
+        {
+            // Ventana "Agregar Marca" //
+            btnGuardarEditar.Click += delegate
+            {
+                if (!EstoyEditando)
+                {
+                    AgregarNuevaMarca_Event?.Invoke(this, EventArgs.Empty);
+                }
+                else
+                {
+                    EditarMarca_Event?.Invoke(this, EventArgs.Empty);
+                }
+
+                if (FueExitoso)
+                {
+                    tbMarca.TabPages.Remove(tpAgregarEditarMarca);
+                    tbMarca.TabPages.Add(tpBuscarMarca);
+                    txtAgregarEditar.Text = "";
+                    MessageBox.Show(Mensaje);
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
+                }
+            };
+
+            btnIrAgregarMarca.Click += delegate
+            {
+                IrVentanaAgregarNuevaMarca_Event?.Invoke(this, EventArgs.Empty);
+                tbMarca.TabPages.Remove(tpBuscarMarca);
+                tbMarca.TabPages.Add(tpAgregarEditarMarca);
+                tpAgregarEditarMarca.Text = "Agregar marca";
+                lblAgregarEditar.Text = "Ingrese el nombre de la nueva marca";
+                btnGuardarEditar.Text = "Agregar";
+            };
+            btnRegresarEditarGuardar.Click += delegate
+            {
+                RegresarVentanaAgregarNuevaMarca_Event?.Invoke(this, EventArgs.Empty);
+                tbMarca.TabPages.Remove(tpAgregarEditarMarca);
+                tbMarca.TabPages.Add(tpBuscarMarca);
+            };
+            // Ventana "Eliminar Marca" //
+            // Ventana "Editar Marca" //
+            btnIrEditarMarca.Click += delegate{
+                IrVentanaEditarMarca_Event?.Invoke(this, EventArgs.Empty);
+                tbMarca.TabPages.Remove(tpBuscarMarca);
+                tbMarca.TabPages.Add(tpAgregarEditarMarca);
+                tpAgregarEditarMarca.Text = "Editar marca";
+                btnGuardarEditar.Text = "Editar";
+            };
+            // Ventana "Buscar Marca" //
+            btnBuscar.Click += delegate
+            {
+                BuscarMarca_Event?.Invoke(this, EventArgs.Empty);
+            };
+        }
         // /////// //
         // EVENTOS //
         // /////// //
@@ -57,7 +129,7 @@ namespace cochinitoDeDulce.Views
         // Aqui se muestran las marcas en una tabla al ver la primera pantalla
         public void EstablecerValoresBindingSource(BindingSource marcasLista)
         {
-            throw new NotImplementedException();
+            dgMarcas.DataSource = marcasLista;
         }
 
     

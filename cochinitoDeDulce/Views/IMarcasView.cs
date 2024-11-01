@@ -18,7 +18,10 @@ namespace cochinitoDeDulce.Views
         string NombreMarca { get; set; }
 
         // De la vista
-        
+        string TxtBuscarMarca {  get; set; }
+        string TxtAgregarEditar { get; set; }
+        string LblAgregarEditar { get; set; }
+
         // Solo en codigo
         bool EstoyEditando { get; set; }
         bool FueExitoso { get; set; }
