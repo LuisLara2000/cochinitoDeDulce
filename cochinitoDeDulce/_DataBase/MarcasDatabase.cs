@@ -139,11 +139,63 @@ namespace cochinitoDeDulce._DataBase
         // Eliminar //
         public void EliminarMarca(int IdMarcaEliminar, string nombreMarcaReemplazar)
         {
-            throw new NotImplementedException();
+            // crear la conexion
+            using (var conexion = new SqlConnection(cadenaConexion))
+            // creo un objeto comando para poder ejecutar los comandos
+            using (var command = new SqlCommand("spEliminarMarca"))
+            {
+                // abrir la conexion
+                conexion.Open();
+                // establecemos la conexion al objeto comando
+                command.Connection = conexion;
+                // determino el tipo de comando
+                command.CommandType = CommandType.StoredProcedure;
+                // pasar parametros
+                command.Parameters.Add("@idMarcaEliminar", SqlDbType.Int).Value = IdMarcaEliminar;
+                command.Parameters.Add("@idMarcaReemplazar", SqlDbType.VarChar).Value = nombreMarcaReemplazar;
+                // ejecutar comando
+                command.ExecuteNonQuery();
+
+                // como uso using la conexion se cierra automaticamente
+            }
         }
         public IEnumerable<MarcasModel> BuscarMarcaExepto(int IdModel)
         {
-            throw new NotImplementedException();
+            // creo una lista de categoriaModels
+            List<MarcasModel> lMarcas = new List<MarcasModel>();
+            // crear la conexion
+            using (var conexion = new SqlConnection(cadenaConexion))
+            // creo un objeto comando para poder ejecutar los comandos
+            using (var command = new SqlCommand("spMostrarMarcaExepto"))
+            {
+                // abrir la conexion
+                conexion.Open();
+                // establecemos la conexion al objeto comando
+                command.Connection = conexion;
+                // determino el tipo de comando
+                command.CommandType = CommandType.StoredProcedure;
+                // pasar parametros
+                command.Parameters.Add("@idMarcaExepcion", SqlDbType.Int).Value = IdModel;
+                // ejecutar comando
+                command.ExecuteNonQuery();
+                // creo un lector
+                using (var lector = command.ExecuteReader())
+                {
+                    while (lector.Read())
+                    {
+                        // creamos un nuevo modelo categoria
+                        var vMarca = new MarcasModel();
+                        // leemos los datos que regresa la consulta
+                        vMarca.IdMarca = (int)lector[0];
+                        vMarca.NombreMarca = lector[1].ToString();
+                        // los agregamos a la lista de categorias
+                        lMarcas.Add(vMarca);
+                    }
+                }
+                // como uso using la conexion se cierra automaticamente
+            }
+            // retorno la lista
+            return lMarcas;
         }
 
 

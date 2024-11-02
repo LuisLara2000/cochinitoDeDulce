@@ -1,6 +1,8 @@
-﻿using System;
+﻿using cochinitoDeDulce.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -21,7 +23,8 @@ namespace cochinitoDeDulce.Views
         string TxtBuscarMarca {  get; set; }
         string TxtAgregarEditar { get; set; }
         string LblAgregarEditar { get; set; }
-
+        string LblElimnarMarca {  get; set; }
+        string CbEliminar {  get; set; }
         // Solo en codigo
         bool EstoyEditando { get; set; }
         bool FueExitoso { get; set; }
@@ -42,7 +45,8 @@ namespace cochinitoDeDulce.Views
         // Ventana "Eliminar Marca" //
         // ------------------------ //
         event EventHandler EliminarMarca_Event;
-        event EventHandler IrVentanaEliminarCMarca_Event;
+        event EventHandler IrVentanaEliminarMarca_Event;
+        event EventHandler RegresarVentanaEliminarMarca_Event;
         // ---------------------- //
         // Ventana "Editar Marca" //
         // ---------------------- //
@@ -61,7 +65,7 @@ namespace cochinitoDeDulce.Views
         // Aqui se muestran las marcas en una tabla al ver la primera pantalla
         void EstablecerValoresBindingSource(BindingSource marcasLista);
         // Aqui se muestran las marcas en una lista para que escojas cual reemplazara a la que quieres eliminar
-        void EstablecerValoresComboBox(List<string> marcasListaMenosLaQueVasAEliminar);
+        void EstablecerValoresComboBox(IEnumerable<MarcasModel> marcasListaMenosLaQueVasAEliminar);
         void Show();
     }
 }

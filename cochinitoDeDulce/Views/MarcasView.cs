@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cochinitoDeDulce.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,8 @@ namespace cochinitoDeDulce.Views
         public string TxtBuscarMarca { get => txtBuscarMarca.Text; set => txtBuscarMarca.Text = value; }
         public string TxtAgregarEditar { get => txtAgregarEditar.Text; set => txtAgregarEditar.Text = value; }
         public string LblAgregarEditar { get => lblAgregarEditar.Text; set => lblAgregarEditar.Text = value; }
+        public string LblElimnarMarca { get => lblEliminarMarca.Text; set => lblEliminarMarca.Text = value; }
+        public string CbEliminar { get => cbMarcas.Text; set => cbMarcas.Text=value; }
 
         public MarcasView()
         {
@@ -77,7 +80,6 @@ namespace cochinitoDeDulce.Views
                     MessageBox.Show(Mensaje);
                 }
             };
-
             btnIrAgregarMarca.Click += delegate
             {
                 IrVentanaAgregarNuevaMarca_Event?.Invoke(this, EventArgs.Empty);
@@ -94,6 +96,44 @@ namespace cochinitoDeDulce.Views
                 tbMarca.TabPages.Add(tpBuscarMarca);
             };
             // Ventana "Eliminar Marca" //
+            btnEliminarEliminar.Click += delegate
+            {
+                EliminarMarca_Event?.Invoke(this, EventArgs.Empty);
+                if (FueExitoso)
+                {
+                    tbMarca.TabPages.Remove(tpEliminarMarca);
+                    tbMarca.TabPages.Add(tpBuscarMarca);
+                    MessageBox.Show(Mensaje);
+                    cbMarcas.SelectedItem = null;
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
+                }
+            };
+            btnIrEliminarMarca.Click += delegate
+            {
+                IrVentanaEliminarMarca_Event?.Invoke(this, EventArgs.Empty);
+                if (PuedoEliminar)
+                {
+                   
+                    tbMarca.TabPages.Remove(tpBuscarMarca);
+                    tbMarca.TabPages.Add(tpEliminarMarca);
+                    MessageBox.Show(Mensaje);
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
+                }
+
+
+            };
+            btnCancelarEliminar.Click += delegate
+            {
+                RegresarVentanaEliminarMarca_Event?.Invoke(this, EventArgs.Empty);
+                tbMarca.TabPages.Remove(tpEliminarMarca);
+                tbMarca.TabPages.Add(tpBuscarMarca);
+            };
             // Ventana "Editar Marca" //
             btnIrEditarMarca.Click += delegate{
                 IrVentanaEditarMarca_Event?.Invoke(this, EventArgs.Empty);
@@ -115,11 +155,14 @@ namespace cochinitoDeDulce.Views
         public event EventHandler IrVentanaAgregarNuevaMarca_Event;
         public event EventHandler RegresarVentanaAgregarNuevaMarca_Event;
         public event EventHandler EliminarMarca_Event;
-        public event EventHandler IrVentanaEliminarCMarca_Event;
+        public event EventHandler IrVentanaEliminarMarca_Event;
+        public event EventHandler RegresarVentanaEliminarMarca_Event;
         public event EventHandler EditarMarca_Event;
         public event EventHandler IrVentanaEditarMarca_Event;
         public event EventHandler RegresarVentanaEditarMarca_Event;
         public event EventHandler BuscarMarca_Event;
+
+
 
 
         // /////// //
@@ -134,9 +177,13 @@ namespace cochinitoDeDulce.Views
 
     
         // Aqui se muestran las marcas en una lista para que escojas cual reemplazara a la que quieres eliminar
-        public void EstablecerValoresComboBox(List<string> marcasListaMenosLaQueVasAEliminar)
+        public void EstablecerValoresComboBox(IEnumerable<MarcasModel> marcasListaMenosLaQueVasAEliminar)
         {
-            throw new NotImplementedException();
+            cbMarcas.Items.Clear();
+            foreach(var marca in marcasListaMenosLaQueVasAEliminar)
+            {
+                cbMarcas.Items.Add(marca.NombreMarca);
+            }
         }
 
         // PATRON SINGLETON, para que la ventana solo se invoke una vez y no existan duplicados

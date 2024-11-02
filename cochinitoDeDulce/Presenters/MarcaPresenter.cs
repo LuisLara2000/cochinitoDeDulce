@@ -39,6 +39,9 @@ namespace cochinitoDeDulce.Presenters
             iViewMarca.IrVentanaAgregarNuevaMarca_Event += IrVentanaAgregarNuevaMarca;
             iViewMarca.RegresarVentanaAgregarNuevaMarca_Event += RegresarVentanaAgregarNuevaMarca;
             // Ventana "Eliminar"
+            iViewMarca.IrVentanaEliminarMarca_Event += IrVentanaEliminarMarca;
+            iViewMarca.EliminarMarca_Event += EliminarMarca;
+            iViewMarca.RegresarVentanaEliminarMarca_Event += RegresarVentanaEliminarMarca;
             // Ventana "Editar"
             iViewMarca.IrVentanaEditarMarca_Event += IrVentanaEditarMarca;
             iViewMarca.EditarMarca_Event += EditarMarca;
@@ -47,11 +50,6 @@ namespace cochinitoDeDulce.Presenters
             iViewMarca.BuscarMarca_Event += BuscarMarca;
             
         }
-
-
-
-
-
 
 
 
@@ -119,7 +117,6 @@ namespace cochinitoDeDulce.Presenters
 
         }
         // editar // 
-
         private void IrVentanaEditarMarca(object? sender, EventArgs e)
         {
             var marcaActual = (MarcasModel)marcasBindingsSource.Current;
@@ -158,13 +155,70 @@ namespace cochinitoDeDulce.Presenters
             }
             
         }
-        // no en uso
+        // no se esta usando esta funcion 
         private void RegresarVentanaEditarMarca(object? sender, EventArgs e)
         {
             iViewMarca.TxtAgregarEditar = "";
         }
         // eliminar //
+        private void EliminarMarca(object? sender, EventArgs e)
+        {
 
+            // obtengo la categoria a eliminar
+            var marcaActual = (MarcasModel)marcasBindingsSource.Current;
+            // creo un modelo
+            var modeloMarca = new MarcasModel();
+
+            modeloMarca.NombreMarca = iViewMarca.CbEliminar;
+
+            try
+            {
+                // valido el modelo
+                new General.ModelDataValidation().Validar(modeloMarca);
+                // elimino la categoria                                          le paso la categoria a reemplazar
+                dataBaseMarca.EliminarMarca(marcaActual.IdMarca, iViewMarca.CbEliminar);
+                // cargo las categorias para actualizar la tabla
+                CargarMarcas();
+                iViewMarca.FueExitoso = true;
+                iViewMarca.Mensaje = "La categoria '" + marcaActual.NombreMarca + "' fue eliminada exitosamente";
+
+
+            }
+            catch (Exception ex)
+            {
+                iViewMarca.FueExitoso = false;
+                iViewMarca.Mensaje = ex.Message;
+            }
+        }
+        private void IrVentanaEliminarMarca(object? sender, EventArgs e)
+        {
+           // mostrar mensaje de cual categoria vas a eliminar
+            var marcaElimnar = (MarcasModel)marcasBindingsSource.Current;
+            iViewMarca.LblElimnarMarca = "Para eliminar la marca '" + marcaElimnar.NombreMarca + "' es necesario reemplazarla por:";
+            // obtener de la base de datos la lista de todos las categorias creadas,
+            // exepto del id de la categoria eliminar
+
+            // reutilizo el codigo que tengo de buscar categoria
+            marcasList = dataBaseMarca.BuscarMarcaExepto(marcaElimnar.IdMarca);
+
+            // se las mando al combo box que esta en la ventana eliminar
+            CargarMarcasComboBox();
+            iViewMarca.PuedoEliminar = true;
+            if (marcasList.Count() == 0)
+            {
+                iViewMarca.PuedoEliminar = false;
+                iViewMarca.Mensaje = "¡NO PUEDES QUEDARTE SIN MARCAS!";
+            }
+
+        }
+        private void RegresarVentanaEliminarMarca(object? sender, EventArgs e)
+        {
+            iViewMarca.CbEliminar = "";
+        }
+        void CargarMarcasComboBox()
+        {
+            iViewMarca.EstablecerValoresComboBox(marcasList);
+        }
 
 
     }

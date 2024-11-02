@@ -31,7 +31,7 @@
             tbMarca = new TabControl();
             tpBuscarMarca = new TabPage();
             txtBuscarMarca = new TextBox();
-            button4 = new Button();
+            btnIrEliminarMarca = new Button();
             btnIrEditarMarca = new Button();
             btnIrAgregarMarca = new Button();
             btnBuscar = new Button();
@@ -42,10 +42,10 @@
             btnRegresarEditarGuardar = new Button();
             btnGuardarEditar = new Button();
             tpEliminarMarca = new TabPage();
-            button8 = new Button();
-            button7 = new Button();
-            comboBox1 = new ComboBox();
-            label2 = new Label();
+            btnCancelarEliminar = new Button();
+            btnEliminarEliminar = new Button();
+            cbMarcas = new ComboBox();
+            lblEliminarMarca = new Label();
             tbMarca.SuspendLayout();
             tpBuscarMarca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgMarcas).BeginInit();
@@ -70,7 +70,7 @@
             // tpBuscarMarca
             // 
             tpBuscarMarca.Controls.Add(txtBuscarMarca);
-            tpBuscarMarca.Controls.Add(button4);
+            tpBuscarMarca.Controls.Add(btnIrEliminarMarca);
             tpBuscarMarca.Controls.Add(btnIrEditarMarca);
             tpBuscarMarca.Controls.Add(btnIrAgregarMarca);
             tpBuscarMarca.Controls.Add(btnBuscar);
@@ -90,14 +90,14 @@
             txtBuscarMarca.Size = new Size(178, 23);
             txtBuscarMarca.TabIndex = 5;
             // 
-            // button4
+            // btnIrEliminarMarca
             // 
-            button4.Location = new Point(377, 281);
-            button4.Name = "button4";
-            button4.Size = new Size(259, 117);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnIrEliminarMarca.Location = new Point(377, 281);
+            btnIrEliminarMarca.Name = "btnIrEliminarMarca";
+            btnIrEliminarMarca.Size = new Size(259, 117);
+            btnIrEliminarMarca.TabIndex = 4;
+            btnIrEliminarMarca.Text = "Eliminar";
+            btnIrEliminarMarca.UseVisualStyleBackColor = true;
             // 
             // btnIrEditarMarca
             // 
@@ -184,10 +184,10 @@
             // 
             // tpEliminarMarca
             // 
-            tpEliminarMarca.Controls.Add(button8);
-            tpEliminarMarca.Controls.Add(button7);
-            tpEliminarMarca.Controls.Add(comboBox1);
-            tpEliminarMarca.Controls.Add(label2);
+            tpEliminarMarca.Controls.Add(btnCancelarEliminar);
+            tpEliminarMarca.Controls.Add(btnEliminarEliminar);
+            tpEliminarMarca.Controls.Add(cbMarcas);
+            tpEliminarMarca.Controls.Add(lblEliminarMarca);
             tpEliminarMarca.Location = new Point(4, 24);
             tpEliminarMarca.Name = "tpEliminarMarca";
             tpEliminarMarca.Padding = new Padding(3);
@@ -196,40 +196,40 @@
             tpEliminarMarca.Text = "Eliminar marca";
             tpEliminarMarca.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnCancelarEliminar
             // 
-            button8.Location = new Point(325, 225);
-            button8.Name = "button8";
-            button8.Size = new Size(298, 23);
-            button8.TabIndex = 3;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
+            btnCancelarEliminar.Location = new Point(325, 225);
+            btnCancelarEliminar.Name = "btnCancelarEliminar";
+            btnCancelarEliminar.Size = new Size(298, 23);
+            btnCancelarEliminar.TabIndex = 3;
+            btnCancelarEliminar.Text = "Cancelar";
+            btnCancelarEliminar.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnEliminarEliminar
             // 
-            button7.Location = new Point(24, 225);
-            button7.Name = "button7";
-            button7.Size = new Size(295, 23);
-            button7.TabIndex = 2;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
+            btnEliminarEliminar.Location = new Point(24, 225);
+            btnEliminarEliminar.Name = "btnEliminarEliminar";
+            btnEliminarEliminar.Size = new Size(295, 23);
+            btnEliminarEliminar.TabIndex = 2;
+            btnEliminarEliminar.Text = "Eliminar";
+            btnEliminarEliminar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbMarcas
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(24, 187);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(599, 23);
-            comboBox1.TabIndex = 1;
+            cbMarcas.FormattingEnabled = true;
+            cbMarcas.Location = new Point(24, 187);
+            cbMarcas.Name = "cbMarcas";
+            cbMarcas.Size = new Size(599, 23);
+            cbMarcas.TabIndex = 1;
             // 
-            // label2
+            // lblEliminarMarca
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(301, 161);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 0;
-            label2.Text = "label2";
+            lblEliminarMarca.AutoSize = true;
+            lblEliminarMarca.Location = new Point(301, 161);
+            lblEliminarMarca.Name = "lblEliminarMarca";
+            lblEliminarMarca.Size = new Size(38, 15);
+            lblEliminarMarca.TabIndex = 0;
+            lblEliminarMarca.Text = "label2";
             // 
             // MarcasView
             // 
@@ -257,7 +257,7 @@
         private TabPage tpAgregarEditarMarca;
         private TabPage tpEliminarMarca;
         private TextBox txtBuscarMarca;
-        private Button button4;
+        private Button btnIrEliminarMarca;
         private Button btnIrEditarMarca;
         private Button btnIrAgregarMarca;
         private Button btnBuscar;
@@ -266,9 +266,9 @@
         private Label lblAgregarEditar;
         private Button btnRegresarEditarGuardar;
         private Button btnGuardarEditar;
-        private ComboBox comboBox1;
-        private Label label2;
-        private Button button8;
-        private Button button7;
+        private ComboBox cbMarcas;
+        private Label lblEliminarMarca;
+        private Button btnCancelarEliminar;
+        private Button btnEliminarEliminar;
     }
 }
