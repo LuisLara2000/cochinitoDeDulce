@@ -119,7 +119,6 @@ namespace cochinitoDeDulce.Views
                    
                     tbMarca.TabPages.Remove(tpBuscarMarca);
                     tbMarca.TabPages.Add(tpEliminarMarca);
-                    MessageBox.Show(Mensaje);
                 }
                 else
                 {

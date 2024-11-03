@@ -45,7 +45,9 @@ namespace cochinitoDeDulce.Presenters
 
         private void MostrarLugares(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ILugaresView vista = LugaresView.ObtenerLaVentanaLugares((PrincipalView)principalView);
+            ILugaresDatabase database = new LugaresDatabase(sqlCadenaConexion);
+            new LugaresPresenter(vista, database);
         }
         private void MostrarTipos(object? sender, EventArgs e)
         {
