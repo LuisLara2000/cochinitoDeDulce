@@ -28,251 +28,251 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tbTipos = new TabControl();
-            tpBuscarTipos = new TabPage();
-            textBox1 = new TextBox();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            tpAgregarEditarTipos = new TabPage();
-            textBox2 = new TextBox();
-            label1 = new Label();
-            button6 = new Button();
-            button5 = new Button();
-            tpEliminarTipos = new TabPage();
-            button8 = new Button();
-            button7 = new Button();
-            comboBox1 = new ComboBox();
-            label2 = new Label();
-            tbTipos.SuspendLayout();
-            tpBuscarTipos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tpAgregarEditarTipos.SuspendLayout();
-            tpEliminarTipos.SuspendLayout();
+            tbTipo = new TabControl();
+            tpBuscarTipo = new TabPage();
+            txtBuscarTipo = new TextBox();
+            btnIrEliminarTipo = new Button();
+            btnIrEditarTipo = new Button();
+            btnIrAgregarTipo = new Button();
+            btnBuscar = new Button();
+            dgTipos = new DataGridView();
+            tpAgregarEditarTipo = new TabPage();
+            txtAgregarEditar = new TextBox();
+            lblAgregarEditar = new Label();
+            btnRegresarEditarGuardar = new Button();
+            btnGuardarEditar = new Button();
+            tpEliminarTipo = new TabPage();
+            btnCancelarEliminar = new Button();
+            btnEliminarEliminar = new Button();
+            cbTipos = new ComboBox();
+            lblEliminarTipo = new Label();
+            tbTipo.SuspendLayout();
+            tpBuscarTipo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgTipos).BeginInit();
+            tpAgregarEditarTipo.SuspendLayout();
+            tpEliminarTipo.SuspendLayout();
             SuspendLayout();
             // 
-            // tbTipos
+            // tbTipo
             // 
-            tbTipos.Controls.Add(tpBuscarTipos);
-            tbTipos.Controls.Add(tpAgregarEditarTipos);
-            tbTipos.Controls.Add(tpEliminarTipos);
-            tbTipos.Dock = DockStyle.Fill;
-            tbTipos.Location = new Point(0, 0);
-            tbTipos.Name = "tbTipos";
-            tbTipos.SelectedIndex = 0;
-            tbTipos.Size = new Size(661, 450);
-            tbTipos.SizeMode = TabSizeMode.FillToRight;
-            tbTipos.TabIndex = 2;
+            tbTipo.Controls.Add(tpBuscarTipo);
+            tbTipo.Controls.Add(tpAgregarEditarTipo);
+            tbTipo.Controls.Add(tpEliminarTipo);
+            tbTipo.Dock = DockStyle.Fill;
+            tbTipo.Location = new Point(0, 0);
+            tbTipo.Name = "tbTipo";
+            tbTipo.SelectedIndex = 0;
+            tbTipo.Size = new Size(661, 450);
+            tbTipo.SizeMode = TabSizeMode.FillToRight;
+            tbTipo.TabIndex = 2;
             // 
-            // tpBuscarTipos
+            // tpBuscarTipo
             // 
-            tpBuscarTipos.Controls.Add(textBox1);
-            tpBuscarTipos.Controls.Add(button4);
-            tpBuscarTipos.Controls.Add(button3);
-            tpBuscarTipos.Controls.Add(button2);
-            tpBuscarTipos.Controls.Add(button1);
-            tpBuscarTipos.Controls.Add(dataGridView1);
-            tpBuscarTipos.Location = new Point(4, 24);
-            tpBuscarTipos.Name = "tpBuscarTipos";
-            tpBuscarTipos.Padding = new Padding(3);
-            tpBuscarTipos.Size = new Size(653, 422);
-            tpBuscarTipos.TabIndex = 0;
-            tpBuscarTipos.Text = "Todos los tipos";
-            tpBuscarTipos.UseVisualStyleBackColor = true;
+            tpBuscarTipo.Controls.Add(txtBuscarTipo);
+            tpBuscarTipo.Controls.Add(btnIrEliminarTipo);
+            tpBuscarTipo.Controls.Add(btnIrEditarTipo);
+            tpBuscarTipo.Controls.Add(btnIrAgregarTipo);
+            tpBuscarTipo.Controls.Add(btnBuscar);
+            tpBuscarTipo.Controls.Add(dgTipos);
+            tpBuscarTipo.Location = new Point(4, 24);
+            tpBuscarTipo.Name = "tpBuscarTipo";
+            tpBuscarTipo.Padding = new Padding(3);
+            tpBuscarTipo.Size = new Size(653, 422);
+            tpBuscarTipo.TabIndex = 0;
+            tpBuscarTipo.Text = "Todos los tipos";
+            tpBuscarTipo.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBuscarTipo
             // 
-            textBox1.Location = new Point(377, 6);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(178, 23);
-            textBox1.TabIndex = 5;
+            txtBuscarTipo.Location = new Point(377, 6);
+            txtBuscarTipo.Name = "txtBuscarTipo";
+            txtBuscarTipo.Size = new Size(178, 23);
+            txtBuscarTipo.TabIndex = 5;
             // 
-            // button4
+            // btnIrEliminarTipo
             // 
-            button4.Location = new Point(377, 281);
-            button4.Name = "button4";
-            button4.Size = new Size(259, 117);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnIrEliminarTipo.Location = new Point(377, 281);
+            btnIrEliminarTipo.Name = "btnIrEliminarTipo";
+            btnIrEliminarTipo.Size = new Size(259, 117);
+            btnIrEliminarTipo.TabIndex = 4;
+            btnIrEliminarTipo.Text = "Eliminar";
+            btnIrEliminarTipo.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnIrEditarTipo
             // 
-            button3.Location = new Point(377, 158);
-            button3.Name = "button3";
-            button3.Size = new Size(259, 117);
-            button3.TabIndex = 3;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnIrEditarTipo.Location = new Point(377, 158);
+            btnIrEditarTipo.Name = "btnIrEditarTipo";
+            btnIrEditarTipo.Size = new Size(259, 117);
+            btnIrEditarTipo.TabIndex = 3;
+            btnIrEditarTipo.Text = "Editar";
+            btnIrEditarTipo.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnIrAgregarTipo
             // 
-            button2.Location = new Point(377, 35);
-            button2.Name = "button2";
-            button2.Size = new Size(259, 117);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnIrAgregarTipo.Location = new Point(377, 35);
+            btnIrAgregarTipo.Name = "btnIrAgregarTipo";
+            btnIrAgregarTipo.Size = new Size(259, 117);
+            btnIrAgregarTipo.TabIndex = 2;
+            btnIrAgregarTipo.Text = "Agregar";
+            btnIrAgregarTipo.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnBuscar
             // 
-            button1.Location = new Point(561, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(561, 6);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 1;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgTipos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(8, 6);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(363, 392);
-            dataGridView1.TabIndex = 0;
+            dgTipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgTipos.Location = new Point(8, 6);
+            dgTipos.Name = "dgTipos";
+            dgTipos.Size = new Size(363, 392);
+            dgTipos.TabIndex = 0;
             // 
-            // tpAgregarEditarTipos
+            // tpAgregarEditarTipo
             // 
-            tpAgregarEditarTipos.Controls.Add(textBox2);
-            tpAgregarEditarTipos.Controls.Add(label1);
-            tpAgregarEditarTipos.Controls.Add(button6);
-            tpAgregarEditarTipos.Controls.Add(button5);
-            tpAgregarEditarTipos.Location = new Point(4, 24);
-            tpAgregarEditarTipos.Name = "tpAgregarEditarTipos";
-            tpAgregarEditarTipos.Padding = new Padding(3);
-            tpAgregarEditarTipos.Size = new Size(653, 422);
-            tpAgregarEditarTipos.TabIndex = 1;
-            tpAgregarEditarTipos.Text = "AgregarEditar tipo";
-            tpAgregarEditarTipos.UseVisualStyleBackColor = true;
-            tpAgregarEditarTipos.UseWaitCursor = true;
+            tpAgregarEditarTipo.Controls.Add(txtAgregarEditar);
+            tpAgregarEditarTipo.Controls.Add(lblAgregarEditar);
+            tpAgregarEditarTipo.Controls.Add(btnRegresarEditarGuardar);
+            tpAgregarEditarTipo.Controls.Add(btnGuardarEditar);
+            tpAgregarEditarTipo.Location = new Point(4, 24);
+            tpAgregarEditarTipo.Name = "tpAgregarEditarTipo";
+            tpAgregarEditarTipo.Padding = new Padding(3);
+            tpAgregarEditarTipo.Size = new Size(653, 422);
+            tpAgregarEditarTipo.TabIndex = 1;
+            tpAgregarEditarTipo.Text = "AgregarEditar tipo";
+            tpAgregarEditarTipo.UseVisualStyleBackColor = true;
+            tpAgregarEditarTipo.UseWaitCursor = true;
             // 
-            // textBox2
+            // txtAgregarEditar
             // 
-            textBox2.Location = new Point(27, 193);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(598, 23);
-            textBox2.TabIndex = 3;
-            textBox2.UseWaitCursor = true;
+            txtAgregarEditar.Location = new Point(27, 193);
+            txtAgregarEditar.Name = "txtAgregarEditar";
+            txtAgregarEditar.Size = new Size(598, 23);
+            txtAgregarEditar.TabIndex = 3;
+            txtAgregarEditar.UseWaitCursor = true;
             // 
-            // label1
+            // lblAgregarEditar
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(317, 169);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
-            label1.UseWaitCursor = true;
+            lblAgregarEditar.AutoSize = true;
+            lblAgregarEditar.Location = new Point(317, 169);
+            lblAgregarEditar.Name = "lblAgregarEditar";
+            lblAgregarEditar.Size = new Size(38, 15);
+            lblAgregarEditar.TabIndex = 2;
+            lblAgregarEditar.Text = "label1";
+            lblAgregarEditar.UseWaitCursor = true;
             // 
-            // button6
+            // btnRegresarEditarGuardar
             // 
-            button6.Location = new Point(329, 235);
-            button6.Name = "button6";
-            button6.Size = new Size(296, 22);
-            button6.TabIndex = 1;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
-            button6.UseWaitCursor = true;
+            btnRegresarEditarGuardar.Location = new Point(329, 235);
+            btnRegresarEditarGuardar.Name = "btnRegresarEditarGuardar";
+            btnRegresarEditarGuardar.Size = new Size(296, 22);
+            btnRegresarEditarGuardar.TabIndex = 1;
+            btnRegresarEditarGuardar.Text = "Cancelar";
+            btnRegresarEditarGuardar.UseVisualStyleBackColor = true;
+            btnRegresarEditarGuardar.UseWaitCursor = true;
             // 
-            // button5
+            // btnGuardarEditar
             // 
-            button5.Location = new Point(27, 235);
-            button5.Name = "button5";
-            button5.Size = new Size(296, 22);
-            button5.TabIndex = 0;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            button5.UseWaitCursor = true;
+            btnGuardarEditar.Location = new Point(27, 235);
+            btnGuardarEditar.Name = "btnGuardarEditar";
+            btnGuardarEditar.Size = new Size(296, 22);
+            btnGuardarEditar.TabIndex = 0;
+            btnGuardarEditar.Text = "button5";
+            btnGuardarEditar.UseVisualStyleBackColor = true;
+            btnGuardarEditar.UseWaitCursor = true;
             // 
-            // tpEliminarTipos
+            // tpEliminarTipo
             // 
-            tpEliminarTipos.Controls.Add(button8);
-            tpEliminarTipos.Controls.Add(button7);
-            tpEliminarTipos.Controls.Add(comboBox1);
-            tpEliminarTipos.Controls.Add(label2);
-            tpEliminarTipos.Location = new Point(4, 24);
-            tpEliminarTipos.Name = "tpEliminarTipos";
-            tpEliminarTipos.Padding = new Padding(3);
-            tpEliminarTipos.Size = new Size(653, 422);
-            tpEliminarTipos.TabIndex = 2;
-            tpEliminarTipos.Text = "Eliminar tipo";
-            tpEliminarTipos.UseVisualStyleBackColor = true;
+            tpEliminarTipo.Controls.Add(btnCancelarEliminar);
+            tpEliminarTipo.Controls.Add(btnEliminarEliminar);
+            tpEliminarTipo.Controls.Add(cbTipos);
+            tpEliminarTipo.Controls.Add(lblEliminarTipo);
+            tpEliminarTipo.Location = new Point(4, 24);
+            tpEliminarTipo.Name = "tpEliminarTipo";
+            tpEliminarTipo.Padding = new Padding(3);
+            tpEliminarTipo.Size = new Size(653, 422);
+            tpEliminarTipo.TabIndex = 2;
+            tpEliminarTipo.Text = "Eliminar tipo";
+            tpEliminarTipo.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnCancelarEliminar
             // 
-            button8.Location = new Point(325, 225);
-            button8.Name = "button8";
-            button8.Size = new Size(298, 23);
-            button8.TabIndex = 3;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
+            btnCancelarEliminar.Location = new Point(325, 225);
+            btnCancelarEliminar.Name = "btnCancelarEliminar";
+            btnCancelarEliminar.Size = new Size(298, 23);
+            btnCancelarEliminar.TabIndex = 3;
+            btnCancelarEliminar.Text = "Cancelar";
+            btnCancelarEliminar.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnEliminarEliminar
             // 
-            button7.Location = new Point(24, 225);
-            button7.Name = "button7";
-            button7.Size = new Size(295, 23);
-            button7.TabIndex = 2;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
+            btnEliminarEliminar.Location = new Point(24, 225);
+            btnEliminarEliminar.Name = "btnEliminarEliminar";
+            btnEliminarEliminar.Size = new Size(295, 23);
+            btnEliminarEliminar.TabIndex = 2;
+            btnEliminarEliminar.Text = "Elininar";
+            btnEliminarEliminar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbTipos
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(24, 187);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(599, 23);
-            comboBox1.TabIndex = 1;
+            cbTipos.FormattingEnabled = true;
+            cbTipos.Location = new Point(24, 187);
+            cbTipos.Name = "cbTipos";
+            cbTipos.Size = new Size(599, 23);
+            cbTipos.TabIndex = 1;
             // 
-            // label2
+            // lblEliminarTipo
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(307, 167);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 0;
-            label2.Text = "label2";
+            lblEliminarTipo.AutoSize = true;
+            lblEliminarTipo.Location = new Point(307, 167);
+            lblEliminarTipo.Name = "lblEliminarTipo";
+            lblEliminarTipo.Size = new Size(38, 15);
+            lblEliminarTipo.TabIndex = 0;
+            lblEliminarTipo.Text = "label2";
             // 
-            // ViewTipos
+            // TiposView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(661, 450);
-            Controls.Add(tbTipos);
-            Name = "ViewTipos";
+            Controls.Add(tbTipo);
+            Name = "TiposView";
             Text = "ViewTipos";
-            tbTipos.ResumeLayout(false);
-            tpBuscarTipos.ResumeLayout(false);
-            tpBuscarTipos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tpAgregarEditarTipos.ResumeLayout(false);
-            tpAgregarEditarTipos.PerformLayout();
-            tpEliminarTipos.ResumeLayout(false);
-            tpEliminarTipos.PerformLayout();
+            tbTipo.ResumeLayout(false);
+            tpBuscarTipo.ResumeLayout(false);
+            tpBuscarTipo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgTipos).EndInit();
+            tpAgregarEditarTipo.ResumeLayout(false);
+            tpAgregarEditarTipo.PerformLayout();
+            tpEliminarTipo.ResumeLayout(false);
+            tpEliminarTipo.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tbTipos;
-        private TabPage tpBuscarTipos;
-        private TextBox textBox1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private DataGridView dataGridView1;
-        private TabPage tpAgregarEditarTipos;
-        private TextBox textBox2;
-        private Label label1;
-        private Button button6;
-        private Button button5;
-        private TabPage tpEliminarTipos;
-        private Button button8;
-        private Button button7;
-        private ComboBox comboBox1;
-        private Label label2;
+        private TabControl tbTipo;
+        private TabPage tpBuscarTipo;
+        private TextBox txtBuscarTipo;
+        private Button btnIrEliminarTipo;
+        private Button btnIrEditarTipo;
+        private Button btnIrAgregarTipo;
+        private Button btnBuscar;
+        private DataGridView dgTipos;
+        private TabPage tpAgregarEditarTipo;
+        private TextBox txtAgregarEditar;
+        private Label lblAgregarEditar;
+        private Button btnRegresarEditarGuardar;
+        private Button btnGuardarEditar;
+        private TabPage tpEliminarTipo;
+        private Button btnCancelarEliminar;
+        private Button btnEliminarEliminar;
+        private ComboBox cbTipos;
+        private Label lblEliminarTipo;
     }
 }

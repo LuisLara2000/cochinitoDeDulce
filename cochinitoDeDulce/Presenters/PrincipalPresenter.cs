@@ -51,7 +51,9 @@ namespace cochinitoDeDulce.Presenters
         }
         private void MostrarTipos(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ITiposView vista = TiposView.ObtenerLaVentanaTipos((PrincipalView)principalView);
+            ITiposDatabase database = new TiposDatabase(sqlCadenaConexion);
+            new TiposPresenter(vista, database);
         }
 
 
