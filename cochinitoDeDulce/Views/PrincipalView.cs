@@ -31,6 +31,10 @@ namespace cochinitoDeDulce.Views
             {
                 MostrarTipos_Evento?.Invoke(this, EventArgs.Empty);
             };
+            btnGastos.Click += delegate
+            {
+                MostrarGastos_Evento?.Invoke(this, EventArgs.Empty);
+            };
           
         }
 
@@ -38,5 +42,6 @@ namespace cochinitoDeDulce.Views
         public event EventHandler MostrarMarcas_Evento;
         public event EventHandler MostrarLugares_Evento;
         public event EventHandler MostrarTipos_Evento;
+        public event EventHandler MostrarGastos_Evento;
     }
 }

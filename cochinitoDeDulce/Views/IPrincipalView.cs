@@ -13,5 +13,6 @@ namespace cochinitoDeDulce.Views
         event EventHandler MostrarMarcas_Evento;
         event EventHandler MostrarLugares_Evento;
         event EventHandler MostrarTipos_Evento;
+        event EventHandler MostrarGastos_Evento;
     }
 }

@@ -26,8 +26,16 @@ namespace cochinitoDeDulce.Presenters
             this.principalView.MostrarMarcas_Evento += MostrarMarcas;
             this.principalView.MostrarLugares_Evento += MostrarLugares;
             this.principalView.MostrarTipos_Evento += MostrarTipos;
+            this.principalView.MostrarGastos_Evento += MostrarGastos;
         }
 
+        private void MostrarGastos(object? sender, EventArgs e)
+        {
+            IGastosView vista = GastosView.ObtenerLaVentanaGastos((PrincipalView)principalView);
+            IGastosDatabase database = new GastosDatabase(sqlCadenaConexion);
+            new GastosPresenter(vista, database);
+
+        }
 
         private void MostrarCategorias(object sender, EventArgs e)
         {
