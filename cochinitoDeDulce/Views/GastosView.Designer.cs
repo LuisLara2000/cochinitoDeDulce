@@ -42,19 +42,19 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtComentario = new TextBox();
+            txtDescuento = new TextBox();
+            txtCantidad = new TextBox();
+            txtPrecio = new TextBox();
             txtAgregarEditar = new TextBox();
             label1 = new Label();
             lblAgregarEditar = new Label();
             btnRegresarEditarGuardar = new Button();
             btnGuardarEditar = new Button();
             tpBuscarGasto = new TabPage();
-            txtBuscarMarca = new TextBox();
-            btnIrEliminarLugar = new Button();
-            btnIrEditarLugar = new Button();
+            txtBuscarGasto = new TextBox();
+            btnEliminarGasto = new Button();
+            btnIrEditarGasto = new Button();
             btnIrAgregarGasto = new Button();
             btnBuscar = new Button();
             dgGasto = new DataGridView();
@@ -80,10 +80,10 @@
             tpAgregarEditarGasto.Controls.Add(label4);
             tpAgregarEditarGasto.Controls.Add(label3);
             tpAgregarEditarGasto.Controls.Add(label2);
-            tpAgregarEditarGasto.Controls.Add(textBox5);
-            tpAgregarEditarGasto.Controls.Add(textBox4);
-            tpAgregarEditarGasto.Controls.Add(textBox2);
-            tpAgregarEditarGasto.Controls.Add(textBox1);
+            tpAgregarEditarGasto.Controls.Add(txtComentario);
+            tpAgregarEditarGasto.Controls.Add(txtDescuento);
+            tpAgregarEditarGasto.Controls.Add(txtCantidad);
+            tpAgregarEditarGasto.Controls.Add(txtPrecio);
             tpAgregarEditarGasto.Controls.Add(txtAgregarEditar);
             tpAgregarEditarGasto.Controls.Add(label1);
             tpAgregarEditarGasto.Controls.Add(lblAgregarEditar);
@@ -92,7 +92,7 @@
             tpAgregarEditarGasto.Location = new Point(4, 24);
             tpAgregarEditarGasto.Name = "tpAgregarEditarGasto";
             tpAgregarEditarGasto.Padding = new Padding(3);
-            tpAgregarEditarGasto.Size = new Size(964, 450);
+            tpAgregarEditarGasto.Size = new Size(1149, 721);
             tpAgregarEditarGasto.TabIndex = 1;
             tpAgregarEditarGasto.Text = "AgregarEditar marca";
             tpAgregarEditarGasto.UseVisualStyleBackColor = true;
@@ -163,6 +163,7 @@
             cbCategorias.Name = "cbCategorias";
             cbCategorias.Size = new Size(220, 23);
             cbCategorias.TabIndex = 15;
+            cbCategorias.Text = "sds";
             // 
             // label6
             // 
@@ -209,34 +210,34 @@
             label2.TabIndex = 10;
             label2.Text = "Cantidad";
             // 
-            // textBox5
+            // txtComentario
             // 
-            textBox5.Location = new Point(409, 87);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(547, 23);
-            textBox5.TabIndex = 9;
+            txtComentario.Location = new Point(409, 87);
+            txtComentario.Name = "txtComentario";
+            txtComentario.Size = new Size(547, 23);
+            txtComentario.TabIndex = 9;
             // 
-            // textBox4
+            // txtDescuento
             // 
-            textBox4.Location = new Point(312, 87);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(86, 23);
-            textBox4.TabIndex = 8;
+            txtDescuento.Location = new Point(312, 87);
+            txtDescuento.Name = "txtDescuento";
+            txtDescuento.Size = new Size(86, 23);
+            txtDescuento.TabIndex = 8;
             // 
-            // textBox2
+            // txtCantidad
             // 
-            textBox2.Location = new Point(109, 87);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(86, 23);
-            textBox2.TabIndex = 6;
-            textBox2.TextChanged += textBox2_TextChanged;
+            txtCantidad.Location = new Point(109, 87);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Size = new Size(86, 23);
+            txtCantidad.TabIndex = 6;
+            txtCantidad.TextChanged += textBox2_TextChanged;
             // 
-            // textBox1
+            // txtPrecio
             // 
-            textBox1.Location = new Point(8, 87);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(86, 23);
-            textBox1.TabIndex = 5;
+            txtPrecio.Location = new Point(8, 87);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(86, 23);
+            txtPrecio.TabIndex = 5;
             // 
             // txtAgregarEditar
             // 
@@ -283,48 +284,48 @@
             // 
             // tpBuscarGasto
             // 
-            tpBuscarGasto.Controls.Add(txtBuscarMarca);
-            tpBuscarGasto.Controls.Add(btnIrEliminarLugar);
-            tpBuscarGasto.Controls.Add(btnIrEditarLugar);
+            tpBuscarGasto.Controls.Add(txtBuscarGasto);
+            tpBuscarGasto.Controls.Add(btnEliminarGasto);
+            tpBuscarGasto.Controls.Add(btnIrEditarGasto);
             tpBuscarGasto.Controls.Add(btnIrAgregarGasto);
             tpBuscarGasto.Controls.Add(btnBuscar);
             tpBuscarGasto.Controls.Add(dgGasto);
             tpBuscarGasto.Location = new Point(4, 24);
             tpBuscarGasto.Name = "tpBuscarGasto";
             tpBuscarGasto.Padding = new Padding(3);
-            tpBuscarGasto.Size = new Size(964, 450);
+            tpBuscarGasto.Size = new Size(1149, 721);
             tpBuscarGasto.TabIndex = 0;
             tpBuscarGasto.Text = "Todos los lugares";
             tpBuscarGasto.UseVisualStyleBackColor = true;
             // 
-            // txtBuscarMarca
+            // txtBuscarGasto
             // 
-            txtBuscarMarca.Location = new Point(8, 7);
-            txtBuscarMarca.Name = "txtBuscarMarca";
-            txtBuscarMarca.Size = new Size(867, 23);
-            txtBuscarMarca.TabIndex = 5;
+            txtBuscarGasto.Location = new Point(8, 7);
+            txtBuscarGasto.Name = "txtBuscarGasto";
+            txtBuscarGasto.Size = new Size(1052, 23);
+            txtBuscarGasto.TabIndex = 5;
             // 
-            // btnIrEliminarLugar
+            // btnEliminarGasto
             // 
-            btnIrEliminarLugar.Location = new Point(697, 404);
-            btnIrEliminarLugar.Name = "btnIrEliminarLugar";
-            btnIrEliminarLugar.Size = new Size(259, 43);
-            btnIrEliminarLugar.TabIndex = 4;
-            btnIrEliminarLugar.Text = "Eliminar";
-            btnIrEliminarLugar.UseVisualStyleBackColor = true;
+            btnEliminarGasto.Location = new Point(887, 670);
+            btnEliminarGasto.Name = "btnEliminarGasto";
+            btnEliminarGasto.Size = new Size(259, 43);
+            btnEliminarGasto.TabIndex = 4;
+            btnEliminarGasto.Text = "Eliminar";
+            btnEliminarGasto.UseVisualStyleBackColor = true;
             // 
-            // btnIrEditarLugar
+            // btnIrEditarGasto
             // 
-            btnIrEditarLugar.Location = new Point(273, 404);
-            btnIrEditarLugar.Name = "btnIrEditarLugar";
-            btnIrEditarLugar.Size = new Size(418, 43);
-            btnIrEditarLugar.TabIndex = 3;
-            btnIrEditarLugar.Text = "Editar";
-            btnIrEditarLugar.UseVisualStyleBackColor = true;
+            btnIrEditarGasto.Location = new Point(327, 670);
+            btnIrEditarGasto.Name = "btnIrEditarGasto";
+            btnIrEditarGasto.Size = new Size(418, 43);
+            btnIrEditarGasto.TabIndex = 3;
+            btnIrEditarGasto.Text = "Editar";
+            btnIrEditarGasto.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregarGasto
             // 
-            btnIrAgregarGasto.Location = new Point(8, 404);
+            btnIrAgregarGasto.Location = new Point(8, 673);
             btnIrAgregarGasto.Name = "btnIrAgregarGasto";
             btnIrAgregarGasto.Size = new Size(259, 40);
             btnIrAgregarGasto.TabIndex = 2;
@@ -333,7 +334,7 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(881, 6);
+            btnBuscar.Location = new Point(1066, 6);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(75, 23);
             btnBuscar.TabIndex = 1;
@@ -345,7 +346,7 @@
             dgGasto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgGasto.Location = new Point(8, 35);
             dgGasto.Name = "dgGasto";
-            dgGasto.Size = new Size(948, 363);
+            dgGasto.Size = new Size(1133, 629);
             dgGasto.TabIndex = 0;
             // 
             // tbGasto
@@ -356,7 +357,7 @@
             tbGasto.Location = new Point(0, 0);
             tbGasto.Name = "tbGasto";
             tbGasto.SelectedIndex = 0;
-            tbGasto.Size = new Size(972, 478);
+            tbGasto.Size = new Size(1157, 749);
             tbGasto.SizeMode = TabSizeMode.FillToRight;
             tbGasto.TabIndex = 2;
             // 
@@ -364,7 +365,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(972, 478);
+            ClientSize = new Size(1157, 749);
             Controls.Add(tbGasto);
             Name = "GastosView";
             Text = "GastosView";
@@ -393,19 +394,19 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtComentario;
+        private TextBox txtDescuento;
+        private TextBox txtCantidad;
+        private TextBox txtPrecio;
         private TextBox txtAgregarEditar;
         private Label label1;
         private Label lblAgregarEditar;
         private Button btnRegresarEditarGuardar;
         private Button btnGuardarEditar;
         private TabPage tpBuscarGasto;
-        private TextBox txtBuscarMarca;
-        private Button btnIrEliminarLugar;
-        private Button btnIrEditarLugar;
+        private TextBox txtBuscarGasto;
+        private Button btnEliminarGasto;
+        private Button btnIrEditarGasto;
         private Button btnIrAgregarGasto;
         private Button btnBuscar;
         private DataGridView dgGasto;

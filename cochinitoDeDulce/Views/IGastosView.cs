@@ -28,6 +28,16 @@ namespace cochinitoDeDulce.Views
         string Tipo { get; set; }
         // ------ [De la vista] ----- //
         string TxtBuscarGasto { get; set; }
+        string TxtAgregarEditar { get; set; }
+        string TxtPrecio { get; set; }
+        string TxtCantidad {  get; set; }
+        string TxtDescuento { get; set; }
+        string TxtComentario { get; set; }
+        string CbUnidad { get; set; }
+        string CbCategoria {  get; set; }
+        string CbMarca { get; set; }
+        string CbLugar { get; set; }
+        string CbTipo {  get; set; }
 
         // ------ [Solo en codigo] ----- //
         bool EstoyEditando { get; set; }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace cochinitoDeDulce.Views
 {
-    public partial class GastosView : Form,IGastosView
+    public partial class GastosView : Form, IGastosView
     {
         // ///////// //
         // ATRIBUTOS //
@@ -40,11 +40,21 @@ namespace cochinitoDeDulce.Views
         public string Marca { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Tipo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         // ------ [De la vista] ----- //
-        public string TxtBuscarGasto { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string TxtBuscarGasto { get => txtBuscarGasto.Text; set => txtBuscarGasto.Text = value; }
+        public string TxtAgregarEditar { get => txtAgregarEditar.Text; set => txtAgregarEditar.Text = value; }
+        public string TxtPrecio { get => txtPrecio.Text; set => txtPrecio.Text = value; }
+        public string TxtCantidad { get => txtCantidad.Text; set => txtCantidad.Text = value; }
+        public string TxtDescuento { get => txtDescuento.Text; set => txtDescuento.Text = value; }
+        public string TxtComentario { get => txtComentario.Text; set => txtComentario.Text = value; }
         // ------ [Solo en codigo] ----- //
-        public bool EstoyEditando { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool FueExitoso { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Mensaje { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool EstoyEditando { get => estoyEditando; set => estoyEditando = value; }
+        public bool FueExitoso { get => fueExitoso; set => fueExitoso = value; }
+        public string Mensaje { get => mensaje; set => mensaje = value; }
+        public string CbUnidad { get => cbUnidades.Text; set =>cbUnidades.Text=value; }
+        public string CbCategoria { get => cbCategorias.Text; set => cbCategorias.Text = value; }
+        public string CbMarca { get => cbMarcas.Text; set => cbMarcas.Text = value; }
+        public string CbLugar { get => cbLugares.Text; set => cbLugares.Text=value; }
+        public string CbTipo { get => cbTipos.Text; set => cbTipos.Text=value; }
 
 
 
@@ -82,12 +92,55 @@ namespace cochinitoDeDulce.Views
                 IrVentanaAgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);    
                 tbGasto.TabPages.Remove(tpBuscarGasto);
                 tbGasto.TabPages.Add(tpAgregarEditarGasto);
+                btnGuardarEditar.Text = "Agregar";
+
             };
             btnRegresarEditarGuardar.Click += delegate
             {
                 RegresarVentanaAgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);
                 tbGasto.TabPages.Remove(tpAgregarEditarGasto);
                 tbGasto.TabPages.Add(tpBuscarGasto);
+            };
+            btnGuardarEditar.Click += delegate
+            {
+                if(EstoyEditando)
+                {
+                    EditarGasto_Event?.Invoke(this, EventArgs.Empty);
+                }
+                else
+                {
+                    AgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);
+                }
+
+                if(FueExitoso)
+                {
+                    tbGasto.TabPages.Remove(tpAgregarEditarGasto);
+                    tbGasto.TabPages.Add(tpBuscarGasto);
+                    MessageBox.Show(Mensaje);
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
+                }
+            };
+
+            btnIrEditarGasto.Click += delegate
+            {
+                IrVentanaEditarGasto_Event?.Invoke(this, EventArgs.Empty);
+                tbGasto.TabPages.Remove(tpBuscarGasto);
+                tbGasto.TabPages.Add(tpAgregarEditarGasto);
+                btnGuardarEditar.Text = "Editar";
+            };
+
+            btnEliminarGasto.Click += delegate
+            {
+                EliminarGasto_Event?.Invoke(this, EventArgs.Empty);
+                MessageBox.Show(Mensaje);
+            };
+
+            btnBuscar.Click += delegate
+            {
+                BuscarGasto_Event?.Invoke(this, EventArgs.Empty);
             };
         }
 

@@ -43,7 +43,8 @@ namespace cochinitoDeDulce._DataBase
                 command.Parameters.Add("@detalleComentario", SqlDbType.NVarChar).Value = gastoModel.Comentario;
                 command.Parameters.Add("@categoriaNombre", SqlDbType.NVarChar).Value = gastoModel.Categoria;
                 command.Parameters.Add("@lugarNombre", SqlDbType.NVarChar).Value = gastoModel.Lugar;
-                //command.Parameters.Add("@imagenId", SqlDbType.Int).Value = gastoModel.;// valor fijo en 1 temporalmente, modificar el sp
+                command.Parameters.Add("@marcaNombre", SqlDbType.NVarChar).Value = gastoModel.Marca;
+                command.Parameters.Add("@imagenId", SqlDbType.Int).Value = 1;// valor fijo en 1 temporalmente, modificar el sp
                 command.Parameters.Add("@tipoNombre", SqlDbType.NVarChar).Value = gastoModel.Tipo;
                 // ejecutar comando
                 command.ExecuteNonQuery();
@@ -103,12 +104,59 @@ namespace cochinitoDeDulce._DataBase
 
         public void EditarGasto(int idGastoActual, GastosModel gastoEditado)
         {
-            throw new NotImplementedException();
+            // crear la conexion
+            using (var conexion = new SqlConnection(cadenaConexion))
+            // creo un objeto comando para poder ejecutar los comandos
+            using (var command = new SqlCommand("spEditarGasto"))
+            {
+                // abrir la conexion
+                conexion.Open();
+                // establecemos la conexion al objeto comando
+                command.Connection = conexion;
+                // determino el tipo de comando
+                command.CommandType = CommandType.StoredProcedure;
+                // pasar parametros
+                command.Parameters.Add("@idGasto", SqlDbType.Int).Value = gastoEditado.IdGasto;
+                command.Parameters.Add("@detalleNombre", SqlDbType.VarChar).Value = gastoEditado.Nombre;
+                command.Parameters.Add("@detallePrecio", SqlDbType.Float).Value = gastoEditado.Precio;
+                command.Parameters.Add("@detalleCantidad", SqlDbType.Float).Value = gastoEditado.Cantidad;
+                command.Parameters.Add("@detalleUnidad", SqlDbType.VarChar).Value = gastoEditado.Unidad;
+                command.Parameters.Add("@detalleDescuento", SqlDbType.Float).Value = gastoEditado.Descuento;
+                command.Parameters.Add("@detalleFecha", SqlDbType.Date).Value = gastoEditado.Fecha;
+                command.Parameters.Add("@detalleComentario", SqlDbType.VarChar).Value = gastoEditado.Comentario;
+                command.Parameters.Add("@categoriaNombre", SqlDbType.VarChar).Value = gastoEditado.Categoria;
+                command.Parameters.Add("@lugarNombre", SqlDbType.VarChar).Value = gastoEditado.Lugar;
+                command.Parameters.Add("@marcaNombre", SqlDbType.VarChar).Value = gastoEditado.Marca;
+                command.Parameters.Add("@imagenId", SqlDbType.VarChar).Value = 1;
+                command.Parameters.Add("@tipoNombre", SqlDbType.VarChar).Value = gastoEditado.Tipo;
+                // ejecutar comando
+                command.ExecuteNonQuery();
+
+                // como uso using la conexion se cierra automaticamente
+            }
         }
 
         public void EliminarGasto(int idGastoEliminar)
         {
-            throw new NotImplementedException();
+            // crear la conexion
+            using (var conexion = new SqlConnection(cadenaConexion))
+            // creo un objeto comando para poder ejecutar los comandos
+            using (var command = new SqlCommand("spEliminarGasto"))
+            {
+                // abrir la conexion
+                conexion.Open();
+                // establecemos la conexion al objeto comando
+                command.Connection = conexion;
+                // determino el tipo de comando
+                command.CommandType = CommandType.StoredProcedure;
+                // pasar parametros
+                command.Parameters.Add("@idGastoEliminar", SqlDbType.Int).Value = idGastoEliminar;
+
+                // ejecutar comando
+                command.ExecuteNonQuery();
+
+                // como uso using la conexion se cierra automaticamente
+            }
         }
 
         public IEnumerable<CategoriasModel> ObtenerCategorias()
