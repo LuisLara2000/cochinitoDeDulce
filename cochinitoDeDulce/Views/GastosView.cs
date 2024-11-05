@@ -46,11 +46,7 @@ namespace cochinitoDeDulce.Views
         public bool FueExitoso { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Mensaje { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public GastosView()
-        {
-            InitializeComponent();
-            // asociamos los eventos
-        }
+
 
         // /////// //
         // EVENTOS //
@@ -68,42 +64,93 @@ namespace cochinitoDeDulce.Views
         // ------ [Ventana "Eliminar Gasto"] ----- //
         public event EventHandler EliminarGasto_Event;
 
+        public GastosView()
+        {
+            InitializeComponent();
+            // asociamos los eventos
+            AsociarEventosDeLaVistaGastos();
+            tbGasto.TabPages.Remove(tpAgregarEditarGasto);
+        }
         // /////// //
         // METODOS //
         // /////// //
 
         private void AsociarEventosDeLaVistaGastos()
         {
-
+            btnIrAgregarGasto.Click += delegate
+            {
+                IrVentanaAgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);    
+                tbGasto.TabPages.Remove(tpBuscarGasto);
+                tbGasto.TabPages.Add(tpAgregarEditarGasto);
+            };
+            btnRegresarEditarGuardar.Click += delegate
+            {
+                RegresarVentanaAgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);
+                tbGasto.TabPages.Remove(tpAgregarEditarGasto);
+                tbGasto.TabPages.Add(tpBuscarGasto);
+            };
         }
 
         // Para el data grid
         public void EstablecerCategoriasComboBox(IEnumerable<CategoriasModel> categoriasDisponibles)
         {
-            throw new NotImplementedException();
+            cbCategorias.Items.Clear();
+            foreach (var categorias in categoriasDisponibles)
+            {
+                cbCategorias.Items.Add(categorias.NombreCategoria);
+
+            }
         }
 
         // Para cada combo box que se muestra en la ventana de agregar/editar
         public void EstablecerLugaresComboBox(IEnumerable<LugaresModel> lugaresDisponibles)
         {
-            throw new NotImplementedException();
+            cbLugares.Items.Clear();
+            foreach (var lugares in lugaresDisponibles)
+            {
+                cbLugares.Items.Add(lugares.NombreLugar);
+
+            }
         }
 
         public void EstablecerMarcasComboBox(IEnumerable<MarcasModel> marcasDisponibles)
         {
-            throw new NotImplementedException();
+            cbMarcas.Items.Clear();
+            foreach (var marcas in marcasDisponibles)
+            {
+                cbMarcas.Items.Add(marcas.NombreMarca);
+
+            }
         }
 
         public void EstablecerTiposComboBox(IEnumerable<TiposModel> tiposDisponibles)
         {
-            throw new NotImplementedException();
+            cbTipos.Items.Clear();
+            foreach (var tipos in tiposDisponibles)
+            {
+                cbTipos.Items.Add(tipos.NombreTipo);
+
+            }
         }
+        public void EstablecerUnidadesComboBox(List<string> listaUnidades)
+        {
+            cbUnidades.Items.Clear();
+            foreach(var unidad in listaUnidades)
+            {
+                cbUnidades.Items.Add(unidad);
+
+            }
+
+        }
+
+
+
 
         public void EstablecerValoresBindingSource(BindingSource gastosLista)
         {
             dgGasto.DataSource = gastosLista;
         }
-
+        // singleton
         public static GastosView ObtenerLaVentanaGastos(Form ventanaPadre)
         {
             // si la ventana no existe o fue eliminada
@@ -130,6 +177,11 @@ namespace cochinitoDeDulce.Views
             // regresamos la ventana
             return instancia;
         }
+
+
+
+
+
 
         //-- borraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar
         private void textBox2_TextChanged(object sender, EventArgs e)

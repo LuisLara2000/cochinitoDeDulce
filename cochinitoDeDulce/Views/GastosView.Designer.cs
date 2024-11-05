@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tpAgregarEditarLugar = new TabPage();
-            comboBox5 = new ComboBox();
+            tpAgregarEditarGasto = new TabPage();
+            cbUnidades = new ComboBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            comboBox4 = new ComboBox();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cbTipos = new ComboBox();
+            cbLugares = new ComboBox();
+            cbMarcas = new ComboBox();
+            cbCategorias = new ComboBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -51,59 +51,59 @@
             lblAgregarEditar = new Label();
             btnRegresarEditarGuardar = new Button();
             btnGuardarEditar = new Button();
-            tpBuscarLugar = new TabPage();
+            tpBuscarGasto = new TabPage();
             txtBuscarMarca = new TextBox();
             btnIrEliminarLugar = new Button();
             btnIrEditarLugar = new Button();
-            btnIrAgregarLugar = new Button();
+            btnIrAgregarGasto = new Button();
             btnBuscar = new Button();
             dgGasto = new DataGridView();
             tbGasto = new TabControl();
-            tpAgregarEditarLugar.SuspendLayout();
-            tpBuscarLugar.SuspendLayout();
+            tpAgregarEditarGasto.SuspendLayout();
+            tpBuscarGasto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgGasto).BeginInit();
             tbGasto.SuspendLayout();
             SuspendLayout();
             // 
-            // tpAgregarEditarLugar
+            // tpAgregarEditarGasto
             // 
-            tpAgregarEditarLugar.Controls.Add(comboBox5);
-            tpAgregarEditarLugar.Controls.Add(label9);
-            tpAgregarEditarLugar.Controls.Add(label8);
-            tpAgregarEditarLugar.Controls.Add(label7);
-            tpAgregarEditarLugar.Controls.Add(comboBox4);
-            tpAgregarEditarLugar.Controls.Add(comboBox3);
-            tpAgregarEditarLugar.Controls.Add(comboBox2);
-            tpAgregarEditarLugar.Controls.Add(comboBox1);
-            tpAgregarEditarLugar.Controls.Add(label6);
-            tpAgregarEditarLugar.Controls.Add(label5);
-            tpAgregarEditarLugar.Controls.Add(label4);
-            tpAgregarEditarLugar.Controls.Add(label3);
-            tpAgregarEditarLugar.Controls.Add(label2);
-            tpAgregarEditarLugar.Controls.Add(textBox5);
-            tpAgregarEditarLugar.Controls.Add(textBox4);
-            tpAgregarEditarLugar.Controls.Add(textBox2);
-            tpAgregarEditarLugar.Controls.Add(textBox1);
-            tpAgregarEditarLugar.Controls.Add(txtAgregarEditar);
-            tpAgregarEditarLugar.Controls.Add(label1);
-            tpAgregarEditarLugar.Controls.Add(lblAgregarEditar);
-            tpAgregarEditarLugar.Controls.Add(btnRegresarEditarGuardar);
-            tpAgregarEditarLugar.Controls.Add(btnGuardarEditar);
-            tpAgregarEditarLugar.Location = new Point(4, 24);
-            tpAgregarEditarLugar.Name = "tpAgregarEditarLugar";
-            tpAgregarEditarLugar.Padding = new Padding(3);
-            tpAgregarEditarLugar.Size = new Size(964, 450);
-            tpAgregarEditarLugar.TabIndex = 1;
-            tpAgregarEditarLugar.Text = "AgregarEditar marca";
-            tpAgregarEditarLugar.UseVisualStyleBackColor = true;
+            tpAgregarEditarGasto.Controls.Add(cbUnidades);
+            tpAgregarEditarGasto.Controls.Add(label9);
+            tpAgregarEditarGasto.Controls.Add(label8);
+            tpAgregarEditarGasto.Controls.Add(label7);
+            tpAgregarEditarGasto.Controls.Add(cbTipos);
+            tpAgregarEditarGasto.Controls.Add(cbLugares);
+            tpAgregarEditarGasto.Controls.Add(cbMarcas);
+            tpAgregarEditarGasto.Controls.Add(cbCategorias);
+            tpAgregarEditarGasto.Controls.Add(label6);
+            tpAgregarEditarGasto.Controls.Add(label5);
+            tpAgregarEditarGasto.Controls.Add(label4);
+            tpAgregarEditarGasto.Controls.Add(label3);
+            tpAgregarEditarGasto.Controls.Add(label2);
+            tpAgregarEditarGasto.Controls.Add(textBox5);
+            tpAgregarEditarGasto.Controls.Add(textBox4);
+            tpAgregarEditarGasto.Controls.Add(textBox2);
+            tpAgregarEditarGasto.Controls.Add(textBox1);
+            tpAgregarEditarGasto.Controls.Add(txtAgregarEditar);
+            tpAgregarEditarGasto.Controls.Add(label1);
+            tpAgregarEditarGasto.Controls.Add(lblAgregarEditar);
+            tpAgregarEditarGasto.Controls.Add(btnRegresarEditarGuardar);
+            tpAgregarEditarGasto.Controls.Add(btnGuardarEditar);
+            tpAgregarEditarGasto.Location = new Point(4, 24);
+            tpAgregarEditarGasto.Name = "tpAgregarEditarGasto";
+            tpAgregarEditarGasto.Padding = new Padding(3);
+            tpAgregarEditarGasto.Size = new Size(964, 450);
+            tpAgregarEditarGasto.TabIndex = 1;
+            tpAgregarEditarGasto.Text = "AgregarEditar marca";
+            tpAgregarEditarGasto.UseVisualStyleBackColor = true;
             // 
-            // comboBox5
+            // cbUnidades
             // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(210, 87);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(96, 23);
-            comboBox5.TabIndex = 22;
+            cbUnidades.FormattingEnabled = true;
+            cbUnidades.Location = new Point(210, 87);
+            cbUnidades.Name = "cbUnidades";
+            cbUnidades.Size = new Size(96, 23);
+            cbUnidades.TabIndex = 22;
             // 
             // label9
             // 
@@ -132,37 +132,37 @@
             label7.TabIndex = 19;
             label7.Text = "Marca";
             // 
-            // comboBox4
+            // cbTipos
             // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(736, 172);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(220, 23);
-            comboBox4.TabIndex = 18;
+            cbTipos.FormattingEnabled = true;
+            cbTipos.Location = new Point(736, 172);
+            cbTipos.Name = "cbTipos";
+            cbTipos.Size = new Size(220, 23);
+            cbTipos.TabIndex = 18;
             // 
-            // comboBox3
+            // cbLugares
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(491, 172);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(220, 23);
-            comboBox3.TabIndex = 17;
+            cbLugares.FormattingEnabled = true;
+            cbLugares.Location = new Point(491, 172);
+            cbLugares.Name = "cbLugares";
+            cbLugares.Size = new Size(220, 23);
+            cbLugares.TabIndex = 17;
             // 
-            // comboBox2
+            // cbMarcas
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(248, 172);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(220, 23);
-            comboBox2.TabIndex = 16;
+            cbMarcas.FormattingEnabled = true;
+            cbMarcas.Location = new Point(248, 172);
+            cbMarcas.Name = "cbMarcas";
+            cbMarcas.Size = new Size(220, 23);
+            cbMarcas.TabIndex = 16;
             // 
-            // comboBox1
+            // cbCategorias
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(8, 172);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(220, 23);
-            comboBox1.TabIndex = 15;
+            cbCategorias.FormattingEnabled = true;
+            cbCategorias.Location = new Point(8, 172);
+            cbCategorias.Name = "cbCategorias";
+            cbCategorias.Size = new Size(220, 23);
+            cbCategorias.TabIndex = 15;
             // 
             // label6
             // 
@@ -281,21 +281,21 @@
             btnGuardarEditar.Text = "button5";
             btnGuardarEditar.UseVisualStyleBackColor = true;
             // 
-            // tpBuscarLugar
+            // tpBuscarGasto
             // 
-            tpBuscarLugar.Controls.Add(txtBuscarMarca);
-            tpBuscarLugar.Controls.Add(btnIrEliminarLugar);
-            tpBuscarLugar.Controls.Add(btnIrEditarLugar);
-            tpBuscarLugar.Controls.Add(btnIrAgregarLugar);
-            tpBuscarLugar.Controls.Add(btnBuscar);
-            tpBuscarLugar.Controls.Add(dgGasto);
-            tpBuscarLugar.Location = new Point(4, 24);
-            tpBuscarLugar.Name = "tpBuscarLugar";
-            tpBuscarLugar.Padding = new Padding(3);
-            tpBuscarLugar.Size = new Size(964, 450);
-            tpBuscarLugar.TabIndex = 0;
-            tpBuscarLugar.Text = "Todos los lugares";
-            tpBuscarLugar.UseVisualStyleBackColor = true;
+            tpBuscarGasto.Controls.Add(txtBuscarMarca);
+            tpBuscarGasto.Controls.Add(btnIrEliminarLugar);
+            tpBuscarGasto.Controls.Add(btnIrEditarLugar);
+            tpBuscarGasto.Controls.Add(btnIrAgregarGasto);
+            tpBuscarGasto.Controls.Add(btnBuscar);
+            tpBuscarGasto.Controls.Add(dgGasto);
+            tpBuscarGasto.Location = new Point(4, 24);
+            tpBuscarGasto.Name = "tpBuscarGasto";
+            tpBuscarGasto.Padding = new Padding(3);
+            tpBuscarGasto.Size = new Size(964, 450);
+            tpBuscarGasto.TabIndex = 0;
+            tpBuscarGasto.Text = "Todos los lugares";
+            tpBuscarGasto.UseVisualStyleBackColor = true;
             // 
             // txtBuscarMarca
             // 
@@ -322,14 +322,14 @@
             btnIrEditarLugar.Text = "Editar";
             btnIrEditarLugar.UseVisualStyleBackColor = true;
             // 
-            // btnIrAgregarLugar
+            // btnIrAgregarGasto
             // 
-            btnIrAgregarLugar.Location = new Point(8, 404);
-            btnIrAgregarLugar.Name = "btnIrAgregarLugar";
-            btnIrAgregarLugar.Size = new Size(259, 40);
-            btnIrAgregarLugar.TabIndex = 2;
-            btnIrAgregarLugar.Text = "Agregar";
-            btnIrAgregarLugar.UseVisualStyleBackColor = true;
+            btnIrAgregarGasto.Location = new Point(8, 404);
+            btnIrAgregarGasto.Name = "btnIrAgregarGasto";
+            btnIrAgregarGasto.Size = new Size(259, 40);
+            btnIrAgregarGasto.TabIndex = 2;
+            btnIrAgregarGasto.Text = "Agregar";
+            btnIrAgregarGasto.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
@@ -350,8 +350,8 @@
             // 
             // tbGasto
             // 
-            tbGasto.Controls.Add(tpBuscarLugar);
-            tbGasto.Controls.Add(tpAgregarEditarLugar);
+            tbGasto.Controls.Add(tpBuscarGasto);
+            tbGasto.Controls.Add(tpAgregarEditarGasto);
             tbGasto.Dock = DockStyle.Fill;
             tbGasto.Location = new Point(0, 0);
             tbGasto.Name = "tbGasto";
@@ -368,10 +368,10 @@
             Controls.Add(tbGasto);
             Name = "GastosView";
             Text = "GastosView";
-            tpAgregarEditarLugar.ResumeLayout(false);
-            tpAgregarEditarLugar.PerformLayout();
-            tpBuscarLugar.ResumeLayout(false);
-            tpBuscarLugar.PerformLayout();
+            tpAgregarEditarGasto.ResumeLayout(false);
+            tpAgregarEditarGasto.PerformLayout();
+            tpBuscarGasto.ResumeLayout(false);
+            tpBuscarGasto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgGasto).EndInit();
             tbGasto.ResumeLayout(false);
             ResumeLayout(false);
@@ -379,15 +379,15 @@
 
         #endregion
 
-        private TabPage tpAgregarEditarLugar;
-        private ComboBox comboBox5;
+        private TabPage tpAgregarEditarGasto;
+        private ComboBox cbUnidades;
         private Label label9;
         private Label label8;
         private Label label7;
-        private ComboBox comboBox4;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cbTipos;
+        private ComboBox cbLugares;
+        private ComboBox cbMarcas;
+        private ComboBox cbCategorias;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -402,11 +402,11 @@
         private Label lblAgregarEditar;
         private Button btnRegresarEditarGuardar;
         private Button btnGuardarEditar;
-        private TabPage tpBuscarLugar;
+        private TabPage tpBuscarGasto;
         private TextBox txtBuscarMarca;
         private Button btnIrEliminarLugar;
         private Button btnIrEditarLugar;
-        private Button btnIrAgregarLugar;
+        private Button btnIrAgregarGasto;
         private Button btnBuscar;
         private DataGridView dgGasto;
         private TabControl tbGasto;

@@ -60,7 +60,7 @@ namespace cochinitoDeDulce.Views
         void EstablecerLugaresComboBox(IEnumerable<LugaresModel> lugaresDisponibles);
         void EstablecerMarcasComboBox(IEnumerable<MarcasModel> marcasDisponibles);
         void EstablecerTiposComboBox(IEnumerable<TiposModel> tiposDisponibles);
-
+        void EstablecerUnidadesComboBox(List<string> listaUnidades);
         void Show();
 
     }
