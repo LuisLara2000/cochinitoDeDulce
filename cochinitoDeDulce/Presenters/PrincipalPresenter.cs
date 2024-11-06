@@ -11,7 +11,7 @@ using cochinitoDeDulce._DataBase;
 
 namespace cochinitoDeDulce.Presenters
 {
-  
+
     public class PrincipalPresenter
     {
         private IPrincipalView principalView;// interfaz de la vista principal
@@ -27,6 +27,22 @@ namespace cochinitoDeDulce.Presenters
             this.principalView.MostrarLugares_Evento += MostrarLugares;
             this.principalView.MostrarTipos_Evento += MostrarTipos;
             this.principalView.MostrarGastos_Evento += MostrarGastos;
+            this.principalView.MostrarIngresos_Evento += MostrarIngresos;
+            this.principalView.MostrarInicio_Evento += MostrarInicio;
+        }
+
+        private void MostrarInicio(object? sender, EventArgs e)
+        {
+            IInicioView vista = InicioView.ObtenerLaVentanaInicio((PrincipalView)principalView);
+            IInicioDatabase database = new InicioDatabase(sqlCadenaConexion);
+            new inicioPresenter(vista, database);
+        }
+
+        private void MostrarIngresos(object? sender, EventArgs e)
+        {
+            IIngresosView vista = IngresosView.ObtenerLaVentanaIngresos((PrincipalView)principalView);
+            IIngresosDatabase database = new IngresosDatabase(sqlCadenaConexion);
+            new IngresosPresenter(vista, database);
         }
 
         private void MostrarGastos(object? sender, EventArgs e)

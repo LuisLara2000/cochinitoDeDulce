@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             btnTipos = new Button();
             btnMarcas = new Button();
             btnLugares = new Button();
             btnIngresos = new Button();
             btnGastos = new Button();
-            button2 = new Button();
+            btnInicio = new Button();
             btnCategorias = new Button();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -49,13 +49,23 @@
             panel1.Controls.Add(btnLugares);
             panel1.Controls.Add(btnIngresos);
             panel1.Controls.Add(btnGastos);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnInicio);
             panel1.Controls.Add(btnCategorias);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(155, 520);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logoTemporal;
+            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(132, 106);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // btnTipos
             // 
@@ -102,14 +112,14 @@
             btnGastos.Text = "Gastos";
             btnGastos.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnInicio
             // 
-            button2.Location = new Point(3, 124);
-            button2.Name = "button2";
-            button2.Size = new Size(152, 50);
-            button2.TabIndex = 2;
-            button2.Text = "Inicio";
-            button2.UseVisualStyleBackColor = true;
+            btnInicio.Location = new Point(3, 124);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(152, 50);
+            btnInicio.TabIndex = 2;
+            btnInicio.Text = "Inicio";
+            btnInicio.UseVisualStyleBackColor = true;
             // 
             // btnCategorias
             // 
@@ -119,16 +129,6 @@
             btnCategorias.TabIndex = 1;
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.logoTemporal;
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(132, 106);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
             // 
             // PrincipalView
             // 
@@ -148,7 +148,7 @@
         #endregion
 
         private Panel panel1;
-        private Button button2;
+        private Button btnInicio;
         private Button btnCategorias;
         private Button btnTipos;
         private Button btnMarcas;

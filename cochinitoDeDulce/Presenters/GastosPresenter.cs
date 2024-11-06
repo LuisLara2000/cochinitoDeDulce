@@ -19,7 +19,12 @@ namespace cochinitoDeDulce.Presenters
         private IGastosDatabase databaseGastos;
         private BindingSource gastosBindingSource;
         private IEnumerable<GastosModel> gastosList;
-
+        // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
+        // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
+        // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
+        // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
+        // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
+        // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
         public GastosPresenter(IGastosView iViewG, IGastosDatabase databaseG)
         {
             gastosBindingSource = new BindingSource();
