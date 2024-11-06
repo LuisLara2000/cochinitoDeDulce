@@ -18,7 +18,6 @@ namespace cochinitoDeDulce.Presenters
         private BindingSource categoriasBindingSource; // mostrar los datos
         private IEnumerable<CategoriasModel> categoriaList;// lista de categorias
         private ComboBox cb;
-        private List<string> xdd= new List<string>();//borrar
         // creamos el constructor (importante)
         public CategoriaPresenter(ICategoriasView viewC,ICategoriasDataBase databaseC)
         {

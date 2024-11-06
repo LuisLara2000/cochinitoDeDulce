@@ -8,5 +8,9 @@ namespace cochinitoDeDulce.Models
 {
     public interface IIngresosDatabase
     {
+        void AgregarIngreso(IngresosModel ingresoModel);
+        void EditarIngreso(IngresosModel ingresoModel);
+        void EliminarIngeso(int idIngreso);
+        IEnumerable<IngresosModel> BuscarIngreso(string origen);
     }
 }

@@ -29,7 +29,7 @@ namespace cochinitoDeDulce.Presenters
             // cargo las marcas
             CargarMarcas();
             // muestro en pantalla 
-            viewM.Show();
+            viewM.Show();// sospechoco
         }
         // subscripcion de eventos //
         public void SuscribirEventosMarcas()
