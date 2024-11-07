@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using cochinitoDeDulce._DataBase;
 
 // importo las vistas y modelos
@@ -25,46 +27,41 @@ namespace cochinitoDeDulce.Presenters
         // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
         // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
         // falta validar el modelo gastos!!!!!!!!!!!!!!!!!!!!!!
-        public GastosPresenter(IGastosView iViewG, IGastosDatabase databaseG)
+        public GastosPresenter(IGastosView iViewG, IGastosDatabase databaseG,bool suscrito)
         {
             gastosBindingSource = new BindingSource();
             iViewGastos = iViewG;
             databaseGastos = databaseG;
-            // suscribimos los eventos
-            SuscribirEventosGastos();
+
             // inicializamos el binding source
             iViewG.EstablecerValoresBindingSource(gastosBindingSource);
             // cargos los gastos
             CargarGastos();
-            // oculto la pantlla
-            //iViewG.
+
+            if (!suscrito)
+            {
+                SuscribirEventosGastos();
+                iViewGastos.Suscrito = true;
+            }
             // muestro la pantalla
             iViewG.Show();
-
-
         }
-
-
         public void SuscribirEventosGastos()
         {
             iViewGastos.IrVentanaAgregarNuevoGasto_Event += IrVentanaAgregarNuevoGasto;
             iViewGastos.RegresarVentanaAgregarNuevoGasto_Event += RegresarVentanaAgregarNuevoGasto;
             iViewGastos.AgregarNuevoGasto_Event += AgregarNuevoGasto;
-
             iViewGastos.IrVentanaEditarGasto_Event += IrVentanaEditarGasto;
             iViewGastos.EditarGasto_Event += EditarGasto;
-
             iViewGastos.EliminarGasto_Event += EliminarGasto;
-
             iViewGastos.BuscarGasto_Event += BuscarGasto;
         }
-
         private void BuscarGasto(object? sender, EventArgs e)
         {
+            iViewGastos.EstablecerValoresBindingSource(gastosBindingSource);
             gastosList = databaseGastos.BuscarGastos(iViewGastos.TxtBuscarGasto);
             gastosBindingSource.DataSource = gastosList;
         }
-
         private void EliminarGasto(object? sender, EventArgs e)
         {
             var idGasto = (GastosModel)gastosBindingSource.Current;// para obetenr el id del gasto seleccionado
@@ -81,7 +78,6 @@ namespace cochinitoDeDulce.Presenters
                 iViewGastos.Mensaje = ex.Message;
             }
         }
-
         private void EditarGasto(object? sender, EventArgs e)
         {
             var gastoModeloEditado = new GastosModel();// obetene todos los datos del gasto editado exepto el id
@@ -114,7 +110,6 @@ namespace cochinitoDeDulce.Presenters
             }
 
         }
-
         private void IrVentanaEditarGasto(object? sender, EventArgs e)
         {
             iViewGastos.EstoyEditando = true;
@@ -138,7 +133,6 @@ namespace cochinitoDeDulce.Presenters
             iViewGastos.CbTipo = gastoActual.Tipo;
 
         }
-
         private void AgregarNuevoGasto(object? sender, EventArgs e)
         {
             var gastoModel = new GastosModel();
@@ -169,7 +163,6 @@ namespace cochinitoDeDulce.Presenters
 
 
         }
-
         private void RegresarVentanaAgregarNuevoGasto(object? sender, EventArgs e)
         {
             iViewGastos.TxtAgregarEditar = "";
@@ -184,7 +177,6 @@ namespace cochinitoDeDulce.Presenters
             iViewGastos.CbLugar = "";
             iViewGastos.CbTipo = "";
         }
-
         private void IrVentanaAgregarNuevoGasto(object? sender, EventArgs e)
         {
             CargarUnidades();
@@ -194,14 +186,12 @@ namespace cochinitoDeDulce.Presenters
             CargarTipos();
             iViewGastos.EstoyEditando = false;
         }
-
         private void CargarGastos()
         {
 
             gastosList = databaseGastos.BuscarGastos("");
             gastosBindingSource.DataSource = gastosList;
         }
-
         private void CargarUnidades()
         {
             List<string> lUnidades = new List<string>();
@@ -212,7 +202,6 @@ namespace cochinitoDeDulce.Presenters
             lUnidades.Add("pieza");
             iViewGastos.EstablecerUnidadesComboBox(lUnidades);
         }
-
         private void CargarCategorias()
         { 
             IEnumerable<CategoriasModel> lCategorias;
@@ -237,7 +226,6 @@ namespace cochinitoDeDulce.Presenters
             lTipos = databaseGastos.ObtenerTipos();
             iViewGastos.EstablecerTiposComboBox(lTipos);
         }
-
     }
 }
 

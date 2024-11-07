@@ -1,10 +1,12 @@
 ﻿using cochinitoDeDulce.Models;
+using cochinitoDeDulce.Presenters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,7 +23,7 @@ namespace cochinitoDeDulce.Views
         private bool puedoEliminar;
         private string mensaje;
         private static GastosView instancia;// para el patron singleton
-
+        private bool suscrito;
         // /////////// //
         // PROPIEDADES //
         // /////////// //
@@ -55,7 +57,7 @@ namespace cochinitoDeDulce.Views
         public string CbMarca { get => cbMarcas.Text; set => cbMarcas.Text = value; }
         public string CbLugar { get => cbLugares.Text; set => cbLugares.Text=value; }
         public string CbTipo { get => cbTipos.Text; set => cbTipos.Text=value; }
-
+        public bool Suscrito { get => suscrito; set => suscrito=value; }
 
 
         // /////// //
@@ -217,6 +219,8 @@ namespace cochinitoDeDulce.Views
                 instancia.FormBorderStyle = FormBorderStyle.None;
                 // hacemos que ocupe todo el espacio
                 instancia.Dock = DockStyle.Fill;
+                // 
+                
             }
             else
             {

@@ -35,10 +35,16 @@ namespace cochinitoDeDulce.Views
             {
                 MostrarGastos_Evento?.Invoke(this, EventArgs.Empty);
             };
+
+
+
             btnIngresos.Click += delegate
             {
-                MostrarIngresos_Evento?.Invoke(this, EventArgs.Empty); 
+                MostrarIngresos_Evento?.Invoke(this, EventArgs.Empty);
             };
+
+
+
             btnInicio.Click += delegate
             {
                 MostrarInicio_Evento?.Invoke(this, EventArgs.Empty);

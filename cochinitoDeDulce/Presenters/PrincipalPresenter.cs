@@ -18,6 +18,7 @@ namespace cochinitoDeDulce.Presenters
         // para la conexion
         private readonly string sqlCadenaConexion;
 
+
         public PrincipalPresenter(IPrincipalView principalView, string sqlCadenaConexion)
         {
             this.principalView = principalView;
@@ -49,7 +50,10 @@ namespace cochinitoDeDulce.Presenters
         {
             IGastosView vista = GastosView.ObtenerLaVentanaGastos((PrincipalView)principalView);
             IGastosDatabase database = new GastosDatabase(sqlCadenaConexion);
-            new GastosPresenter(vista, database);
+            if(!vista.Suscrito)
+                new GastosPresenter(vista, database,false);
+            else
+                new GastosPresenter(vista, database,true);
 
         }
 

@@ -43,6 +43,7 @@ namespace cochinitoDeDulce.Views
         bool EstoyEditando { get; set; }
         bool FueExitoso { get; set; }
         string Mensaje { get; set; }
+        bool Suscrito {  get; set; }
         // /////// //
         // EVENTOS //
         // /////// //
