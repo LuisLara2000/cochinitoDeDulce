@@ -13,10 +13,14 @@ namespace cochinitoDeDulce.Views
     public partial class InicioView : Form, IInicioView
     {
         private static InicioView instancia;
+        private bool suscrito;
         public InicioView()
         {
             InitializeComponent();
         }
+
+        public bool Suscrito { get => suscrito; set => suscrito = value; }
+
         // singleton
         public static InicioView ObtenerLaVentanaInicio(Form ventanaPadre)
         {

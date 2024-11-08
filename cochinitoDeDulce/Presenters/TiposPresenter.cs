@@ -20,16 +20,20 @@ namespace cochinitoDeDulce.Presenters
         private IEnumerable<TiposModel> tiposList;
         private List<TiposModel> listComboBox;
 
-        public TiposPresenter(ITiposView viewT, ITiposDatabase databaseT)
+        public TiposPresenter(ITiposView viewT, ITiposDatabase databaseT, bool suscrito)
         {
             this.tiposBindingsSource = new BindingSource();
             this.listComboBox = new List<TiposModel>();
             iViewTipo = viewT;
             databaseTipo = databaseT;
             // suscribimos los eventos
-            SuscribirEventosTipos();
+            if (!suscrito)
+            {
+                SuscribirEventosTipos();
+                iViewTipo.Suscrito = true;
+            }
             // inicializamos el binding source y el combobox
-            viewT.EstablecerValoresBindingSource(tiposBindingsSource);
+            iViewTipo.EstablecerValoresBindingSource(tiposBindingsSource);
             // cargo las marcas
             CargarTipos();
             // muestro en pantalla 
@@ -108,6 +112,7 @@ namespace cochinitoDeDulce.Presenters
         }
         void CargarTipos()
         {
+            iViewTipo.EstablecerValoresBindingSource(tiposBindingsSource);
             tiposList = databaseTipo.BuscarTipos("");
             tiposBindingsSource.DataSource = tiposList;
 

@@ -21,7 +21,7 @@ namespace cochinitoDeDulce.Views
         private bool puedoEliminar;
         private string mensaje;
         private static LugaresView instancia;// para el patron singleton
-
+        private bool suscrito;
         // /////////// //
         // PROPIEDADES //
         // /////////// //Lugar
@@ -42,6 +42,7 @@ namespace cochinitoDeDulce.Views
         public string LblAgregarEditar { get => lblAgregarEditar.Text; set => lblAgregarEditar.Text = value; }
         public string LblElimnarLugar { get => lblEliminarLugar.Text; set => lblEliminarLugar.Text = value; }
         public string CbEliminar { get => cbLugares.Text; set => cbLugares.Text = value; }
+        public bool Suscrito { get => suscrito; set => suscrito=value; }
 
         public LugaresView()
         {

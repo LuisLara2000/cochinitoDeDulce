@@ -22,7 +22,7 @@ namespace cochinitoDeDulce.Views
         private bool puedoEliminar;
         private string mensaje;
         private static MarcasView instancia;// para el patron singleton
-
+        private bool suscrito;
         // /////////// //
         // PROPIEDADES //
         // /////////// //
@@ -43,6 +43,7 @@ namespace cochinitoDeDulce.Views
         public string LblAgregarEditar { get => lblAgregarEditar.Text; set => lblAgregarEditar.Text = value; }
         public string LblElimnarMarca { get => lblEliminarMarca.Text; set => lblEliminarMarca.Text = value; }
         public string CbEliminar { get => cbMarcas.Text; set => cbMarcas.Text=value; }
+        public bool Suscrito { get => suscrito; set => suscrito=value; }
 
         public MarcasView()
         {

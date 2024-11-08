@@ -18,6 +18,7 @@ namespace cochinitoDeDulce.Views
         private bool editando;
         private bool exitoso;
         private string mensaje;
+        private bool suscrito;
 
         public int IdIngreso { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public float Monto { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -29,6 +30,7 @@ namespace cochinitoDeDulce.Views
         public bool Editando { get => editando; set => editando=value; }
         public bool Exitoso { get => exitoso; set => exitoso=value; }
         public string Mensaje { get => mensaje; set => mensaje=value; }
+        public bool Suscrito { get => suscrito; set => suscrito=value; }
 
         public IngresosView()
         {

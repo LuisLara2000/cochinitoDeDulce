@@ -19,14 +19,18 @@ namespace cochinitoDeDulce.Presenters
         private IEnumerable<CategoriasModel> categoriaList;// lista de categorias
         private ComboBox cb;
         // creamos el constructor (importante)
-        public CategoriaPresenter(ICategoriasView viewC,ICategoriasDataBase databaseC)
+        public CategoriaPresenter(ICategoriasView viewC,ICategoriasDataBase databaseC, bool suscrito)
         {
             this.categoriasBindingSource = new BindingSource();// asignammos el binding source de la vista categoria
             this.cb = new ComboBox();
             viewCategoria = viewC;
             databaseCategoria = databaseC;
             // suscribimos los eventos que se ejecutan en la vista
-            suscribirEventos();
+            if (!suscrito)
+            {
+                suscribirEventos();
+                viewCategoria.Suscrito = true;
+            }
             // set categorias binding source
             viewCategoria.SetPetListBindingSource(categoriasBindingSource);
             viewCategoria.SetComboBoxCategoriasEliminar(cb);
@@ -215,12 +219,14 @@ namespace cochinitoDeDulce.Presenters
         // Ventana "Buscar Categoria"
         private void BuscarCategoria(object sender, EventArgs e)
         {
+           
             categoriaList = databaseCategoria.BuscarCategorias(viewCategoria.BuscarCategoriaTxt);
             categoriasBindingSource.DataSource = categoriaList;
         }
 
         private void CargarCategorias()
         {
+            viewCategoria.SetPetListBindingSource(categoriasBindingSource);
             categoriaList = databaseCategoria.BuscarCategorias("");
             categoriasBindingSource.DataSource = categoriaList; 
         }

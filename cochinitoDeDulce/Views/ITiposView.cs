@@ -28,7 +28,7 @@ namespace cochinitoDeDulce.Views
         bool FueExitoso { get; set; }
         bool PuedoEliminar { get; set; }
         string Mensaje { get; set; }
-
+        bool Suscrito { get; set; }
         // /////// //
         // EVENTOS //
         // /////// //

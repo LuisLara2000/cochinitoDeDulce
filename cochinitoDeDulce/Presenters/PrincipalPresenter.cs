@@ -36,23 +36,29 @@ namespace cochinitoDeDulce.Presenters
         {
             IInicioView vista = InicioView.ObtenerLaVentanaInicio((PrincipalView)principalView);
             IInicioDatabase database = new InicioDatabase(sqlCadenaConexion);
-            new inicioPresenter(vista, database);
+            if (!vista.Suscrito)// me suscribo a los eventos
+                new InicioPresenter(vista, database, false);
+            else// ya no me suscribo a los eventos
+                new InicioPresenter(vista, database, true);
         }
 
         private void MostrarIngresos(object? sender, EventArgs e)
         {
             IIngresosView vista = IngresosView.ObtenerLaVentanaIngresos((PrincipalView)principalView);
             IIngresosDatabase database = new IngresosDatabase(sqlCadenaConexion);
-            new IngresosPresenter(vista, database);
+            if (!vista.Suscrito)// me suscribo a los eventos
+                new IngresosPresenter(vista, database, false);
+            else// ya no me suscribo a los eventos
+                new IngresosPresenter(vista, database, true);
         }
 
         private void MostrarGastos(object? sender, EventArgs e)
         {
             IGastosView vista = GastosView.ObtenerLaVentanaGastos((PrincipalView)principalView);
             IGastosDatabase database = new GastosDatabase(sqlCadenaConexion);
-            if(!vista.Suscrito)
+            if(!vista.Suscrito)// me suscribo a los eventos
                 new GastosPresenter(vista, database,false);
-            else
+            else// ya no me suscribo a los eventos
                 new GastosPresenter(vista, database,true);
 
         }
@@ -61,27 +67,39 @@ namespace cochinitoDeDulce.Presenters
         {
             ICategoriasView vista = CategoriasView.ObtenerInstancia((PrincipalView)principalView);
             ICategoriasDataBase database = new CategoriasDatabase(sqlCadenaConexion);
-            new CategoriaPresenter(vista,database);
+            if (!vista.Suscrito)// me suscribo a los eventos
+                new CategoriaPresenter(vista, database, false);
+            else// ya no me suscribo a los eventos
+                new CategoriaPresenter(vista, database, true);
         }
 
         private void MostrarMarcas(object? sender, EventArgs e)
         {
             IMarcasView vista = MarcasView.ObtenerLaVentanaMarcas((PrincipalView)principalView);
             IMarcasDataBase database = new MarcasDatabase(sqlCadenaConexion);
-            new MarcaPresenter(vista, database);
+            if (!vista.Suscrito)// me suscribo a los eventos
+                new MarcaPresenter(vista, database, false);
+            else// ya no me suscribo a los eventos
+                new MarcaPresenter(vista, database, true);
         }
 
         private void MostrarLugares(object? sender, EventArgs e)
         {
             ILugaresView vista = LugaresView.ObtenerLaVentanaLugares((PrincipalView)principalView);
             ILugaresDatabase database = new LugaresDatabase(sqlCadenaConexion);
-            new LugaresPresenter(vista, database);
+            if (!vista.Suscrito)// me suscribo a los eventos
+                new LugaresPresenter(vista, database, false);
+            else// ya no me suscribo a los eventos
+                new LugaresPresenter(vista, database, true);
         }
         private void MostrarTipos(object? sender, EventArgs e)
         {
             ITiposView vista = TiposView.ObtenerLaVentanaTipos((PrincipalView)principalView);
             ITiposDatabase database = new TiposDatabase(sqlCadenaConexion);
-            new TiposPresenter(vista, database);
+            if (!vista.Suscrito)// me suscribo a los eventos
+                new TiposPresenter(vista, database, false);
+            else// ya no me suscribo a los eventos
+                new TiposPresenter(vista, database, true);
         }
 
 

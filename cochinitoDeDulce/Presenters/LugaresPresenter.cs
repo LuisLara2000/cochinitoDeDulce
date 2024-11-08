@@ -19,16 +19,20 @@ namespace cochinitoDeDulce.Presenters
         private IEnumerable<LugaresModel> lugaresList;
         private List<LugaresModel> listComboBox;
 
-        public LugaresPresenter(ILugaresView viewM, ILugaresDatabase databaseL)
+        public LugaresPresenter(ILugaresView viewM, ILugaresDatabase databaseL, bool suscrito)
         {
             this.lugaresBindingsSource = new BindingSource();
             this.listComboBox = new List<LugaresModel>();
             iViewLugar = viewM;
             dataBaseLugar = databaseL;
             // suscribimos los eventos
-            SuscribirEventosLugares();
+            if (!suscrito)
+            {
+                SuscribirEventosLugares();
+                iViewLugar.Suscrito = true;
+            }
             // inicializamos el binding source y el combobox
-            viewM.EstablecerValoresBindingSource(lugaresBindingsSource);
+            iViewLugar.EstablecerValoresBindingSource(lugaresBindingsSource);
             // cargo las marcas
             CargarLugares();
             // muestro en pantalla 
@@ -115,6 +119,7 @@ namespace cochinitoDeDulce.Presenters
         }
         void CargarLugares()
         {
+            iViewLugar.EstablecerValoresBindingSource(lugaresBindingsSource);
             lugaresList = dataBaseLugar.BuscarLugares("");
             lugaresBindingsSource.DataSource = lugaresList;
 

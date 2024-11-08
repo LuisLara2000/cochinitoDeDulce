@@ -16,12 +16,16 @@ namespace cochinitoDeDulce.Presenters
         private IIngresosDatabase databaIngresos;
         private IEnumerable<IngresosModel> listaIngresos;
         private BindingSource ingresosBindingSource;
-        public IngresosPresenter(IIngresosView iViewI, IIngresosDatabase databaseI)
+        public IngresosPresenter(IIngresosView iViewI, IIngresosDatabase databaseI, bool suscrito)
         {
             this.ingresosBindingSource = new BindingSource();
             this.iViewIngresos = iViewI;
             this.databaIngresos = databaseI;
-            suscribirEventos();
+            if (!suscrito)
+            {
+                suscribirEventos();
+                iViewIngresos.Suscrito = true;
+            }
             iViewIngresos.EstablecerBindingSource(ingresosBindingSource);
             CargarIngresos();
             iViewI.Show();
@@ -125,6 +129,7 @@ namespace cochinitoDeDulce.Presenters
 
         void CargarIngresos()
         {
+            iViewIngresos.EstablecerBindingSource(ingresosBindingSource);
             listaIngresos = databaIngresos.BuscarIngreso("");
             ingresosBindingSource.DataSource = listaIngresos;
         }

@@ -23,6 +23,7 @@ namespace cochinitoDeDulce.Views
         bool Exitoso { get; set; }
         string Mensaje {  get; set; }
         bool PuedoEliminar { get; set; }
+        bool Suscrito { get; set; }
         // eventos
         /// <summary>
         /// todos los eventos van aqui, por ejemplo 

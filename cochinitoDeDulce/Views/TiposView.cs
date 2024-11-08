@@ -21,7 +21,7 @@ namespace cochinitoDeDulce.Views
         private bool puedoEliminar;
         private string mensaje;
         private static TiposView instancia;// para el patron singleton
-
+        private bool suscrito;
         // /////////// //
         // PROPIEDADES //
         // /////////// //
@@ -42,6 +42,7 @@ namespace cochinitoDeDulce.Views
         public string LblAgregarEditar { get => lblAgregarEditar.Text; set => lblAgregarEditar.Text = value; }
         public string LblElimnarTipo { get => lblEliminarTipo.Text; set => lblEliminarTipo.Text = value; }
         public string CbEliminar { get => cbTipos.Text; set => cbTipos.Text = value; }
+        public bool Suscrito { get => suscrito; set => suscrito=value; }
 
         public TiposView()
         {

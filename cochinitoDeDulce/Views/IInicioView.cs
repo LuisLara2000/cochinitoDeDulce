@@ -8,6 +8,7 @@ namespace cochinitoDeDulce.Views
 {
     public interface IInicioView
     {
+        bool Suscrito { get; set; }
         void Show();
     }
 }

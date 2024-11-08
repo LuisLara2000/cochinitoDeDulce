@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace cochinitoDeDulce.Presenters
 {
-    public class inicioPresenter
+    public class InicioPresenter
     {
         private IInicioView iViewInicio;
         private IInicioDatabase databaseInicio;
-        public inicioPresenter(IInicioView iViewI,IInicioDatabase databaseI)
+        public InicioPresenter(IInicioView iViewI,IInicioDatabase databaseI, bool suscrito)
         {
             iViewInicio = iViewI;
             databaseInicio = databaseI;

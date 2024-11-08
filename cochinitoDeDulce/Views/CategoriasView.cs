@@ -17,6 +17,7 @@ namespace cochinitoDeDulce.Views
         private bool exitoso;
         private string mensaje;
         private bool puedoEliminar;
+        private bool suscrito;
         public CategoriasView()
         {
             // no se que hace esto jaja
@@ -180,6 +181,8 @@ namespace cochinitoDeDulce.Views
             get { return puedoEliminar; }
             set { puedoEliminar = value; }
         }
+
+        public bool Suscrito { get => suscrito; set => suscrito=value; }
 
         // Ventana "Agregar Categoria"
         public event EventHandler AgregarNuevaCategoria_Event;

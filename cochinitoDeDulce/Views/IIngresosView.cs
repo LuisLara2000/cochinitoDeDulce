@@ -26,6 +26,7 @@ namespace cochinitoDeDulce.Views
         bool Editando { get; set; }
         bool Exitoso { get; set; }
         string Mensaje { get; set; }
+        bool Suscrito { get; set; }
         // eventos
         // Ventana "Agregar"
         event EventHandler AgregarNuevoIngreso_Event;

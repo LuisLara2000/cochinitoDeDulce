@@ -16,16 +16,20 @@ namespace cochinitoDeDulce.Presenters
         private IEnumerable<MarcasModel> marcasList;
         private List<MarcasModel> listComboBox;
 
-        public MarcaPresenter(IMarcasView viewM, IMarcasDataBase databaseM)
+        public MarcaPresenter(IMarcasView viewM, IMarcasDataBase databaseM, bool suscrito)
         {
             this.marcasBindingsSource = new BindingSource();
             this.listComboBox = new List<MarcasModel>();
             iViewMarca = viewM;
             dataBaseMarca = databaseM;
             // suscribimos los eventos
-            SuscribirEventosMarcas();
+            if (!suscrito)
+            {
+                SuscribirEventosMarcas();
+                iViewMarca.Suscrito = true;
+            }
             // inicializamos el binding source y el combobox
-            viewM.EstablecerValoresBindingSource(marcasBindingsSource);
+            iViewMarca.EstablecerValoresBindingSource(marcasBindingsSource);
             // cargo las marcas
             CargarMarcas();
             // muestro en pantalla 
@@ -112,6 +116,7 @@ namespace cochinitoDeDulce.Presenters
         }
         void CargarMarcas()
         {
+            iViewMarca.EstablecerValoresBindingSource(marcasBindingsSource);
             marcasList = dataBaseMarca.BuscarMarcas("");
             marcasBindingsSource.DataSource = marcasList;
 
