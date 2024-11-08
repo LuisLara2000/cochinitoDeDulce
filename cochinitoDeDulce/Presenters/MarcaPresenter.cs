@@ -27,9 +27,10 @@ namespace cochinitoDeDulce.Presenters
             {
                 SuscribirEventosMarcas();
                 iViewMarca.Suscrito = true;
+                // inicializamos el binding source y el combobox
+                iViewMarca.EstablecerValoresBindingSource(marcasBindingsSource);
             }
-            // inicializamos el binding source y el combobox
-            iViewMarca.EstablecerValoresBindingSource(marcasBindingsSource);
+           
             // cargo las marcas
             CargarMarcas();
             // muestro en pantalla 
@@ -116,7 +117,6 @@ namespace cochinitoDeDulce.Presenters
         }
         void CargarMarcas()
         {
-            iViewMarca.EstablecerValoresBindingSource(marcasBindingsSource);
             marcasList = dataBaseMarca.BuscarMarcas("");
             marcasBindingsSource.DataSource = marcasList;
 

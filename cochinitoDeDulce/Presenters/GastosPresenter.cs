@@ -33,8 +33,7 @@ namespace cochinitoDeDulce.Presenters
             iViewGastos = iViewG;
             databaseGastos = databaseG;
 
-            // inicializamos el binding source
-            iViewGastos.EstablecerValoresBindingSource(gastosBindingSource);
+          
             // cargos los gastos
             CargarGastos();
 
@@ -42,6 +41,8 @@ namespace cochinitoDeDulce.Presenters
             {
                 SuscribirEventosGastos();
                 iViewGastos.Suscrito = true;
+                // inicializamos el binding source
+                iViewGastos.EstablecerValoresBindingSource(gastosBindingSource);
             }
             // muestro la pantalla
             iViewG.Show();
@@ -188,7 +189,6 @@ namespace cochinitoDeDulce.Presenters
         }
         private void CargarGastos()
         {
-            iViewGastos.EstablecerValoresBindingSource(gastosBindingSource);
             gastosList = databaseGastos.BuscarGastos("");
             gastosBindingSource.DataSource = gastosList;
         }

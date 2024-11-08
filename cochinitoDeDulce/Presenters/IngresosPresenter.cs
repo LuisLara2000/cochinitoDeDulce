@@ -25,8 +25,9 @@ namespace cochinitoDeDulce.Presenters
             {
                 suscribirEventos();
                 iViewIngresos.Suscrito = true;
+                iViewIngresos.EstablecerBindingSource(ingresosBindingSource);
             }
-            iViewIngresos.EstablecerBindingSource(ingresosBindingSource);
+
             CargarIngresos();
             iViewI.Show();
         }
@@ -129,7 +130,6 @@ namespace cochinitoDeDulce.Presenters
 
         void CargarIngresos()
         {
-            iViewIngresos.EstablecerBindingSource(ingresosBindingSource);
             listaIngresos = databaIngresos.BuscarIngreso("");
             ingresosBindingSource.DataSource = listaIngresos;
         }

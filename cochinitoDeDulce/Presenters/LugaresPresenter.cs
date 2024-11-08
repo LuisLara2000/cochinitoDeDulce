@@ -30,9 +30,10 @@ namespace cochinitoDeDulce.Presenters
             {
                 SuscribirEventosLugares();
                 iViewLugar.Suscrito = true;
+                // inicializamos el binding source y el combobox
+                iViewLugar.EstablecerValoresBindingSource(lugaresBindingsSource);
             }
-            // inicializamos el binding source y el combobox
-            iViewLugar.EstablecerValoresBindingSource(lugaresBindingsSource);
+
             // cargo las marcas
             CargarLugares();
             // muestro en pantalla 
@@ -119,7 +120,6 @@ namespace cochinitoDeDulce.Presenters
         }
         void CargarLugares()
         {
-            iViewLugar.EstablecerValoresBindingSource(lugaresBindingsSource);
             lugaresList = dataBaseLugar.BuscarLugares("");
             lugaresBindingsSource.DataSource = lugaresList;
 

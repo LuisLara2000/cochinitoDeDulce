@@ -31,9 +31,10 @@ namespace cochinitoDeDulce.Presenters
             {
                 SuscribirEventosTipos();
                 iViewTipo.Suscrito = true;
+                // inicializamos el binding source y el combobox
+                viewT.EstablecerValoresBindingSource(tiposBindingsSource);
             }
-            // inicializamos el binding source y el combobox
-            iViewTipo.EstablecerValoresBindingSource(tiposBindingsSource);
+          
             // cargo las marcas
             CargarTipos();
             // muestro en pantalla 
@@ -112,7 +113,7 @@ namespace cochinitoDeDulce.Presenters
         }
         void CargarTipos()
         {
-            iViewTipo.EstablecerValoresBindingSource(tiposBindingsSource);
+            //iViewTipo.EstablecerValoresBindingSource(tiposBindingsSource);
             tiposList = databaseTipo.BuscarTipos("");
             tiposBindingsSource.DataSource = tiposList;
 

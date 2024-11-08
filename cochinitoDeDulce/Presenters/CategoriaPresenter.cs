@@ -30,9 +30,10 @@ namespace cochinitoDeDulce.Presenters
             {
                 suscribirEventos();
                 viewCategoria.Suscrito = true;
+                // set categorias binding source
+                viewCategoria.SetPetListBindingSource(categoriasBindingSource);
             }
-            // set categorias binding source
-            viewCategoria.SetPetListBindingSource(categoriasBindingSource);
+           
             viewCategoria.SetComboBoxCategoriasEliminar(cb);
             // cargo todas las categorias
             CargarCategorias();
@@ -226,7 +227,7 @@ namespace cochinitoDeDulce.Presenters
 
         private void CargarCategorias()
         {
-            viewCategoria.SetPetListBindingSource(categoriasBindingSource);
+           
             categoriaList = databaseCategoria.BuscarCategorias("");
             categoriasBindingSource.DataSource = categoriaList; 
         }
