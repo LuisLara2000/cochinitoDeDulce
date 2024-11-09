@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// importo estilos
+using cochinitoDeDulce.Estilos;
 
 namespace cochinitoDeDulce.Views
 {
@@ -14,7 +16,12 @@ namespace cochinitoDeDulce.Views
     {
         public PrincipalView()
         {
+            
             InitializeComponent();
+
+            // le da estilo a la forma
+            Estilos.EstilosPrincipal.CargarEstilosPrincipal(this);
+
             btnCategorias.Click += delegate
             {
                 MostrarCategorias_Evento?.Invoke(this,EventArgs.Empty);

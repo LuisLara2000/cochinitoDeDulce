@@ -92,7 +92,7 @@
             tpAgregarEditarGasto.Location = new Point(4, 24);
             tpAgregarEditarGasto.Name = "tpAgregarEditarGasto";
             tpAgregarEditarGasto.Padding = new Padding(3);
-            tpAgregarEditarGasto.Size = new Size(1149, 721);
+            tpAgregarEditarGasto.Size = new Size(1407, 872);
             tpAgregarEditarGasto.TabIndex = 1;
             tpAgregarEditarGasto.Text = "AgregarEditar marca";
             tpAgregarEditarGasto.UseVisualStyleBackColor = true;
@@ -284,80 +284,95 @@
             // 
             // tpBuscarGasto
             // 
+            tpBuscarGasto.BackColor = Color.Black;
             tpBuscarGasto.Controls.Add(txtBuscarGasto);
             tpBuscarGasto.Controls.Add(btnEliminarGasto);
             tpBuscarGasto.Controls.Add(btnIrEditarGasto);
             tpBuscarGasto.Controls.Add(btnIrAgregarGasto);
             tpBuscarGasto.Controls.Add(btnBuscar);
             tpBuscarGasto.Controls.Add(dgGasto);
+            tpBuscarGasto.ForeColor = SystemColors.ControlDarkDark;
             tpBuscarGasto.Location = new Point(4, 24);
             tpBuscarGasto.Name = "tpBuscarGasto";
             tpBuscarGasto.Padding = new Padding(3);
-            tpBuscarGasto.Size = new Size(1149, 721);
+            tpBuscarGasto.Size = new Size(1407, 872);
             tpBuscarGasto.TabIndex = 0;
             tpBuscarGasto.Text = "Todos los lugares";
-            tpBuscarGasto.UseVisualStyleBackColor = true;
             // 
             // txtBuscarGasto
             // 
-            txtBuscarGasto.Location = new Point(8, 7);
+            txtBuscarGasto.BorderStyle = BorderStyle.FixedSingle;
+            txtBuscarGasto.ForeColor = SystemColors.Window;
+            txtBuscarGasto.Location = new Point(146, 14);
             txtBuscarGasto.Name = "txtBuscarGasto";
-            txtBuscarGasto.Size = new Size(1052, 23);
+            txtBuscarGasto.RightToLeft = RightToLeft.Yes;
+            txtBuscarGasto.Size = new Size(1043, 23);
             txtBuscarGasto.TabIndex = 5;
+            txtBuscarGasto.TextAlign = HorizontalAlignment.Right;
+            txtBuscarGasto.TextChanged += txtBuscarGasto_TextChanged;
             // 
             // btnEliminarGasto
             // 
-            btnEliminarGasto.Location = new Point(887, 670);
+            btnEliminarGasto.Location = new Point(809, 724);
             btnEliminarGasto.Name = "btnEliminarGasto";
-            btnEliminarGasto.Size = new Size(259, 43);
+            btnEliminarGasto.Size = new Size(380, 26);
             btnEliminarGasto.TabIndex = 4;
             btnEliminarGasto.Text = "Eliminar";
             btnEliminarGasto.UseVisualStyleBackColor = true;
             // 
             // btnIrEditarGasto
             // 
-            btnIrEditarGasto.Location = new Point(327, 670);
+            btnIrEditarGasto.Location = new Point(416, 724);
             btnIrEditarGasto.Name = "btnIrEditarGasto";
-            btnIrEditarGasto.Size = new Size(418, 43);
+            btnIrEditarGasto.Size = new Size(380, 26);
             btnIrEditarGasto.TabIndex = 3;
             btnIrEditarGasto.Text = "Editar";
             btnIrEditarGasto.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregarGasto
             // 
-            btnIrAgregarGasto.Location = new Point(8, 673);
+            btnIrAgregarGasto.Location = new Point(19, 724);
             btnIrAgregarGasto.Name = "btnIrAgregarGasto";
-            btnIrAgregarGasto.Size = new Size(259, 40);
+            btnIrAgregarGasto.Size = new Size(380, 26);
             btnIrAgregarGasto.TabIndex = 2;
             btnIrAgregarGasto.Text = "Agregar";
             btnIrAgregarGasto.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(1066, 6);
+            btnBuscar.Location = new Point(19, 13);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.Size = new Size(121, 24);
             btnBuscar.TabIndex = 1;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             // 
             // dgGasto
             // 
+            dgGasto.AllowUserToAddRows = false;
+            dgGasto.AllowUserToDeleteRows = false;
+            dgGasto.AllowUserToOrderColumns = true;
+            dgGasto.AllowUserToResizeColumns = false;
+            dgGasto.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgGasto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
             dgGasto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgGasto.Location = new Point(8, 35);
+            dgGasto.GridColor = SystemColors.Info;
+            dgGasto.Location = new Point(18, 43);
             dgGasto.Name = "dgGasto";
-            dgGasto.Size = new Size(1133, 629);
+            dgGasto.Size = new Size(1170, 675);
             dgGasto.TabIndex = 0;
             // 
             // tbGasto
             // 
+            tbGasto.Anchor = AnchorStyles.Top;
             tbGasto.Controls.Add(tpBuscarGasto);
             tbGasto.Controls.Add(tpAgregarEditarGasto);
-            tbGasto.Dock = DockStyle.Fill;
-            tbGasto.Location = new Point(0, 0);
+            tbGasto.ImeMode = ImeMode.NoControl;
+            tbGasto.Location = new Point(-10, -25);
             tbGasto.Name = "tbGasto";
+            tbGasto.Padding = new Point(0, 0);
             tbGasto.SelectedIndex = 0;
-            tbGasto.Size = new Size(1157, 749);
+            tbGasto.Size = new Size(1415, 900);
             tbGasto.SizeMode = TabSizeMode.FillToRight;
             tbGasto.TabIndex = 2;
             // 
@@ -365,7 +380,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1157, 749);
+            ClientSize = new Size(1194, 748);
             Controls.Add(tbGasto);
             Name = "GastosView";
             Text = "GastosView";

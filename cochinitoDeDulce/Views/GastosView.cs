@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using cochinitoDeDulce.Estilos;
 
 namespace cochinitoDeDulce.Views
 {
@@ -52,12 +53,12 @@ namespace cochinitoDeDulce.Views
         public bool EstoyEditando { get => estoyEditando; set => estoyEditando = value; }
         public bool FueExitoso { get => fueExitoso; set => fueExitoso = value; }
         public string Mensaje { get => mensaje; set => mensaje = value; }
-        public string CbUnidad { get => cbUnidades.Text; set =>cbUnidades.Text=value; }
+        public string CbUnidad { get => cbUnidades.Text; set => cbUnidades.Text = value; }
         public string CbCategoria { get => cbCategorias.Text; set => cbCategorias.Text = value; }
         public string CbMarca { get => cbMarcas.Text; set => cbMarcas.Text = value; }
-        public string CbLugar { get => cbLugares.Text; set => cbLugares.Text=value; }
-        public string CbTipo { get => cbTipos.Text; set => cbTipos.Text=value; }
-        public bool Suscrito { get => suscrito; set => suscrito=value; }
+        public string CbLugar { get => cbLugares.Text; set => cbLugares.Text = value; }
+        public string CbTipo { get => cbTipos.Text; set => cbTipos.Text = value; }
+        public bool Suscrito { get => suscrito; set => suscrito = value; }
 
 
         // /////// //
@@ -79,6 +80,8 @@ namespace cochinitoDeDulce.Views
         public GastosView()
         {
             InitializeComponent();
+            Estilos.EstilosGeneral.CargarEstilosGeneral(this);
+            Estilos.TamañosPosiciones.CargarPosiciones(this);
             // asociamos los eventos
             AsociarEventosDeLaVistaGastos();
             tbGasto.TabPages.Remove(tpAgregarEditarGasto);
@@ -91,7 +94,7 @@ namespace cochinitoDeDulce.Views
         {
             btnIrAgregarGasto.Click += delegate
             {
-                IrVentanaAgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);    
+                IrVentanaAgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);
                 tbGasto.TabPages.Remove(tpBuscarGasto);
                 tbGasto.TabPages.Add(tpAgregarEditarGasto);
                 btnGuardarEditar.Text = "Agregar";
@@ -105,7 +108,7 @@ namespace cochinitoDeDulce.Views
             };
             btnGuardarEditar.Click += delegate
             {
-                if(EstoyEditando)
+                if (EstoyEditando)
                 {
                     EditarGasto_Event?.Invoke(this, EventArgs.Empty);
                 }
@@ -114,7 +117,7 @@ namespace cochinitoDeDulce.Views
                     AgregarNuevoGasto_Event?.Invoke(this, EventArgs.Empty);
                 }
 
-                if(FueExitoso)
+                if (FueExitoso)
                 {
                     tbGasto.TabPages.Remove(tpAgregarEditarGasto);
                     tbGasto.TabPages.Add(tpBuscarGasto);
@@ -190,7 +193,7 @@ namespace cochinitoDeDulce.Views
         public void EstablecerUnidadesComboBox(List<string> listaUnidades)
         {
             cbUnidades.Items.Clear();
-            foreach(var unidad in listaUnidades)
+            foreach (var unidad in listaUnidades)
             {
                 cbUnidades.Items.Add(unidad);
 
@@ -220,7 +223,7 @@ namespace cochinitoDeDulce.Views
                 // hacemos que ocupe todo el espacio
                 instancia.Dock = DockStyle.Fill;
                 // 
-                
+
             }
             else
             {
@@ -242,6 +245,11 @@ namespace cochinitoDeDulce.Views
 
         //-- borraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscarGasto_TextChanged(object sender, EventArgs e)
         {
 
         }
