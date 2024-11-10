@@ -17,6 +17,7 @@ namespace cochinitoDeDulce.Views
         public InicioView()
         {
             InitializeComponent();
+            Estilos.EstilosGeneral.CargarEstilosGeneral(this);
         }
 
         public bool Suscrito { get => suscrito; set => suscrito = value; }

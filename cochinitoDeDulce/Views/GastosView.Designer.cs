@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tpAgregarEditarGasto = new TabPage();
             cbUnidades = new ComboBox();
             label9 = new Label();
@@ -99,6 +102,8 @@
             // 
             // cbUnidades
             // 
+            cbUnidades.BackColor = SystemColors.InactiveCaptionText;
+            cbUnidades.FlatStyle = FlatStyle.Flat;
             cbUnidades.FormattingEnabled = true;
             cbUnidades.Location = new Point(210, 87);
             cbUnidades.Name = "cbUnidades";
@@ -354,11 +359,43 @@
             dgGasto.AllowUserToOrderColumns = true;
             dgGasto.AllowUserToResizeColumns = false;
             dgGasto.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgGasto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllHeaders;
-            dgGasto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgGasto.GridColor = SystemColors.Info;
+            dgGasto.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dgGasto.BackgroundColor = Color.FromArgb(52, 52, 52);
+            dgGasto.BorderStyle = BorderStyle.None;
+            dgGasto.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgGasto.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgGasto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgGasto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(52, 52, 52);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlDarkDark;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgGasto.DefaultCellStyle = dataGridViewCellStyle5;
+            dgGasto.GridColor = SystemColors.Highlight;
             dgGasto.Location = new Point(18, 43);
             dgGasto.Name = "dgGasto";
+            dgGasto.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgGasto.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dgGasto.RowHeadersVisible = false;
+            dgGasto.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgGasto.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgGasto.Size = new Size(1170, 675);
             dgGasto.TabIndex = 0;
             // 

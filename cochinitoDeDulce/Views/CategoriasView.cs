@@ -24,6 +24,7 @@ namespace cochinitoDeDulce.Views
             InitializeComponent();
             // asociamos los eventos con las acciones que suceden en la vista
             AsociarEventosDeLaVista();
+            Estilos.EstilosGeneral.CargarEstilosGeneral(this);
             tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
             tbCategorias.TabPages.Remove(tpEliminar);
 

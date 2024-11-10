@@ -49,6 +49,7 @@ namespace cochinitoDeDulce.Views
             InitializeComponent();
             // asocio los eventos
             AsociarEventosDeLaVistaTipo();
+            Estilos.EstilosGeneral.CargarEstilosGeneral(this);
             // oculto las ventanas que no quiero que se vean al inicio
             tbTipo.TabPages.Remove(tpAgregarEditarTipo);
             tbTipo.TabPages.Remove(tpEliminarTipo);

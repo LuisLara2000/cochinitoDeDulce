@@ -35,10 +35,12 @@ namespace cochinitoDeDulce.Views
         public IngresosView()
         {
             InitializeComponent();
+            Estilos.EstilosGeneral.CargarEstilosGeneral(this);
             // acomodo las paginas
             tbIngresos.TabPages.Remove(tpAgregarEditarIngresos);
             // asociar eventos
             AsociarEventosDeLaVista();
+          
         }
 
         private void AsociarEventosDeLaVista()

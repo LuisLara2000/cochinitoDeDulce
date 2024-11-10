@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using cochinitoDeDulce.Estilos;
 
 namespace cochinitoDeDulce.Views
 {
@@ -49,6 +50,7 @@ namespace cochinitoDeDulce.Views
             InitializeComponent();
             // asocio los eventos
             AsociarEventosDeLaVistaLugar();
+            Estilos.EstilosGeneral.CargarEstilosGeneral(this);
             // oculto las ventanas que no quiero que se vean al inicio
             tbLugar.TabPages.Remove(tpAgregarEditarLugar);
             tbLugar.TabPages.Remove(tpEliminarLugar);

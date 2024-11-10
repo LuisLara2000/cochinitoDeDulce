@@ -59,9 +59,36 @@ namespace cochinitoDeDulce.Estilos
                                 else if(tabPage is DataGridView)
                                 {
                                     
-                                    ((DataGridView)tabPage).BackColor = primary;
-                                    ((DataGridView)tabPage).GridColor = primary;
+                                    // El fondo del data grid cuando no hay registros
                                     ((DataGridView)tabPage).BackgroundColor = primary;
+
+                                    // Le quito los bordes a las celdas
+                                    ((DataGridView)tabPage).BorderStyle = BorderStyle.None;
+                                    ((DataGridView)tabPage).CellBorderStyle = DataGridViewCellBorderStyle.None;
+                                    ((DataGridView)tabPage).ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                                    // Bloqueo poder hacer mas altas las celdas
+                                    ((DataGridView)tabPage).ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+                                    // Bloqueo poder hacer mas anchas las celdas
+                                    ((DataGridView)tabPage).RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                                    // Hago que las columnas se expandan en todo el contenedor del datagrid
+                                    ((DataGridView)tabPage).AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                                    // Hago que las filas se expandas en todo el data grid view
+                                    ((DataGridView)tabPage).AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+
+          
+                                    // El color de cada celda
+                                    ((DataGridView)tabPage).DefaultCellStyle.BackColor = primary;
+                                    ((DataGridView)tabPage).DefaultCellStyle.ForeColor = secondary;
+
+                                    // Para los encabezados de las filas (no se usa)
+                                    //((DataGridView)tabPage).RowHeadersDefaultCellStyle.BackColor = primary;
+                                    ((DataGridView)tabPage).RowHeadersVisible = false;// quita la columna con la flechita
+                                    ((DataGridView)tabPage).RowHeadersVisible = false;
+
+                                    // Estilo diferente a los encabezados de las columnas
+                                    ((DataGridView)tabPage).ColumnHeadersDefaultCellStyle.BackColor = secondary;
+                                    ((DataGridView)tabPage).ColumnHeadersDefaultCellStyle.ForeColor = primary;
+                                    ((DataGridView)tabPage).EnableHeadersVisualStyles = false;// permite aplicar los cambios a los headers
                                 }
                                 else if(tabPage is TextBox)
                                 {

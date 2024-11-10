@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tbLugar = new TabControl();
             tpBuscarLugar = new TabPage();
             txtBuscarMarca = new TextBox();
@@ -127,9 +130,29 @@
             // 
             // dgLugar
             // 
+            dgLugar.BackgroundColor = Color.FromArgb(52, 52, 52);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 113, 0);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(52, 52, 52);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgLugar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgLugar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgLugar.Location = new Point(8, 6);
             dgLugar.Name = "dgLugar";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 113, 0);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(52, 52, 52);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgLugar.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(52, 52, 52);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 113, 0);
+            dgLugar.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgLugar.Size = new Size(363, 392);
             dgLugar.TabIndex = 0;
             // 
