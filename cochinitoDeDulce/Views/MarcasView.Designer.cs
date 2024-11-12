@@ -44,8 +44,8 @@
             tpEliminarMarca = new TabPage();
             btnCancelarEliminar = new Button();
             btnEliminarEliminar = new Button();
-            cbMarcas = new ComboBox();
             lblEliminarMarca = new Label();
+            cbMarcas = new ControlesPersonalizados.CustomComboBox();
             tbMarca.SuspendLayout();
             tpBuscarMarca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgMarcas).BeginInit();
@@ -184,9 +184,9 @@
             // 
             // tpEliminarMarca
             // 
+            tpEliminarMarca.Controls.Add(cbMarcas);
             tpEliminarMarca.Controls.Add(btnCancelarEliminar);
             tpEliminarMarca.Controls.Add(btnEliminarEliminar);
-            tpEliminarMarca.Controls.Add(cbMarcas);
             tpEliminarMarca.Controls.Add(lblEliminarMarca);
             tpEliminarMarca.Location = new Point(4, 24);
             tpEliminarMarca.Name = "tpEliminarMarca";
@@ -214,14 +214,6 @@
             btnEliminarEliminar.Text = "Eliminar";
             btnEliminarEliminar.UseVisualStyleBackColor = true;
             // 
-            // cbMarcas
-            // 
-            cbMarcas.FormattingEnabled = true;
-            cbMarcas.Location = new Point(24, 187);
-            cbMarcas.Name = "cbMarcas";
-            cbMarcas.Size = new Size(599, 23);
-            cbMarcas.TabIndex = 1;
-            // 
             // lblEliminarMarca
             // 
             lblEliminarMarca.AutoSize = true;
@@ -230,6 +222,25 @@
             lblEliminarMarca.Size = new Size(38, 15);
             lblEliminarMarca.TabIndex = 0;
             lblEliminarMarca.Text = "label2";
+            // 
+            // cbMarcas
+            // 
+            cbMarcas.BackColor = Color.WhiteSmoke;
+            cbMarcas.BorderColor = Color.MediumSlateBlue;
+            cbMarcas.BorderSize = 1;
+            cbMarcas.DropDownStyle = ComboBoxStyle.DropDown;
+            cbMarcas.Font = new Font("Segoe UI", 10F);
+            cbMarcas.ForeColor = Color.DimGray;
+            cbMarcas.IconColor = Color.MediumSlateBlue;
+            cbMarcas.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbMarcas.ListTextColor = Color.DimGray;
+            cbMarcas.Location = new Point(24, 189);
+            cbMarcas.MinimumSize = new Size(100, 30);
+            cbMarcas.Name = "cbMarcas";
+            cbMarcas.Padding = new Padding(1);
+            cbMarcas.Size = new Size(599, 30);
+            cbMarcas.TabIndex = 4;
+            cbMarcas.Texts = "";
             // 
             // MarcasView
             // 
@@ -266,9 +277,9 @@
         private Label lblAgregarEditar;
         private Button btnRegresarEditarGuardar;
         private Button btnGuardarEditar;
-        private ComboBox cbMarcas;
         private Label lblEliminarMarca;
         private Button btnCancelarEliminar;
         private Button btnEliminarEliminar;
+        private ControlesPersonalizados.CustomComboBox cbMarcas;
     }
 }

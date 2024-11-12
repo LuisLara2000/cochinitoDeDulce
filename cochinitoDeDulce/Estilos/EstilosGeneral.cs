@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using cochinitoDeDulce.ControlesPersonalizados;
 namespace cochinitoDeDulce.Estilos
 {
     internal class EstilosGeneral
@@ -93,12 +94,22 @@ namespace cochinitoDeDulce.Estilos
                                 else if(tabPage is TextBox)
                                 {
                                     ((TextBox)tabPage).BackColor = primary;
-                                    ((TextBox)tabPage).BorderStyle = BorderStyle.None;
+                                    //((TextBox)tabPage).BorderStyle = BorderStyle.None;
                                     ((TextBox)tabPage).Font = new Font(
                                         new FontFamily("OCR A Extended"),
                                         11,
                                         FontStyle.Bold);
                                     ((TextBox)tabPage).ForeColor = secondary;
+                                }
+                                else if(tabPage is CustomComboBox)
+                                {
+                                    ((CustomComboBox)tabPage).BackColor = secondary;
+                                    ((CustomComboBox)tabPage).ForeColor = primary;
+                                    ((CustomComboBox)tabPage).IconColor = primary;
+                                    ((CustomComboBox)tabPage).ListBackColor = secondary;
+                                    ((CustomComboBox)tabPage).ListTextColor = primary;
+                                    ((CustomComboBox)tabPage).AutoCompleteMode = AutoCompleteMode.Suggest;
+                                    ((CustomComboBox)tabPage).AutoCompleteSource = AutoCompleteSource.ListItems;
                                 }
 
                             }

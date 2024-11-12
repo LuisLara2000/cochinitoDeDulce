@@ -42,9 +42,9 @@
             btnRegresarEditarGuardar = new Button();
             btnGuardarEditar = new Button();
             tpEliminarTipo = new TabPage();
+            cbTipos = new ControlesPersonalizados.CustomComboBox();
             btnCancelarEliminar = new Button();
             btnEliminarEliminar = new Button();
-            cbTipos = new ComboBox();
             lblEliminarTipo = new Label();
             tbTipo.SuspendLayout();
             tpBuscarTipo.SuspendLayout();
@@ -188,9 +188,9 @@
             // 
             // tpEliminarTipo
             // 
+            tpEliminarTipo.Controls.Add(cbTipos);
             tpEliminarTipo.Controls.Add(btnCancelarEliminar);
             tpEliminarTipo.Controls.Add(btnEliminarEliminar);
-            tpEliminarTipo.Controls.Add(cbTipos);
             tpEliminarTipo.Controls.Add(lblEliminarTipo);
             tpEliminarTipo.Location = new Point(4, 24);
             tpEliminarTipo.Name = "tpEliminarTipo";
@@ -199,6 +199,27 @@
             tpEliminarTipo.TabIndex = 2;
             tpEliminarTipo.Text = "Eliminar tipo";
             tpEliminarTipo.UseVisualStyleBackColor = true;
+            // 
+            // cbTipos
+            // 
+            cbTipos.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cbTipos.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbTipos.BackColor = Color.WhiteSmoke;
+            cbTipos.BorderColor = Color.MediumSlateBlue;
+            cbTipos.BorderSize = 1;
+            cbTipos.DropDownStyle = ComboBoxStyle.DropDown;
+            cbTipos.Font = new Font("Segoe UI", 10F);
+            cbTipos.ForeColor = Color.DimGray;
+            cbTipos.IconColor = Color.MediumSlateBlue;
+            cbTipos.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbTipos.ListTextColor = Color.DimGray;
+            cbTipos.Location = new Point(24, 189);
+            cbTipos.MinimumSize = new Size(100, 15);
+            cbTipos.Name = "cbTipos";
+            cbTipos.Padding = new Padding(1);
+            cbTipos.Size = new Size(599, 30);
+            cbTipos.TabIndex = 4;
+            cbTipos.Texts = "";
             // 
             // btnCancelarEliminar
             // 
@@ -218,18 +239,10 @@
             btnEliminarEliminar.Text = "Elininar";
             btnEliminarEliminar.UseVisualStyleBackColor = true;
             // 
-            // cbTipos
-            // 
-            cbTipos.FormattingEnabled = true;
-            cbTipos.Location = new Point(24, 187);
-            cbTipos.Name = "cbTipos";
-            cbTipos.Size = new Size(599, 23);
-            cbTipos.TabIndex = 1;
-            // 
             // lblEliminarTipo
             // 
             lblEliminarTipo.AutoSize = true;
-            lblEliminarTipo.Location = new Point(307, 167);
+            lblEliminarTipo.Location = new Point(307, 160);
             lblEliminarTipo.Name = "lblEliminarTipo";
             lblEliminarTipo.Size = new Size(38, 15);
             lblEliminarTipo.TabIndex = 0;
@@ -272,7 +285,7 @@
         private TabPage tpEliminarTipo;
         private Button btnCancelarEliminar;
         private Button btnEliminarEliminar;
-        private ComboBox cbTipos;
         private Label lblEliminarTipo;
+        private ControlesPersonalizados.CustomComboBox cbTipos;
     }
 }

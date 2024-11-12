@@ -32,14 +32,14 @@
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tpAgregarEditarGasto = new TabPage();
-            cbUnidades = new ComboBox();
+            cbLugares = new ControlesPersonalizados.CustomComboBox();
+            cbCategorias = new ControlesPersonalizados.CustomComboBox();
+            cbMarcas = new ControlesPersonalizados.CustomComboBox();
+            cbUnidades = new ControlesPersonalizados.CustomComboBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            cbTipos = new ComboBox();
-            cbLugares = new ComboBox();
-            cbMarcas = new ComboBox();
-            cbCategorias = new ComboBox();
+            cbTipos = new ControlesPersonalizados.CustomComboBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -70,14 +70,14 @@
             // 
             // tpAgregarEditarGasto
             // 
+            tpAgregarEditarGasto.Controls.Add(cbLugares);
+            tpAgregarEditarGasto.Controls.Add(cbCategorias);
+            tpAgregarEditarGasto.Controls.Add(cbMarcas);
             tpAgregarEditarGasto.Controls.Add(cbUnidades);
             tpAgregarEditarGasto.Controls.Add(label9);
             tpAgregarEditarGasto.Controls.Add(label8);
             tpAgregarEditarGasto.Controls.Add(label7);
             tpAgregarEditarGasto.Controls.Add(cbTipos);
-            tpAgregarEditarGasto.Controls.Add(cbLugares);
-            tpAgregarEditarGasto.Controls.Add(cbMarcas);
-            tpAgregarEditarGasto.Controls.Add(cbCategorias);
             tpAgregarEditarGasto.Controls.Add(label6);
             tpAgregarEditarGasto.Controls.Add(label5);
             tpAgregarEditarGasto.Controls.Add(label4);
@@ -100,15 +100,81 @@
             tpAgregarEditarGasto.Text = "AgregarEditar marca";
             tpAgregarEditarGasto.UseVisualStyleBackColor = true;
             // 
+            // cbLugares
+            // 
+            cbLugares.BackColor = Color.WhiteSmoke;
+            cbLugares.BorderColor = Color.MediumSlateBlue;
+            cbLugares.BorderSize = 1;
+            cbLugares.DropDownStyle = ComboBoxStyle.DropDown;
+            cbLugares.Font = new Font("Segoe UI", 10F);
+            cbLugares.ForeColor = Color.DimGray;
+            cbLugares.IconColor = Color.MediumSlateBlue;
+            cbLugares.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbLugares.ListTextColor = Color.DimGray;
+            cbLugares.Location = new Point(491, 172);
+            cbLugares.MinimumSize = new Size(100, 30);
+            cbLugares.Name = "cbLugares";
+            cbLugares.Padding = new Padding(1);
+            cbLugares.Size = new Size(220, 30);
+            cbLugares.TabIndex = 27;
+            cbLugares.Texts = "";
+            // 
+            // cbCategorias
+            // 
+            cbCategorias.BackColor = Color.WhiteSmoke;
+            cbCategorias.BorderColor = Color.MediumSlateBlue;
+            cbCategorias.BorderSize = 1;
+            cbCategorias.DropDownStyle = ComboBoxStyle.DropDown;
+            cbCategorias.Font = new Font("Segoe UI", 10F);
+            cbCategorias.ForeColor = Color.DimGray;
+            cbCategorias.IconColor = Color.MediumSlateBlue;
+            cbCategorias.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbCategorias.ListTextColor = Color.DimGray;
+            cbCategorias.Location = new Point(8, 172);
+            cbCategorias.MinimumSize = new Size(100, 30);
+            cbCategorias.Name = "cbCategorias";
+            cbCategorias.Padding = new Padding(1);
+            cbCategorias.Size = new Size(220, 30);
+            cbCategorias.TabIndex = 25;
+            cbCategorias.Texts = "";
+            // 
+            // cbMarcas
+            // 
+            cbMarcas.BackColor = Color.WhiteSmoke;
+            cbMarcas.BorderColor = Color.MediumSlateBlue;
+            cbMarcas.BorderSize = 1;
+            cbMarcas.DropDownStyle = ComboBoxStyle.DropDown;
+            cbMarcas.Font = new Font("Segoe UI", 10F);
+            cbMarcas.ForeColor = Color.DimGray;
+            cbMarcas.IconColor = Color.MediumSlateBlue;
+            cbMarcas.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbMarcas.ListTextColor = Color.DimGray;
+            cbMarcas.Location = new Point(248, 172);
+            cbMarcas.MinimumSize = new Size(100, 30);
+            cbMarcas.Name = "cbMarcas";
+            cbMarcas.Padding = new Padding(1);
+            cbMarcas.Size = new Size(220, 30);
+            cbMarcas.TabIndex = 24;
+            cbMarcas.Texts = "";
+            // 
             // cbUnidades
             // 
-            cbUnidades.BackColor = SystemColors.InactiveCaptionText;
-            cbUnidades.FlatStyle = FlatStyle.Flat;
-            cbUnidades.FormattingEnabled = true;
-            cbUnidades.Location = new Point(210, 87);
+            cbUnidades.BackColor = Color.WhiteSmoke;
+            cbUnidades.BorderColor = Color.MediumSlateBlue;
+            cbUnidades.BorderSize = 1;
+            cbUnidades.DropDownStyle = ComboBoxStyle.DropDown;
+            cbUnidades.Font = new Font("Segoe UI", 10F);
+            cbUnidades.ForeColor = Color.DimGray;
+            cbUnidades.IconColor = Color.MediumSlateBlue;
+            cbUnidades.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbUnidades.ListTextColor = Color.DimGray;
+            cbUnidades.Location = new Point(206, 87);
+            cbUnidades.MinimumSize = new Size(100, 30);
             cbUnidades.Name = "cbUnidades";
-            cbUnidades.Size = new Size(96, 23);
-            cbUnidades.TabIndex = 22;
+            cbUnidades.Padding = new Padding(1);
+            cbUnidades.Size = new Size(100, 30);
+            cbUnidades.TabIndex = 23;
+            cbUnidades.Texts = "";
             // 
             // label9
             // 
@@ -139,36 +205,22 @@
             // 
             // cbTipos
             // 
-            cbTipos.FormattingEnabled = true;
+            cbTipos.BackColor = Color.WhiteSmoke;
+            cbTipos.BorderColor = Color.MediumSlateBlue;
+            cbTipos.BorderSize = 1;
+            cbTipos.DropDownStyle = ComboBoxStyle.DropDown;
+            cbTipos.Font = new Font("Segoe UI", 10F);
+            cbTipos.ForeColor = Color.DimGray;
+            cbTipos.IconColor = Color.MediumSlateBlue;
+            cbTipos.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbTipos.ListTextColor = Color.DimGray;
             cbTipos.Location = new Point(736, 172);
+            cbTipos.MinimumSize = new Size(100, 30);
             cbTipos.Name = "cbTipos";
-            cbTipos.Size = new Size(220, 23);
+            cbTipos.Padding = new Padding(1);
+            cbTipos.Size = new Size(220, 30);
             cbTipos.TabIndex = 18;
-            // 
-            // cbLugares
-            // 
-            cbLugares.FormattingEnabled = true;
-            cbLugares.Location = new Point(491, 172);
-            cbLugares.Name = "cbLugares";
-            cbLugares.Size = new Size(220, 23);
-            cbLugares.TabIndex = 17;
-            // 
-            // cbMarcas
-            // 
-            cbMarcas.FormattingEnabled = true;
-            cbMarcas.Location = new Point(248, 172);
-            cbMarcas.Name = "cbMarcas";
-            cbMarcas.Size = new Size(220, 23);
-            cbMarcas.TabIndex = 16;
-            // 
-            // cbCategorias
-            // 
-            cbCategorias.FormattingEnabled = true;
-            cbCategorias.Location = new Point(8, 172);
-            cbCategorias.Name = "cbCategorias";
-            cbCategorias.Size = new Size(220, 23);
-            cbCategorias.TabIndex = 15;
-            cbCategorias.Text = "sds";
+            cbTipos.Texts = "";
             // 
             // label6
             // 
@@ -433,14 +485,14 @@
         #endregion
 
         private TabPage tpAgregarEditarGasto;
-        private ComboBox cbUnidades;
+        //private ComboBox cbUnidades;
         private Label label9;
         private Label label8;
         private Label label7;
-        private ComboBox cbTipos;
-        private ComboBox cbLugares;
-        private ComboBox cbMarcas;
-        private ComboBox cbCategorias;
+        //private ComboBox cbTipos;
+        //private ComboBox df;
+        //private ComboBox cbMarcas;
+        //private ComboBox cbCategorias;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -463,5 +515,10 @@
         private Button btnBuscar;
         private DataGridView dgGasto;
         private TabControl tbGasto;
+        private ControlesPersonalizados.CustomComboBox cbUnidades;
+        private ControlesPersonalizados.CustomComboBox cbLugares;
+        private ControlesPersonalizados.CustomComboBox cbTipos;
+        private ControlesPersonalizados.CustomComboBox cbCategorias;
+        private ControlesPersonalizados.CustomComboBox cbMarcas;
     }
 }

@@ -47,8 +47,8 @@
             tpEliminarLugar = new TabPage();
             btnCancelarLugar = new Button();
             btnEliminarEliminar = new Button();
-            cbLugares = new ComboBox();
             lblEliminarLugar = new Label();
+            cbLugares = new ControlesPersonalizados.CustomComboBox();
             tbLugar.SuspendLayout();
             tpBuscarLugar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgLugar).BeginInit();
@@ -206,9 +206,9 @@
             // 
             // tpEliminarLugar
             // 
+            tpEliminarLugar.Controls.Add(cbLugares);
             tpEliminarLugar.Controls.Add(btnCancelarLugar);
             tpEliminarLugar.Controls.Add(btnEliminarEliminar);
-            tpEliminarLugar.Controls.Add(cbLugares);
             tpEliminarLugar.Controls.Add(lblEliminarLugar);
             tpEliminarLugar.Location = new Point(4, 24);
             tpEliminarLugar.Name = "tpEliminarLugar";
@@ -236,14 +236,6 @@
             btnEliminarEliminar.Text = "Eliminar";
             btnEliminarEliminar.UseVisualStyleBackColor = true;
             // 
-            // cbLugares
-            // 
-            cbLugares.FormattingEnabled = true;
-            cbLugares.Location = new Point(24, 187);
-            cbLugares.Name = "cbLugares";
-            cbLugares.Size = new Size(599, 23);
-            cbLugares.TabIndex = 1;
-            // 
             // lblEliminarLugar
             // 
             lblEliminarLugar.AutoSize = true;
@@ -252,6 +244,25 @@
             lblEliminarLugar.Size = new Size(38, 15);
             lblEliminarLugar.TabIndex = 0;
             lblEliminarLugar.Text = "label2";
+            // 
+            // cbLugares
+            // 
+            cbLugares.BackColor = Color.WhiteSmoke;
+            cbLugares.BorderColor = Color.MediumSlateBlue;
+            cbLugares.BorderSize = 1;
+            cbLugares.DropDownStyle = ComboBoxStyle.DropDown;
+            cbLugares.Font = new Font("Segoe UI", 10F);
+            cbLugares.ForeColor = Color.DimGray;
+            cbLugares.IconColor = Color.MediumSlateBlue;
+            cbLugares.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbLugares.ListTextColor = Color.DimGray;
+            cbLugares.Location = new Point(24, 189);
+            cbLugares.MinimumSize = new Size(100, 30);
+            cbLugares.Name = "cbLugares";
+            cbLugares.Padding = new Padding(1);
+            cbLugares.Size = new Size(599, 30);
+            cbLugares.TabIndex = 4;
+            cbLugares.Texts = "";
             // 
             // LugaresView
             // 
@@ -290,7 +301,7 @@
         private TabPage tpEliminarLugar;
         private Button btnCancelarLugar;
         private Button btnEliminarEliminar;
-        private ComboBox cbLugares;
         private Label lblEliminarLugar;
+        private ControlesPersonalizados.CustomComboBox cbLugares;
     }
 }

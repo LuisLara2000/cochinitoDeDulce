@@ -44,8 +44,8 @@
             tpEliminar = new TabPage();
             btnEliminarCategoriaCancelar = new Button();
             btnEliminarCategoriaEliminar = new Button();
-            cbEliminarCategoria = new ComboBox();
             lblElimimarCategoria = new Label();
+            cbEliminarCategoria = new ControlesPersonalizados.CustomComboBox();
             tpCategoriasAgregarEditar.SuspendLayout();
             tpCategoriasVer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgCategorias).BeginInit();
@@ -182,9 +182,9 @@
             // 
             // tpEliminar
             // 
+            tpEliminar.Controls.Add(cbEliminarCategoria);
             tpEliminar.Controls.Add(btnEliminarCategoriaCancelar);
             tpEliminar.Controls.Add(btnEliminarCategoriaEliminar);
-            tpEliminar.Controls.Add(cbEliminarCategoria);
             tpEliminar.Controls.Add(lblElimimarCategoria);
             tpEliminar.Location = new Point(4, 24);
             tpEliminar.Name = "tpEliminar";
@@ -196,7 +196,7 @@
             // 
             // btnEliminarCategoriaCancelar
             // 
-            btnEliminarCategoriaCancelar.Location = new Point(318, 179);
+            btnEliminarCategoriaCancelar.Location = new Point(329, 207);
             btnEliminarCategoriaCancelar.Name = "btnEliminarCategoriaCancelar";
             btnEliminarCategoriaCancelar.Size = new Size(190, 98);
             btnEliminarCategoriaCancelar.TabIndex = 7;
@@ -205,20 +205,12 @@
             // 
             // btnEliminarCategoriaEliminar
             // 
-            btnEliminarCategoriaEliminar.Location = new Point(101, 179);
+            btnEliminarCategoriaEliminar.Location = new Point(101, 207);
             btnEliminarCategoriaEliminar.Name = "btnEliminarCategoriaEliminar";
             btnEliminarCategoriaEliminar.Size = new Size(190, 98);
             btnEliminarCategoriaEliminar.TabIndex = 6;
             btnEliminarCategoriaEliminar.Text = "Eliminar";
             btnEliminarCategoriaEliminar.UseVisualStyleBackColor = true;
-            // 
-            // cbEliminarCategoria
-            // 
-            cbEliminarCategoria.FormattingEnabled = true;
-            cbEliminarCategoria.Location = new Point(20, 150);
-            cbEliminarCategoria.Name = "cbEliminarCategoria";
-            cbEliminarCategoria.Size = new Size(592, 23);
-            cbEliminarCategoria.TabIndex = 5;
             // 
             // lblElimimarCategoria
             // 
@@ -228,6 +220,25 @@
             lblElimimarCategoria.Size = new Size(438, 15);
             lblElimimarCategoria.TabIndex = 4;
             lblElimimarCategoria.Text = "La categoria \"inserte categoria\" al ser eliminada sera reemplazada por la categoria:";
+            // 
+            // cbEliminarCategoria
+            // 
+            cbEliminarCategoria.BackColor = Color.WhiteSmoke;
+            cbEliminarCategoria.BorderColor = Color.MediumSlateBlue;
+            cbEliminarCategoria.BorderSize = 1;
+            cbEliminarCategoria.DropDownStyle = ComboBoxStyle.DropDown;
+            cbEliminarCategoria.Font = new Font("Segoe UI", 10F);
+            cbEliminarCategoria.ForeColor = Color.DimGray;
+            cbEliminarCategoria.IconColor = Color.MediumSlateBlue;
+            cbEliminarCategoria.ListBackColor = Color.FromArgb(230, 228, 245);
+            cbEliminarCategoria.ListTextColor = Color.DimGray;
+            cbEliminarCategoria.Location = new Point(8, 150);
+            cbEliminarCategoria.MinimumSize = new Size(100, 30);
+            cbEliminarCategoria.Name = "cbEliminarCategoria";
+            cbEliminarCategoria.Padding = new Padding(1);
+            cbEliminarCategoria.Size = new Size(592, 30);
+            cbEliminarCategoria.TabIndex = 8;
+            cbEliminarCategoria.Texts = "";
             // 
             // CategoriasView
             // 
@@ -264,9 +275,9 @@
         private TabControl tbCategorias;
         private Button btnRegresar;
         private TabPage tpEliminar;
-        private ComboBox cbEliminarCategoria;
         private Label lblElimimarCategoria;
         private Button btnEliminarCategoriaCancelar;
         private Button btnEliminarCategoriaEliminar;
+        private ControlesPersonalizados.CustomComboBox cbEliminarCategoria;
     }
 }
