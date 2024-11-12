@@ -30,6 +30,21 @@ namespace cochinitoDeDulce.Presenters
             this.principalView.MostrarGastos_Evento += MostrarGastos;
             this.principalView.MostrarIngresos_Evento += MostrarIngresos;
             this.principalView.MostrarInicio_Evento += MostrarInicio;
+            this.principalView.CerrarAplicacion_Evento += CerrarAplicacion;
+        }
+
+        private void CerrarAplicacion(object? sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show("¿Quieres salir de la aplicacion?","Cerrar",MessageBoxButtons.OKCancel);
+            if (respuesta == DialogResult.OK)
+            {
+                principalView.QuieresSalirDeLaAplicacion = true;
+            }
+            else
+            {
+                principalView.QuieresSalirDeLaAplicacion = false;
+            }
+            
         }
 
         private void MostrarInicio(object? sender, EventArgs e)

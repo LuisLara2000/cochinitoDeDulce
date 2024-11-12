@@ -33,22 +33,22 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             tbLugar = new TabControl();
             tpBuscarLugar = new TabPage();
-            txtBuscarMarca = new TextBox();
+            txtBuscarMarca = new ControlesPersonalizados.CustomTextBox();
             btnIrEliminarLugar = new Button();
             btnIrEditarLugar = new Button();
             btnIrAgregarLugar = new Button();
             btnBuscar = new Button();
             dgLugar = new DataGridView();
             tpAgregarEditarLugar = new TabPage();
-            txtAgregarEditar = new TextBox();
+            txtAgregarEditar = new ControlesPersonalizados.CustomTextBox();
             lblAgregarEditar = new Label();
             btnRegresarEditarGuardar = new Button();
             btnGuardarEditar = new Button();
             tpEliminarLugar = new TabPage();
+            cbLugares = new ControlesPersonalizados.CustomComboBox();
             btnCancelarLugar = new Button();
             btnEliminarEliminar = new Button();
             lblEliminarLugar = new Label();
-            cbLugares = new ControlesPersonalizados.CustomComboBox();
             tbLugar.SuspendLayout();
             tpBuscarLugar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgLugar).BeginInit();
@@ -61,11 +61,10 @@
             tbLugar.Controls.Add(tpBuscarLugar);
             tbLugar.Controls.Add(tpAgregarEditarLugar);
             tbLugar.Controls.Add(tpEliminarLugar);
-            tbLugar.Dock = DockStyle.Fill;
-            tbLugar.Location = new Point(0, 0);
+            tbLugar.Location = new Point(-10, -25);
             tbLugar.Name = "tbLugar";
             tbLugar.SelectedIndex = 0;
-            tbLugar.Size = new Size(657, 450);
+            tbLugar.Size = new Size(1415, 900);
             tbLugar.SizeMode = TabSizeMode.FillToRight;
             tbLugar.TabIndex = 1;
             // 
@@ -80,50 +79,58 @@
             tpBuscarLugar.Location = new Point(4, 24);
             tpBuscarLugar.Name = "tpBuscarLugar";
             tpBuscarLugar.Padding = new Padding(3);
-            tpBuscarLugar.Size = new Size(649, 422);
+            tpBuscarLugar.Size = new Size(1407, 872);
             tpBuscarLugar.TabIndex = 0;
             tpBuscarLugar.Text = "Todos los lugares";
             tpBuscarLugar.UseVisualStyleBackColor = true;
             // 
             // txtBuscarMarca
             // 
-            txtBuscarMarca.Location = new Point(377, 6);
+            txtBuscarMarca.BorderColor = Color.MediumSlateBlue;
+            txtBuscarMarca.BorderFocusColor = Color.HotPink;
+            txtBuscarMarca.BorderSize = 2;
+            txtBuscarMarca.Location = new Point(701, 8);
+            txtBuscarMarca.Multiline = false;
             txtBuscarMarca.Name = "txtBuscarMarca";
-            txtBuscarMarca.Size = new Size(178, 23);
-            txtBuscarMarca.TabIndex = 5;
+            txtBuscarMarca.Padding = new Padding(7);
+            txtBuscarMarca.PasswordChar = false;
+            txtBuscarMarca.Size = new Size(355, 30);
+            txtBuscarMarca.TabIndex = 6;
+            txtBuscarMarca.Texts = "";
+            txtBuscarMarca.UnderlinedStyle = false;
             // 
             // btnIrEliminarLugar
             // 
-            btnIrEliminarLugar.Location = new Point(377, 281);
+            btnIrEliminarLugar.Location = new Point(701, 488);
             btnIrEliminarLugar.Name = "btnIrEliminarLugar";
-            btnIrEliminarLugar.Size = new Size(259, 117);
+            btnIrEliminarLugar.Size = new Size(487, 249);
             btnIrEliminarLugar.TabIndex = 4;
             btnIrEliminarLugar.Text = "Eliminar";
             btnIrEliminarLugar.UseVisualStyleBackColor = true;
             // 
             // btnIrEditarLugar
             // 
-            btnIrEditarLugar.Location = new Point(377, 158);
+            btnIrEditarLugar.Location = new Point(701, 243);
             btnIrEditarLugar.Name = "btnIrEditarLugar";
-            btnIrEditarLugar.Size = new Size(259, 117);
+            btnIrEditarLugar.Size = new Size(487, 239);
             btnIrEditarLugar.TabIndex = 3;
             btnIrEditarLugar.Text = "Editar";
             btnIrEditarLugar.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregarLugar
             // 
-            btnIrAgregarLugar.Location = new Point(377, 35);
+            btnIrAgregarLugar.Location = new Point(701, 44);
             btnIrAgregarLugar.Name = "btnIrAgregarLugar";
-            btnIrAgregarLugar.Size = new Size(259, 117);
+            btnIrAgregarLugar.Size = new Size(487, 193);
             btnIrAgregarLugar.TabIndex = 2;
             btnIrAgregarLugar.Text = "Agregar";
             btnIrAgregarLugar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(561, 6);
+            btnBuscar.Location = new Point(1062, 8);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.Size = new Size(134, 30);
             btnBuscar.TabIndex = 1;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -140,7 +147,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgLugar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgLugar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgLugar.Location = new Point(8, 6);
+            dgLugar.Location = new Point(12, 5);
             dgLugar.Name = "dgLugar";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 113, 0);
@@ -153,7 +160,7 @@
             dataGridViewCellStyle3.BackColor = Color.FromArgb(52, 52, 52);
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 113, 0);
             dgLugar.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgLugar.Size = new Size(363, 392);
+            dgLugar.Size = new Size(683, 732);
             dgLugar.TabIndex = 0;
             // 
             // tpAgregarEditarLugar
@@ -165,22 +172,30 @@
             tpAgregarEditarLugar.Location = new Point(4, 24);
             tpAgregarEditarLugar.Name = "tpAgregarEditarLugar";
             tpAgregarEditarLugar.Padding = new Padding(3);
-            tpAgregarEditarLugar.Size = new Size(649, 422);
+            tpAgregarEditarLugar.Size = new Size(1202, 759);
             tpAgregarEditarLugar.TabIndex = 1;
             tpAgregarEditarLugar.Text = "AgregarEditar marca";
             tpAgregarEditarLugar.UseVisualStyleBackColor = true;
             // 
             // txtAgregarEditar
             // 
-            txtAgregarEditar.Location = new Point(27, 193);
+            txtAgregarEditar.BorderColor = Color.MediumSlateBlue;
+            txtAgregarEditar.BorderFocusColor = Color.HotPink;
+            txtAgregarEditar.BorderSize = 2;
+            txtAgregarEditar.Location = new Point(313, 336);
+            txtAgregarEditar.Multiline = false;
             txtAgregarEditar.Name = "txtAgregarEditar";
-            txtAgregarEditar.Size = new Size(598, 23);
-            txtAgregarEditar.TabIndex = 3;
+            txtAgregarEditar.Padding = new Padding(7);
+            txtAgregarEditar.PasswordChar = false;
+            txtAgregarEditar.Size = new Size(598, 30);
+            txtAgregarEditar.TabIndex = 4;
+            txtAgregarEditar.Texts = "";
+            txtAgregarEditar.UnderlinedStyle = false;
             // 
             // lblAgregarEditar
             // 
             lblAgregarEditar.AutoSize = true;
-            lblAgregarEditar.Location = new Point(314, 166);
+            lblAgregarEditar.Location = new Point(600, 312);
             lblAgregarEditar.Name = "lblAgregarEditar";
             lblAgregarEditar.Size = new Size(38, 15);
             lblAgregarEditar.TabIndex = 2;
@@ -188,7 +203,7 @@
             // 
             // btnRegresarEditarGuardar
             // 
-            btnRegresarEditarGuardar.Location = new Point(329, 235);
+            btnRegresarEditarGuardar.Location = new Point(615, 381);
             btnRegresarEditarGuardar.Name = "btnRegresarEditarGuardar";
             btnRegresarEditarGuardar.Size = new Size(296, 22);
             btnRegresarEditarGuardar.TabIndex = 1;
@@ -197,7 +212,7 @@
             // 
             // btnGuardarEditar
             // 
-            btnGuardarEditar.Location = new Point(27, 235);
+            btnGuardarEditar.Location = new Point(313, 381);
             btnGuardarEditar.Name = "btnGuardarEditar";
             btnGuardarEditar.Size = new Size(296, 22);
             btnGuardarEditar.TabIndex = 0;
@@ -213,37 +228,10 @@
             tpEliminarLugar.Location = new Point(4, 24);
             tpEliminarLugar.Name = "tpEliminarLugar";
             tpEliminarLugar.Padding = new Padding(3);
-            tpEliminarLugar.Size = new Size(649, 422);
+            tpEliminarLugar.Size = new Size(1202, 759);
             tpEliminarLugar.TabIndex = 2;
             tpEliminarLugar.Text = "Eliminar lugar";
             tpEliminarLugar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelarLugar
-            // 
-            btnCancelarLugar.Location = new Point(325, 225);
-            btnCancelarLugar.Name = "btnCancelarLugar";
-            btnCancelarLugar.Size = new Size(298, 23);
-            btnCancelarLugar.TabIndex = 3;
-            btnCancelarLugar.Text = "Cancelar";
-            btnCancelarLugar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminarEliminar
-            // 
-            btnEliminarEliminar.Location = new Point(24, 225);
-            btnEliminarEliminar.Name = "btnEliminarEliminar";
-            btnEliminarEliminar.Size = new Size(295, 23);
-            btnEliminarEliminar.TabIndex = 2;
-            btnEliminarEliminar.Text = "Eliminar";
-            btnEliminarEliminar.UseVisualStyleBackColor = true;
-            // 
-            // lblEliminarLugar
-            // 
-            lblEliminarLugar.AutoSize = true;
-            lblEliminarLugar.Location = new Point(304, 164);
-            lblEliminarLugar.Name = "lblEliminarLugar";
-            lblEliminarLugar.Size = new Size(38, 15);
-            lblEliminarLugar.TabIndex = 0;
-            lblEliminarLugar.Text = "label2";
             // 
             // cbLugares
             // 
@@ -256,7 +244,7 @@
             cbLugares.IconColor = Color.MediumSlateBlue;
             cbLugares.ListBackColor = Color.FromArgb(230, 228, 245);
             cbLugares.ListTextColor = Color.DimGray;
-            cbLugares.Location = new Point(24, 189);
+            cbLugares.Location = new Point(272, 362);
             cbLugares.MinimumSize = new Size(100, 30);
             cbLugares.Name = "cbLugares";
             cbLugares.Padding = new Padding(1);
@@ -264,17 +252,43 @@
             cbLugares.TabIndex = 4;
             cbLugares.Texts = "";
             // 
+            // btnCancelarLugar
+            // 
+            btnCancelarLugar.Location = new Point(573, 398);
+            btnCancelarLugar.Name = "btnCancelarLugar";
+            btnCancelarLugar.Size = new Size(298, 23);
+            btnCancelarLugar.TabIndex = 3;
+            btnCancelarLugar.Text = "Cancelar";
+            btnCancelarLugar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarEliminar
+            // 
+            btnEliminarEliminar.Location = new Point(272, 398);
+            btnEliminarEliminar.Name = "btnEliminarEliminar";
+            btnEliminarEliminar.Size = new Size(295, 23);
+            btnEliminarEliminar.TabIndex = 2;
+            btnEliminarEliminar.Text = "Eliminar";
+            btnEliminarEliminar.UseVisualStyleBackColor = true;
+            // 
+            // lblEliminarLugar
+            // 
+            lblEliminarLugar.AutoSize = true;
+            lblEliminarLugar.Location = new Point(552, 337);
+            lblEliminarLugar.Name = "lblEliminarLugar";
+            lblEliminarLugar.Size = new Size(38, 15);
+            lblEliminarLugar.TabIndex = 0;
+            lblEliminarLugar.Text = "label2";
+            // 
             // LugaresView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(657, 450);
+            ClientSize = new Size(1194, 748);
             Controls.Add(tbLugar);
             Name = "LugaresView";
             Text = "ViewLugares";
             tbLugar.ResumeLayout(false);
             tpBuscarLugar.ResumeLayout(false);
-            tpBuscarLugar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgLugar).EndInit();
             tpAgregarEditarLugar.ResumeLayout(false);
             tpAgregarEditarLugar.PerformLayout();
@@ -287,14 +301,12 @@
 
         private TabControl tbLugar;
         private TabPage tpBuscarLugar;
-        private TextBox txtBuscarMarca;
         private Button btnIrEliminarLugar;
         private Button btnIrEditarLugar;
         private Button btnIrAgregarLugar;
         private Button btnBuscar;
         private DataGridView dgLugar;
         private TabPage tpAgregarEditarLugar;
-        private TextBox txtAgregarEditar;
         private Label lblAgregarEditar;
         private Button btnRegresarEditarGuardar;
         private Button btnGuardarEditar;
@@ -303,5 +315,7 @@
         private Button btnEliminarEliminar;
         private Label lblEliminarLugar;
         private ControlesPersonalizados.CustomComboBox cbLugares;
+        private ControlesPersonalizados.CustomTextBox txtBuscarMarca;
+        private ControlesPersonalizados.CustomTextBox txtAgregarEditar;
     }
 }

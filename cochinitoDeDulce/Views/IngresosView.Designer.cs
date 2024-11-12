@@ -30,17 +30,17 @@
         {
             tbIngresos = new TabControl();
             tpBuscarIngresos = new TabPage();
-            txtBuscarIngreso = new TextBox();
+            txtBuscarIngreso = new ControlesPersonalizados.CustomTextBox();
             btnEliminarIngreso = new Button();
             btnIrEditarMarca = new Button();
             btnIrAgregarMarca = new Button();
             btnBuscar = new Button();
             dgIngresos = new DataGridView();
             tpAgregarEditarIngresos = new TabPage();
+            txtAgregarOrigen = new ControlesPersonalizados.CustomTextBox();
+            txtAgregarMonto = new ControlesPersonalizados.CustomTextBox();
             label2 = new Label();
             label1 = new Label();
-            txtAgregarOrigen = new TextBox();
-            txtAgregarMonto = new TextBox();
             lblAgregarEditar = new Label();
             btnRegresarEditarGuardar = new Button();
             btnGuardarEditar = new Button();
@@ -54,11 +54,10 @@
             // 
             tbIngresos.Controls.Add(tpBuscarIngresos);
             tbIngresos.Controls.Add(tpAgregarEditarIngresos);
-            tbIngresos.Dock = DockStyle.Fill;
-            tbIngresos.Location = new Point(0, 0);
+            tbIngresos.Location = new Point(-10, -25);
             tbIngresos.Name = "tbIngresos";
             tbIngresos.SelectedIndex = 0;
-            tbIngresos.Size = new Size(800, 450);
+            tbIngresos.Size = new Size(1415, 900);
             tbIngresos.SizeMode = TabSizeMode.FillToRight;
             tbIngresos.TabIndex = 1;
             // 
@@ -73,50 +72,58 @@
             tpBuscarIngresos.Location = new Point(4, 24);
             tpBuscarIngresos.Name = "tpBuscarIngresos";
             tpBuscarIngresos.Padding = new Padding(3);
-            tpBuscarIngresos.Size = new Size(792, 422);
+            tpBuscarIngresos.Size = new Size(1407, 872);
             tpBuscarIngresos.TabIndex = 0;
             tpBuscarIngresos.Text = "Todos los ingresos";
             tpBuscarIngresos.UseVisualStyleBackColor = true;
             // 
             // txtBuscarIngreso
             // 
-            txtBuscarIngreso.Location = new Point(525, 7);
+            txtBuscarIngreso.BorderColor = Color.MediumSlateBlue;
+            txtBuscarIngreso.BorderFocusColor = Color.HotPink;
+            txtBuscarIngreso.BorderSize = 2;
+            txtBuscarIngreso.Location = new Point(859, 9);
+            txtBuscarIngreso.Multiline = false;
             txtBuscarIngreso.Name = "txtBuscarIngreso";
-            txtBuscarIngreso.Size = new Size(178, 23);
-            txtBuscarIngreso.TabIndex = 5;
+            txtBuscarIngreso.Padding = new Padding(7);
+            txtBuscarIngreso.PasswordChar = false;
+            txtBuscarIngreso.Size = new Size(251, 30);
+            txtBuscarIngreso.TabIndex = 6;
+            txtBuscarIngreso.Texts = "";
+            txtBuscarIngreso.UnderlinedStyle = false;
             // 
             // btnEliminarIngreso
             // 
-            btnEliminarIngreso.Location = new Point(525, 281);
+            btnEliminarIngreso.Location = new Point(859, 555);
             btnEliminarIngreso.Name = "btnEliminarIngreso";
-            btnEliminarIngreso.Size = new Size(259, 117);
+            btnEliminarIngreso.Size = new Size(332, 182);
             btnEliminarIngreso.TabIndex = 4;
             btnEliminarIngreso.Text = "Eliminar";
             btnEliminarIngreso.UseVisualStyleBackColor = true;
             // 
             // btnIrEditarMarca
             // 
-            btnIrEditarMarca.Location = new Point(525, 158);
+            btnIrEditarMarca.Location = new Point(859, 342);
             btnIrEditarMarca.Name = "btnIrEditarMarca";
-            btnIrEditarMarca.Size = new Size(259, 117);
+            btnIrEditarMarca.Size = new Size(332, 207);
             btnIrEditarMarca.TabIndex = 3;
             btnIrEditarMarca.Text = "Editar";
             btnIrEditarMarca.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregarMarca
             // 
-            btnIrAgregarMarca.Location = new Point(525, 35);
+            btnIrAgregarMarca.Location = new Point(859, 45);
             btnIrAgregarMarca.Name = "btnIrAgregarMarca";
-            btnIrAgregarMarca.Size = new Size(259, 117);
+            btnIrAgregarMarca.Size = new Size(332, 291);
             btnIrAgregarMarca.TabIndex = 2;
             btnIrAgregarMarca.Text = "Agregar";
             btnIrAgregarMarca.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(709, 6);
+            btnBuscar.Location = new Point(1116, 8);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.Size = new Size(75, 31);
             btnBuscar.TabIndex = 1;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -124,32 +131,62 @@
             // dgIngresos
             // 
             dgIngresos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgIngresos.Location = new Point(8, 7);
+            dgIngresos.Location = new Point(13, 6);
             dgIngresos.Name = "dgIngresos";
-            dgIngresos.Size = new Size(511, 392);
+            dgIngresos.Size = new Size(840, 731);
             dgIngresos.TabIndex = 0;
             // 
             // tpAgregarEditarIngresos
             // 
-            tpAgregarEditarIngresos.Controls.Add(label2);
-            tpAgregarEditarIngresos.Controls.Add(label1);
             tpAgregarEditarIngresos.Controls.Add(txtAgregarOrigen);
             tpAgregarEditarIngresos.Controls.Add(txtAgregarMonto);
+            tpAgregarEditarIngresos.Controls.Add(label2);
+            tpAgregarEditarIngresos.Controls.Add(label1);
             tpAgregarEditarIngresos.Controls.Add(lblAgregarEditar);
             tpAgregarEditarIngresos.Controls.Add(btnRegresarEditarGuardar);
             tpAgregarEditarIngresos.Controls.Add(btnGuardarEditar);
             tpAgregarEditarIngresos.Location = new Point(4, 24);
             tpAgregarEditarIngresos.Name = "tpAgregarEditarIngresos";
             tpAgregarEditarIngresos.Padding = new Padding(3);
-            tpAgregarEditarIngresos.Size = new Size(792, 422);
+            tpAgregarEditarIngresos.Size = new Size(1407, 872);
             tpAgregarEditarIngresos.TabIndex = 1;
             tpAgregarEditarIngresos.Text = "AgregarEditar ingreso";
             tpAgregarEditarIngresos.UseVisualStyleBackColor = true;
             // 
+            // txtAgregarOrigen
+            // 
+            txtAgregarOrigen.BorderColor = Color.MediumSlateBlue;
+            txtAgregarOrigen.BorderFocusColor = Color.HotPink;
+            txtAgregarOrigen.BorderSize = 2;
+            txtAgregarOrigen.Location = new Point(325, 365);
+            txtAgregarOrigen.Multiline = false;
+            txtAgregarOrigen.Name = "txtAgregarOrigen";
+            txtAgregarOrigen.Padding = new Padding(7);
+            txtAgregarOrigen.PasswordChar = false;
+            txtAgregarOrigen.Size = new Size(549, 30);
+            txtAgregarOrigen.TabIndex = 8;
+            txtAgregarOrigen.Texts = "";
+            txtAgregarOrigen.UnderlinedStyle = false;
+            // 
+            // txtAgregarMonto
+            // 
+            txtAgregarMonto.BorderColor = Color.MediumSlateBlue;
+            txtAgregarMonto.BorderFocusColor = Color.HotPink;
+            txtAgregarMonto.BorderSize = 2;
+            txtAgregarMonto.Location = new Point(325, 329);
+            txtAgregarMonto.Multiline = false;
+            txtAgregarMonto.Name = "txtAgregarMonto";
+            txtAgregarMonto.Padding = new Padding(7);
+            txtAgregarMonto.PasswordChar = false;
+            txtAgregarMonto.Size = new Size(549, 30);
+            txtAgregarMonto.TabIndex = 7;
+            txtAgregarMonto.Texts = "";
+            txtAgregarMonto.UnderlinedStyle = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(466, 175);
+            label2.Location = new Point(276, 373);
             label2.Name = "label2";
             label2.Size = new Size(43, 15);
             label2.TabIndex = 6;
@@ -158,30 +195,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(153, 175);
+            label1.Location = new Point(276, 337);
             label1.Name = "label1";
             label1.Size = new Size(43, 15);
             label1.TabIndex = 5;
             label1.Text = "Monto";
             // 
-            // txtAgregarOrigen
-            // 
-            txtAgregarOrigen.Location = new Point(329, 193);
-            txtAgregarOrigen.Name = "txtAgregarOrigen";
-            txtAgregarOrigen.Size = new Size(296, 23);
-            txtAgregarOrigen.TabIndex = 4;
-            // 
-            // txtAgregarMonto
-            // 
-            txtAgregarMonto.Location = new Point(27, 193);
-            txtAgregarMonto.Name = "txtAgregarMonto";
-            txtAgregarMonto.Size = new Size(296, 23);
-            txtAgregarMonto.TabIndex = 3;
-            // 
             // lblAgregarEditar
             // 
             lblAgregarEditar.AutoSize = true;
-            lblAgregarEditar.Location = new Point(306, 132);
+            lblAgregarEditar.Location = new Point(555, 297);
             lblAgregarEditar.Name = "lblAgregarEditar";
             lblAgregarEditar.Size = new Size(38, 15);
             lblAgregarEditar.TabIndex = 2;
@@ -189,18 +212,18 @@
             // 
             // btnRegresarEditarGuardar
             // 
-            btnRegresarEditarGuardar.Location = new Point(27, 272);
+            btnRegresarEditarGuardar.Location = new Point(578, 408);
             btnRegresarEditarGuardar.Name = "btnRegresarEditarGuardar";
-            btnRegresarEditarGuardar.Size = new Size(598, 22);
+            btnRegresarEditarGuardar.Size = new Size(296, 22);
             btnRegresarEditarGuardar.TabIndex = 1;
             btnRegresarEditarGuardar.Text = "Cancelar";
             btnRegresarEditarGuardar.UseVisualStyleBackColor = true;
             // 
             // btnGuardarEditar
             // 
-            btnGuardarEditar.Location = new Point(27, 235);
+            btnGuardarEditar.Location = new Point(276, 408);
             btnGuardarEditar.Name = "btnGuardarEditar";
-            btnGuardarEditar.Size = new Size(598, 22);
+            btnGuardarEditar.Size = new Size(296, 22);
             btnGuardarEditar.TabIndex = 0;
             btnGuardarEditar.Text = "button5";
             btnGuardarEditar.UseVisualStyleBackColor = true;
@@ -209,13 +232,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1194, 748);
             Controls.Add(tbIngresos);
             Name = "IngresosView";
             Text = "IngresosView";
             tbIngresos.ResumeLayout(false);
             tpBuscarIngresos.ResumeLayout(false);
-            tpBuscarIngresos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgIngresos).EndInit();
             tpAgregarEditarIngresos.ResumeLayout(false);
             tpAgregarEditarIngresos.PerformLayout();
@@ -226,19 +248,19 @@
 
         private TabControl tbIngresos;
         private TabPage tpBuscarIngresos;
-        private TextBox txtBuscarIngreso;
         private Button btnEliminarIngreso;
         private Button btnIrEditarMarca;
         private Button btnIrAgregarMarca;
         private Button btnBuscar;
         private DataGridView dgIngresos;
         private TabPage tpAgregarEditarIngresos;
-        private TextBox txtAgregarMonto;
         private Label lblAgregarEditar;
         private Button btnRegresarEditarGuardar;
         private Button btnGuardarEditar;
         private Label label2;
         private Label label1;
-        private TextBox txtAgregarOrigen;
+        private ControlesPersonalizados.CustomTextBox txtBuscarIngreso;
+        private ControlesPersonalizados.CustomTextBox txtAgregarOrigen;
+        private ControlesPersonalizados.CustomTextBox txtAgregarMonto;
     }
 }

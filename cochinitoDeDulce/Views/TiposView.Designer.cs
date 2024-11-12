@@ -30,14 +30,14 @@
         {
             tbTipo = new TabControl();
             tpBuscarTipo = new TabPage();
-            txtBuscarTipo = new TextBox();
+            txtBuscarTipo = new ControlesPersonalizados.CustomTextBox();
             btnIrEliminarTipo = new Button();
             btnIrEditarTipo = new Button();
             btnIrAgregarTipo = new Button();
             btnBuscar = new Button();
             dgTipos = new DataGridView();
             tpAgregarEditarTipo = new TabPage();
-            txtAgregarEditar = new TextBox();
+            txtAgregarEditar = new ControlesPersonalizados.CustomTextBox();
             lblAgregarEditar = new Label();
             btnRegresarEditarGuardar = new Button();
             btnGuardarEditar = new Button();
@@ -58,11 +58,10 @@
             tbTipo.Controls.Add(tpBuscarTipo);
             tbTipo.Controls.Add(tpAgregarEditarTipo);
             tbTipo.Controls.Add(tpEliminarTipo);
-            tbTipo.Dock = DockStyle.Fill;
-            tbTipo.Location = new Point(0, 0);
+            tbTipo.Location = new Point(-10, -25);
             tbTipo.Name = "tbTipo";
             tbTipo.SelectedIndex = 0;
-            tbTipo.Size = new Size(661, 450);
+            tbTipo.Size = new Size(1415, 900);
             tbTipo.SizeMode = TabSizeMode.FillToRight;
             tbTipo.TabIndex = 2;
             // 
@@ -77,50 +76,58 @@
             tpBuscarTipo.Location = new Point(4, 24);
             tpBuscarTipo.Name = "tpBuscarTipo";
             tpBuscarTipo.Padding = new Padding(3);
-            tpBuscarTipo.Size = new Size(653, 422);
+            tpBuscarTipo.Size = new Size(1407, 872);
             tpBuscarTipo.TabIndex = 0;
             tpBuscarTipo.Text = "Todos los tipos";
             tpBuscarTipo.UseVisualStyleBackColor = true;
             // 
             // txtBuscarTipo
             // 
-            txtBuscarTipo.Location = new Point(377, 6);
+            txtBuscarTipo.BorderColor = Color.MediumSlateBlue;
+            txtBuscarTipo.BorderFocusColor = Color.HotPink;
+            txtBuscarTipo.BorderSize = 2;
+            txtBuscarTipo.Location = new Point(769, 9);
+            txtBuscarTipo.Multiline = false;
             txtBuscarTipo.Name = "txtBuscarTipo";
-            txtBuscarTipo.Size = new Size(178, 23);
-            txtBuscarTipo.TabIndex = 5;
+            txtBuscarTipo.Padding = new Padding(7);
+            txtBuscarTipo.PasswordChar = false;
+            txtBuscarTipo.Size = new Size(338, 30);
+            txtBuscarTipo.TabIndex = 6;
+            txtBuscarTipo.Texts = "";
+            txtBuscarTipo.UnderlinedStyle = false;
             // 
             // btnIrEliminarTipo
             // 
-            btnIrEliminarTipo.Location = new Point(377, 281);
+            btnIrEliminarTipo.Location = new Point(769, 551);
             btnIrEliminarTipo.Name = "btnIrEliminarTipo";
-            btnIrEliminarTipo.Size = new Size(259, 117);
+            btnIrEliminarTipo.Size = new Size(419, 186);
             btnIrEliminarTipo.TabIndex = 4;
             btnIrEliminarTipo.Text = "Eliminar";
             btnIrEliminarTipo.UseVisualStyleBackColor = true;
             // 
             // btnIrEditarTipo
             // 
-            btnIrEditarTipo.Location = new Point(377, 158);
+            btnIrEditarTipo.Location = new Point(769, 337);
             btnIrEditarTipo.Name = "btnIrEditarTipo";
-            btnIrEditarTipo.Size = new Size(259, 117);
+            btnIrEditarTipo.Size = new Size(419, 208);
             btnIrEditarTipo.TabIndex = 3;
             btnIrEditarTipo.Text = "Editar";
             btnIrEditarTipo.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregarTipo
             // 
-            btnIrAgregarTipo.Location = new Point(377, 35);
+            btnIrAgregarTipo.Location = new Point(769, 45);
             btnIrAgregarTipo.Name = "btnIrAgregarTipo";
-            btnIrAgregarTipo.Size = new Size(259, 117);
+            btnIrAgregarTipo.Size = new Size(419, 286);
             btnIrAgregarTipo.TabIndex = 2;
             btnIrAgregarTipo.Text = "Agregar";
             btnIrAgregarTipo.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(561, 6);
+            btnBuscar.Location = new Point(1111, 8);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.Size = new Size(84, 30);
             btnBuscar.TabIndex = 1;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -128,9 +135,9 @@
             // dgTipos
             // 
             dgTipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgTipos.Location = new Point(8, 6);
+            dgTipos.Location = new Point(15, 6);
             dgTipos.Name = "dgTipos";
-            dgTipos.Size = new Size(363, 392);
+            dgTipos.Size = new Size(748, 731);
             dgTipos.TabIndex = 0;
             // 
             // tpAgregarEditarTipo
@@ -142,7 +149,7 @@
             tpAgregarEditarTipo.Location = new Point(4, 24);
             tpAgregarEditarTipo.Name = "tpAgregarEditarTipo";
             tpAgregarEditarTipo.Padding = new Padding(3);
-            tpAgregarEditarTipo.Size = new Size(653, 422);
+            tpAgregarEditarTipo.Size = new Size(1407, 872);
             tpAgregarEditarTipo.TabIndex = 1;
             tpAgregarEditarTipo.Text = "AgregarEditar tipo";
             tpAgregarEditarTipo.UseVisualStyleBackColor = true;
@@ -150,16 +157,24 @@
             // 
             // txtAgregarEditar
             // 
-            txtAgregarEditar.Location = new Point(27, 193);
+            txtAgregarEditar.BorderColor = Color.MediumSlateBlue;
+            txtAgregarEditar.BorderFocusColor = Color.HotPink;
+            txtAgregarEditar.BorderSize = 2;
+            txtAgregarEditar.Location = new Point(251, 346);
+            txtAgregarEditar.Multiline = false;
             txtAgregarEditar.Name = "txtAgregarEditar";
-            txtAgregarEditar.Size = new Size(598, 23);
-            txtAgregarEditar.TabIndex = 3;
+            txtAgregarEditar.Padding = new Padding(7);
+            txtAgregarEditar.PasswordChar = false;
+            txtAgregarEditar.Size = new Size(734, 30);
+            txtAgregarEditar.TabIndex = 4;
+            txtAgregarEditar.Texts = "";
+            txtAgregarEditar.UnderlinedStyle = false;
             txtAgregarEditar.UseWaitCursor = true;
             // 
             // lblAgregarEditar
             // 
             lblAgregarEditar.AutoSize = true;
-            lblAgregarEditar.Location = new Point(317, 169);
+            lblAgregarEditar.Location = new Point(607, 317);
             lblAgregarEditar.Name = "lblAgregarEditar";
             lblAgregarEditar.Size = new Size(38, 15);
             lblAgregarEditar.TabIndex = 2;
@@ -168,9 +183,9 @@
             // 
             // btnRegresarEditarGuardar
             // 
-            btnRegresarEditarGuardar.Location = new Point(329, 235);
+            btnRegresarEditarGuardar.Location = new Point(631, 382);
             btnRegresarEditarGuardar.Name = "btnRegresarEditarGuardar";
-            btnRegresarEditarGuardar.Size = new Size(296, 22);
+            btnRegresarEditarGuardar.Size = new Size(364, 37);
             btnRegresarEditarGuardar.TabIndex = 1;
             btnRegresarEditarGuardar.Text = "Cancelar";
             btnRegresarEditarGuardar.UseVisualStyleBackColor = true;
@@ -178,9 +193,9 @@
             // 
             // btnGuardarEditar
             // 
-            btnGuardarEditar.Location = new Point(27, 235);
+            btnGuardarEditar.Location = new Point(251, 382);
             btnGuardarEditar.Name = "btnGuardarEditar";
-            btnGuardarEditar.Size = new Size(296, 22);
+            btnGuardarEditar.Size = new Size(374, 37);
             btnGuardarEditar.TabIndex = 0;
             btnGuardarEditar.Text = "button5";
             btnGuardarEditar.UseVisualStyleBackColor = true;
@@ -195,7 +210,7 @@
             tpEliminarTipo.Location = new Point(4, 24);
             tpEliminarTipo.Name = "tpEliminarTipo";
             tpEliminarTipo.Padding = new Padding(3);
-            tpEliminarTipo.Size = new Size(653, 422);
+            tpEliminarTipo.Size = new Size(1407, 872);
             tpEliminarTipo.TabIndex = 2;
             tpEliminarTipo.Text = "Eliminar tipo";
             tpEliminarTipo.UseVisualStyleBackColor = true;
@@ -213,7 +228,7 @@
             cbTipos.IconColor = Color.MediumSlateBlue;
             cbTipos.ListBackColor = Color.FromArgb(230, 228, 245);
             cbTipos.ListTextColor = Color.DimGray;
-            cbTipos.Location = new Point(24, 189);
+            cbTipos.Location = new Point(296, 381);
             cbTipos.MinimumSize = new Size(100, 15);
             cbTipos.Name = "cbTipos";
             cbTipos.Padding = new Padding(1);
@@ -223,7 +238,7 @@
             // 
             // btnCancelarEliminar
             // 
-            btnCancelarEliminar.Location = new Point(325, 225);
+            btnCancelarEliminar.Location = new Point(597, 417);
             btnCancelarEliminar.Name = "btnCancelarEliminar";
             btnCancelarEliminar.Size = new Size(298, 23);
             btnCancelarEliminar.TabIndex = 3;
@@ -232,7 +247,7 @@
             // 
             // btnEliminarEliminar
             // 
-            btnEliminarEliminar.Location = new Point(24, 225);
+            btnEliminarEliminar.Location = new Point(296, 417);
             btnEliminarEliminar.Name = "btnEliminarEliminar";
             btnEliminarEliminar.Size = new Size(295, 23);
             btnEliminarEliminar.TabIndex = 2;
@@ -242,7 +257,7 @@
             // lblEliminarTipo
             // 
             lblEliminarTipo.AutoSize = true;
-            lblEliminarTipo.Location = new Point(307, 160);
+            lblEliminarTipo.Location = new Point(579, 352);
             lblEliminarTipo.Name = "lblEliminarTipo";
             lblEliminarTipo.Size = new Size(38, 15);
             lblEliminarTipo.TabIndex = 0;
@@ -252,13 +267,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(661, 450);
+            ClientSize = new Size(1194, 748);
             Controls.Add(tbTipo);
             Name = "TiposView";
             Text = "ViewTipos";
             tbTipo.ResumeLayout(false);
             tpBuscarTipo.ResumeLayout(false);
-            tpBuscarTipo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgTipos).EndInit();
             tpAgregarEditarTipo.ResumeLayout(false);
             tpAgregarEditarTipo.PerformLayout();
@@ -271,14 +285,12 @@
 
         private TabControl tbTipo;
         private TabPage tpBuscarTipo;
-        private TextBox txtBuscarTipo;
         private Button btnIrEliminarTipo;
         private Button btnIrEditarTipo;
         private Button btnIrAgregarTipo;
         private Button btnBuscar;
         private DataGridView dgTipos;
         private TabPage tpAgregarEditarTipo;
-        private TextBox txtAgregarEditar;
         private Label lblAgregarEditar;
         private Button btnRegresarEditarGuardar;
         private Button btnGuardarEditar;
@@ -287,5 +299,7 @@
         private Button btnEliminarEliminar;
         private Label lblEliminarTipo;
         private ControlesPersonalizados.CustomComboBox cbTipos;
+        private ControlesPersonalizados.CustomTextBox txtBuscarTipo;
+        private ControlesPersonalizados.CustomTextBox txtAgregarEditar;
     }
 }

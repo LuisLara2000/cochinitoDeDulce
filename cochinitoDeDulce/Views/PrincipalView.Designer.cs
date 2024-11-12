@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalView));
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            pbLogo = new PictureBox();
             btnTipos = new Button();
             btnMarcas = new Button();
             btnLugares = new Button();
@@ -38,13 +38,15 @@
             btnGastos = new Button();
             btnInicio = new Button();
             btnCategorias = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(pbLogo);
             panel1.Controls.Add(btnTipos);
             panel1.Controls.Add(btnMarcas);
             panel1.Controls.Add(btnLugares);
@@ -58,15 +60,15 @@
             panel1.Size = new Size(150, 520);
             panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(19, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 120);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
+            pbLogo.Location = new Point(19, 3);
+            pbLogo.Name = "pbLogo";
+            pbLogo.Size = new Size(120, 120);
+            pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbLogo.TabIndex = 9;
+            pbLogo.TabStop = false;
             // 
             // btnTipos
             // 
@@ -113,6 +115,7 @@
             btnGastos.TabIndex = 3;
             btnGastos.Text = "Gastos";
             btnGastos.UseVisualStyleBackColor = false;
+            btnGastos.Click += btnGastos_Click;
             // 
             // btnInicio
             // 
@@ -132,6 +135,15 @@
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Location = new Point(0, 474);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 50);
+            button1.TabIndex = 10;
+            button1.Text = "Parametros";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // PrincipalView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -143,11 +155,12 @@
             FormBorderStyle = FormBorderStyle.None;
             IsMdiContainer = true;
             Name = "PrincipalView";
+            RightToLeft = RightToLeft.No;
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cochinito de dulce";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -161,6 +174,7 @@
         private Button btnLugares;
         private Button btnIngresos;
         private Button btnGastos;
-        private PictureBox pictureBox1;
+        private PictureBox pbLogo;
+        private Button button1;
     }
 }

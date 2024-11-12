@@ -14,9 +14,10 @@ namespace cochinitoDeDulce.Views
 {
     public partial class PrincipalView : Form, IPrincipalView
     {
+        private bool quieresSalirDeLaAplicacion;
         public PrincipalView()
         {
-            
+
             InitializeComponent();
 
             // le da estilo a la forma
@@ -24,7 +25,7 @@ namespace cochinitoDeDulce.Views
 
             btnCategorias.Click += delegate
             {
-                MostrarCategorias_Evento?.Invoke(this,EventArgs.Empty);
+                MostrarCategorias_Evento?.Invoke(this, EventArgs.Empty);
             };
             btnMarcas.Click += delegate
             {
@@ -43,20 +44,25 @@ namespace cochinitoDeDulce.Views
                 MostrarGastos_Evento?.Invoke(this, EventArgs.Empty);
             };
 
-
-
             btnIngresos.Click += delegate
             {
                 MostrarIngresos_Evento?.Invoke(this, EventArgs.Empty);
             };
 
-
-
             btnInicio.Click += delegate
             {
                 MostrarInicio_Evento?.Invoke(this, EventArgs.Empty);
             };
+
+            pbLogo.Click += delegate
+            {
+                CerrarAplicacion_Evento?.Invoke(this, EventArgs.Empty);
+                if(QuieresSalirDeLaAplicacion)
+                    Close();
+            };
         }
+
+        public bool QuieresSalirDeLaAplicacion { get => quieresSalirDeLaAplicacion; set => quieresSalirDeLaAplicacion=value; }
 
         public event EventHandler MostrarCategorias_Evento;
         public event EventHandler MostrarMarcas_Evento;
@@ -65,5 +71,11 @@ namespace cochinitoDeDulce.Views
         public event EventHandler MostrarGastos_Evento;
         public event EventHandler MostrarIngresos_Evento;
         public event EventHandler MostrarInicio_Evento;
+        public event EventHandler CerrarAplicacion_Evento;
+
+        private void btnGastos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

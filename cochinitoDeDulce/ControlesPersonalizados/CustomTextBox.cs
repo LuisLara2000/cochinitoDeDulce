@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace cochinitoDeDulce.ControlesPersonalizados
 {
-    public class CustomTextBox: UserControl
+    public partial class CustomTextBox : UserControl
     {
         //Fields
         private Color borderColor = Color.MediumSlateBlue;
@@ -212,5 +213,4 @@ namespace cochinitoDeDulce.ControlesPersonalizados
 
         ///::::+
     }
-}
 }

@@ -48,7 +48,7 @@ namespace cochinitoDeDulce.Views
         public string TxtPrecio { get => txtPrecio.Text; set => txtPrecio.Text = value; }
         public string TxtCantidad { get => txtCantidad.Text; set => txtCantidad.Text = value; }
         public string TxtDescuento { get => txtDescuento.Text; set => txtDescuento.Text = value; }
-        public string TxtComentario { get => txtComentario.Text; set => txtComentario.Text = value; }
+        public string TxtComentario { get => txtDescuento.Text; set => txtDescuento.Text = value; }
         // ------ [Solo en codigo] ----- //
         public bool EstoyEditando { get => estoyEditando; set => estoyEditando = value; }
         public bool FueExitoso { get => fueExitoso; set => fueExitoso = value; }

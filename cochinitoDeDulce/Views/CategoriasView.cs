@@ -33,33 +33,36 @@ namespace cochinitoDeDulce.Views
         private void AsociarEventosDeLaVista()
         {
             // Ventana "Agregar Categoria" //
-          
-            btnIrAgregar.Click += delegate {  // ir a la ventana
+
+            btnIrAgregar.Click += delegate
+            {  // ir a la ventana
                 IrVentanaAgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);
                 tpCategoriasAgregarEditar.Text = "Agregar categoria";
                 tbCategorias.TabPages.Remove(tpCategoriasVer);
                 tbCategorias.TabPages.Add(tpCategoriasAgregarEditar);
                 btnGuardar.Text = "Agregar";
             };
-           
-            btnRegresar.Click += delegate { // regresar de categorias
+
+            btnRegresar.Click += delegate
+            { // regresar de categorias
                 Regresar_Event?.Invoke(this, EventArgs.Empty);
                 tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
                 tbCategorias.TabPages.Add(tpCategoriasVer);
             };
-            
-            btnGuardar.Click += delegate {// guardar nueva categoria
+
+            btnGuardar.Click += delegate
+            {// guardar nueva categoria
                 // este boton sirve para guardar las nuevas categorias y editar
-                if(!Editando)
+                if (!Editando)
                 {
-                    AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);            
+                    AgregarNuevaCategoria_Event?.Invoke(this, EventArgs.Empty);
                 }
                 else
                 {
                     EditarCategoria_Event?.Invoke(this, EventArgs.Empty);
                 }
                 // valido si la operacion fue exitosa
-                if(Exitoso)
+                if (Exitoso)
                 {
                     tbCategorias.TabPages.Remove(tpCategoriasAgregarEditar);
                     tbCategorias.TabPages.Add(tpCategoriasVer);
@@ -68,7 +71,7 @@ namespace cochinitoDeDulce.Views
                 }
                 else
                 {
-                 
+
                     MessageBox.Show(Mensaje);
                 }
 
@@ -77,7 +80,7 @@ namespace cochinitoDeDulce.Views
             btnIrEliminar.Click += delegate
             {
                 IrVentanaEliminarCategoria_Event?.Invoke(this, EventArgs.Empty);
-                if(PuedoEliminar)
+                if (PuedoEliminar)
                 {
                     tbCategorias.TabPages.Remove(tpCategoriasVer);
                     tbCategorias.TabPages.Add(tpEliminar);
@@ -97,7 +100,7 @@ namespace cochinitoDeDulce.Views
             btnEliminarCategoriaEliminar.Click += delegate
             {
                 EliminarCategoria_Event?.Invoke(this, EventArgs.Empty);
-                if(Exitoso)
+                if (Exitoso)
                 {
                     cbEliminarCategoria.SelectedItem = null;
                     tbCategorias.TabPages.Remove(tpEliminar);
@@ -109,7 +112,7 @@ namespace cochinitoDeDulce.Views
                     MessageBox.Show(Mensaje);
                 }
 
-              
+
 
             };
             // Ventana "Editar Categoria"
@@ -129,21 +132,25 @@ namespace cochinitoDeDulce.Views
         }
 
         // no se usa
-        public string IdCategoria {
+        public string IdCategoria
+        {
             get { return "xd"; }
             set { var xd = value; }
         }
-        public string NombreCategorias {
+        public string NombreCategorias
+        {
             get { return txtNombreCategoria.Text.ToString(); }
             set { txtNombreCategoria.Text = value; }
         }
 
-        public string BuscarCategoriaTxt{ 
-            get { return txtBuscarCategoria.Text.ToString(); } 
+        public string BuscarCategoriaTxt
+        {
+            get { return txtBuscarCategoria.Text.ToString(); }
             set { txtBuscarCategoria.Text = value; }
         }
 
-        public string EditarAgregarLbl {
+        public string EditarAgregarLbl
+        {
             get { return lblGuardarEditar.Text; }
             set { lblGuardarEditar.Text = value; }
         }
@@ -156,7 +163,7 @@ namespace cochinitoDeDulce.Views
 
         public string CatagoriaEliminarCb
         {
-            get {return cbEliminarCategoria.SelectedItem.ToString();}
+            get { return cbEliminarCategoria.SelectedItem.ToString(); }
 
         }
 
@@ -183,7 +190,7 @@ namespace cochinitoDeDulce.Views
             set { puedoEliminar = value; }
         }
 
-        public bool Suscrito { get => suscrito; set => suscrito=value; }
+        public bool Suscrito { get => suscrito; set => suscrito = value; }
 
         // Ventana "Agregar Categoria"
         public event EventHandler AgregarNuevaCategoria_Event;
@@ -203,7 +210,7 @@ namespace cochinitoDeDulce.Views
         // sera sustituido
         public event EventHandler Regresar_Event;
 
-        
+
 
 
 
@@ -219,7 +226,7 @@ namespace cochinitoDeDulce.Views
             // limpio los registros 
             cbEliminarCategoria.Items.Clear();
             // asigno los nuevos
-            foreach(var i in cbCategorias.Items)
+            foreach (var i in cbCategorias.Items)
             {
                 cbEliminarCategoria.Items.Add(i);
             }
@@ -233,7 +240,7 @@ namespace cochinitoDeDulce.Views
         public static CategoriasView ObtenerInstancia(Form padreContenedor)
         {
             // si la ventana no existe o fue eliminada
-            if (instancia == null || instancia.IsDisposed) 
+            if (instancia == null || instancia.IsDisposed)
             {
                 // creamos la ventana
                 instancia = new CategoriasView();
@@ -248,7 +255,7 @@ namespace cochinitoDeDulce.Views
             {
                 // en caso de que ya exista
                 // lo desminimizamos en caso de que este minimiazdo
-                if(instancia.WindowState == FormWindowState.Minimized)
+                if (instancia.WindowState == FormWindowState.Minimized)
                     instancia.WindowState = FormWindowState.Normal;
                 // y lo traemos al frente
                 instancia.BringToFront();
@@ -273,6 +280,14 @@ namespace cochinitoDeDulce.Views
 
         }
 
+        private void CategoriasView_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void tpCategoriasVer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

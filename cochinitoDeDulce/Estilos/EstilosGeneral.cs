@@ -111,6 +111,12 @@ namespace cochinitoDeDulce.Estilos
                                     ((CustomComboBox)tabPage).AutoCompleteMode = AutoCompleteMode.Suggest;
                                     ((CustomComboBox)tabPage).AutoCompleteSource = AutoCompleteSource.ListItems;
                                 }
+                                else if(tabPage is CustomTextBox)
+                                {
+                                    ((CustomTextBox)tabPage).BackColor = primary;  //gris
+                                    ((CustomTextBox)tabPage).BorderColor = secondary;
+                                    ((CustomTextBox)tabPage).ForeColor = secondary;
+                                }
 
                             }
   
