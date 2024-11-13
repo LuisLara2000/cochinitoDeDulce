@@ -22,7 +22,7 @@ namespace cochinitoDeDulce.Views
 
             // le da estilo a la forma
             Estilos.EstilosPrincipal.CargarEstilosPrincipal(this);
-
+            /*
             btnCategorias.Click += delegate
             {
                 MostrarCategorias_Evento?.Invoke(this, EventArgs.Empty);
@@ -39,6 +39,7 @@ namespace cochinitoDeDulce.Views
             {
                 MostrarTipos_Evento?.Invoke(this, EventArgs.Empty);
             };
+            */
             btnGastos.Click += delegate
             {
                 MostrarGastos_Evento?.Invoke(this, EventArgs.Empty);
@@ -60,18 +61,25 @@ namespace cochinitoDeDulce.Views
                 if(QuieresSalirDeLaAplicacion)
                     Close();
             };
+
+            btnParametros.Click += delegate
+            {
+                MostrarParametros_Evento?.Invoke(this, EventArgs.Empty);
+            };
         }
 
         public bool QuieresSalirDeLaAplicacion { get => quieresSalirDeLaAplicacion; set => quieresSalirDeLaAplicacion=value; }
-
+        /*
         public event EventHandler MostrarCategorias_Evento;
         public event EventHandler MostrarMarcas_Evento;
         public event EventHandler MostrarLugares_Evento;
         public event EventHandler MostrarTipos_Evento;
+        */
         public event EventHandler MostrarGastos_Evento;
         public event EventHandler MostrarIngresos_Evento;
         public event EventHandler MostrarInicio_Evento;
         public event EventHandler CerrarAplicacion_Evento;
+        public event EventHandler MostrarParametros_Evento;
 
         private void btnGastos_Click(object sender, EventArgs e)
         {

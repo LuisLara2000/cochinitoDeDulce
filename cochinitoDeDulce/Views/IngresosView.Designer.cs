@@ -82,39 +82,39 @@
             txtBuscarIngreso.BorderColor = Color.MediumSlateBlue;
             txtBuscarIngreso.BorderFocusColor = Color.HotPink;
             txtBuscarIngreso.BorderSize = 2;
-            txtBuscarIngreso.Location = new Point(859, 9);
+            txtBuscarIngreso.Location = new Point(941, 9);
             txtBuscarIngreso.Multiline = false;
             txtBuscarIngreso.Name = "txtBuscarIngreso";
             txtBuscarIngreso.Padding = new Padding(7);
             txtBuscarIngreso.PasswordChar = false;
-            txtBuscarIngreso.Size = new Size(251, 30);
+            txtBuscarIngreso.Size = new Size(169, 30);
             txtBuscarIngreso.TabIndex = 6;
             txtBuscarIngreso.Texts = "";
             txtBuscarIngreso.UnderlinedStyle = false;
             // 
             // btnEliminarIngreso
             // 
-            btnEliminarIngreso.Location = new Point(859, 555);
+            btnEliminarIngreso.Location = new Point(941, 555);
             btnEliminarIngreso.Name = "btnEliminarIngreso";
-            btnEliminarIngreso.Size = new Size(332, 182);
+            btnEliminarIngreso.Size = new Size(250, 182);
             btnEliminarIngreso.TabIndex = 4;
             btnEliminarIngreso.Text = "Eliminar";
             btnEliminarIngreso.UseVisualStyleBackColor = true;
             // 
             // btnIrEditarMarca
             // 
-            btnIrEditarMarca.Location = new Point(859, 342);
+            btnIrEditarMarca.Location = new Point(941, 342);
             btnIrEditarMarca.Name = "btnIrEditarMarca";
-            btnIrEditarMarca.Size = new Size(332, 207);
+            btnIrEditarMarca.Size = new Size(250, 207);
             btnIrEditarMarca.TabIndex = 3;
             btnIrEditarMarca.Text = "Editar";
             btnIrEditarMarca.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregarMarca
             // 
-            btnIrAgregarMarca.Location = new Point(859, 45);
+            btnIrAgregarMarca.Location = new Point(941, 45);
             btnIrAgregarMarca.Name = "btnIrAgregarMarca";
-            btnIrAgregarMarca.Size = new Size(332, 291);
+            btnIrAgregarMarca.Size = new Size(250, 291);
             btnIrAgregarMarca.TabIndex = 2;
             btnIrAgregarMarca.Text = "Agregar";
             btnIrAgregarMarca.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             dgIngresos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgIngresos.Location = new Point(13, 6);
             dgIngresos.Name = "dgIngresos";
-            dgIngresos.Size = new Size(840, 731);
+            dgIngresos.Size = new Size(922, 731);
             dgIngresos.TabIndex = 0;
             // 
             // tpAgregarEditarIngresos

@@ -86,39 +86,39 @@
             txtBuscarTipo.BorderColor = Color.MediumSlateBlue;
             txtBuscarTipo.BorderFocusColor = Color.HotPink;
             txtBuscarTipo.BorderSize = 2;
-            txtBuscarTipo.Location = new Point(769, 9);
+            txtBuscarTipo.Location = new Point(938, 9);
             txtBuscarTipo.Multiline = false;
             txtBuscarTipo.Name = "txtBuscarTipo";
             txtBuscarTipo.Padding = new Padding(7);
             txtBuscarTipo.PasswordChar = false;
-            txtBuscarTipo.Size = new Size(338, 30);
+            txtBuscarTipo.Size = new Size(169, 30);
             txtBuscarTipo.TabIndex = 6;
             txtBuscarTipo.Texts = "";
             txtBuscarTipo.UnderlinedStyle = false;
             // 
             // btnIrEliminarTipo
             // 
-            btnIrEliminarTipo.Location = new Point(769, 551);
+            btnIrEliminarTipo.Location = new Point(938, 551);
             btnIrEliminarTipo.Name = "btnIrEliminarTipo";
-            btnIrEliminarTipo.Size = new Size(419, 186);
+            btnIrEliminarTipo.Size = new Size(250, 186);
             btnIrEliminarTipo.TabIndex = 4;
             btnIrEliminarTipo.Text = "Eliminar";
             btnIrEliminarTipo.UseVisualStyleBackColor = true;
             // 
             // btnIrEditarTipo
             // 
-            btnIrEditarTipo.Location = new Point(769, 337);
+            btnIrEditarTipo.Location = new Point(938, 337);
             btnIrEditarTipo.Name = "btnIrEditarTipo";
-            btnIrEditarTipo.Size = new Size(419, 208);
+            btnIrEditarTipo.Size = new Size(250, 208);
             btnIrEditarTipo.TabIndex = 3;
             btnIrEditarTipo.Text = "Editar";
             btnIrEditarTipo.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregarTipo
             // 
-            btnIrAgregarTipo.Location = new Point(769, 45);
+            btnIrAgregarTipo.Location = new Point(938, 45);
             btnIrAgregarTipo.Name = "btnIrAgregarTipo";
-            btnIrAgregarTipo.Size = new Size(419, 286);
+            btnIrAgregarTipo.Size = new Size(250, 286);
             btnIrAgregarTipo.TabIndex = 2;
             btnIrAgregarTipo.Text = "Agregar";
             btnIrAgregarTipo.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             dgTipos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgTipos.Location = new Point(15, 6);
             dgTipos.Name = "dgTipos";
-            dgTipos.Size = new Size(748, 731);
+            dgTipos.Size = new Size(917, 731);
             dgTipos.TabIndex = 0;
             // 
             // tpAgregarEditarTipo

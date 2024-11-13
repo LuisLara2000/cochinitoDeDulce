@@ -23,15 +23,20 @@ namespace cochinitoDeDulce.Presenters
         {
             this.principalView = principalView;
             this.sqlCadenaConexion = sqlCadenaConexion;
+            /*
             this.principalView.MostrarCategorias_Evento += MostrarCategorias;
             this.principalView.MostrarMarcas_Evento += MostrarMarcas;
             this.principalView.MostrarLugares_Evento += MostrarLugares;
             this.principalView.MostrarTipos_Evento += MostrarTipos;
+            */
             this.principalView.MostrarGastos_Evento += MostrarGastos;
             this.principalView.MostrarIngresos_Evento += MostrarIngresos;
             this.principalView.MostrarInicio_Evento += MostrarInicio;
             this.principalView.CerrarAplicacion_Evento += CerrarAplicacion;
+            this.principalView.MostrarParametros_Evento += MostrarParametros;
         }
+
+
 
         private void CerrarAplicacion(object? sender, EventArgs e)
         {
@@ -46,7 +51,14 @@ namespace cochinitoDeDulce.Presenters
             }
             
         }
-
+        private void MostrarParametros(object? sender, EventArgs e)
+        {
+            IParametrosView vista = ParametrosView.ObtenerLaVentanaParametros((PrincipalView)principalView);
+            if (!vista.Suscrito)// me suscribo a los eventos
+                new ParametrosPresenter(vista,principalView, sqlCadenaConexion, false);
+            else// ya no me suscribo a los eventos
+                new ParametrosPresenter(vista, principalView, sqlCadenaConexion, true);
+        }
         private void MostrarInicio(object? sender, EventArgs e)
         {
             IInicioView vista = InicioView.ObtenerLaVentanaInicio((PrincipalView)principalView);

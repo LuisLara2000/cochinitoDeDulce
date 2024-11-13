@@ -62,7 +62,7 @@
             tpCategoriasAgregarEditar.Location = new Point(4, 24);
             tpCategoriasAgregarEditar.Name = "tpCategoriasAgregarEditar";
             tpCategoriasAgregarEditar.Padding = new Padding(3);
-            tpCategoriasAgregarEditar.Size = new Size(1202, 759);
+            tpCategoriasAgregarEditar.Size = new Size(1407, 872);
             tpCategoriasAgregarEditar.TabIndex = 2;
             tpCategoriasAgregarEditar.Text = "/GuardarCategoria";
             tpCategoriasAgregarEditar.UseVisualStyleBackColor = true;
@@ -131,48 +131,48 @@
             txtBuscarCategoria.BorderColor = Color.MediumSlateBlue;
             txtBuscarCategoria.BorderFocusColor = Color.HotPink;
             txtBuscarCategoria.BorderSize = 2;
-            txtBuscarCategoria.Location = new Point(542, 13);
+            txtBuscarCategoria.Location = new Point(941, 13);
             txtBuscarCategoria.Multiline = false;
             txtBuscarCategoria.Name = "txtBuscarCategoria";
             txtBuscarCategoria.Padding = new Padding(7);
             txtBuscarCategoria.PasswordChar = false;
-            txtBuscarCategoria.Size = new Size(536, 30);
+            txtBuscarCategoria.Size = new Size(156, 30);
             txtBuscarCategoria.TabIndex = 6;
             txtBuscarCategoria.Texts = "";
             txtBuscarCategoria.UnderlinedStyle = false;
             // 
             // btnIrEliminar
             // 
-            btnIrEliminar.Location = new Point(542, 477);
+            btnIrEliminar.Location = new Point(942, 477);
             btnIrEliminar.Name = "btnIrEliminar";
-            btnIrEliminar.Size = new Size(654, 260);
+            btnIrEliminar.Size = new Size(250, 260);
             btnIrEliminar.TabIndex = 5;
             btnIrEliminar.Text = "Eliminar";
             btnIrEliminar.UseVisualStyleBackColor = true;
             // 
             // btnIrEditar
             // 
-            btnIrEditar.Location = new Point(542, 244);
+            btnIrEditar.Location = new Point(941, 244);
             btnIrEditar.Name = "btnIrEditar";
-            btnIrEditar.Size = new Size(654, 227);
+            btnIrEditar.Size = new Size(250, 227);
             btnIrEditar.TabIndex = 4;
             btnIrEditar.Text = "Editar";
             btnIrEditar.UseVisualStyleBackColor = true;
             // 
             // btnIrAgregar
             // 
-            btnIrAgregar.Location = new Point(542, 49);
+            btnIrAgregar.Location = new Point(941, 49);
             btnIrAgregar.Name = "btnIrAgregar";
-            btnIrAgregar.Size = new Size(654, 189);
+            btnIrAgregar.Size = new Size(250, 189);
             btnIrAgregar.TabIndex = 3;
             btnIrAgregar.Text = "Agregar";
             btnIrAgregar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(1084, 13);
+            btnBuscar.Location = new Point(1103, 13);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(112, 32);
+            btnBuscar.Size = new Size(88, 32);
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             dgCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgCategorias.Location = new Point(18, 13);
             dgCategorias.Name = "dgCategorias";
-            dgCategorias.Size = new Size(518, 724);
+            dgCategorias.Size = new Size(918, 724);
             dgCategorias.TabIndex = 0;
             // 
             // tbCategorias
@@ -205,7 +205,7 @@
             tpEliminar.Location = new Point(4, 24);
             tpEliminar.Name = "tpEliminar";
             tpEliminar.Padding = new Padding(3);
-            tpEliminar.Size = new Size(1202, 759);
+            tpEliminar.Size = new Size(1407, 872);
             tpEliminar.TabIndex = 3;
             tpEliminar.Text = "Eliminar categoria";
             tpEliminar.UseVisualStyleBackColor = true;
