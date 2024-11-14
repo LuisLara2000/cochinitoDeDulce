@@ -37,11 +37,11 @@ namespace cochinitoDeDulce.Views
         public string Mensaje { get => mensaje; set => mensaje = value; }
 
         // De la vista
-        public string TxtBuscarTipo { get => txtBuscarTipo.Text; set => txtBuscarTipo.Text = value; }
-        public string TxtAgregarEditar { get => txtAgregarEditar.Text; set => txtAgregarEditar.Text = value; }
+        public string TxtBuscarTipo { get => txtBuscarTipo.Texts; set => txtBuscarTipo.Texts = value; }
+        public string TxtAgregarEditar { get => txtAgregarEditar.Texts; set => txtAgregarEditar.Texts = value; }
         public string LblAgregarEditar { get => lblAgregarEditar.Text; set => lblAgregarEditar.Text = value; }
         public string LblElimnarTipo { get => lblEliminarTipo.Text; set => lblEliminarTipo.Text = value; }
-        public string CbEliminar { get => cbTipos.Text; set => cbTipos.Text = value; }
+        public string CbEliminar { get => cbTipos.Texts; set => cbTipos.Texts = value; }
         public bool Suscrito { get => suscrito; set => suscrito=value; }
 
         public TiposView()

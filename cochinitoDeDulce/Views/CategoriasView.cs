@@ -139,14 +139,14 @@ namespace cochinitoDeDulce.Views
         }
         public string NombreCategorias
         {
-            get { return txtNombreCategoria.Text.ToString(); }
-            set { txtNombreCategoria.Text = value; }
+            get { return txtNombreCategoria.Texts.ToString(); }
+            set { txtNombreCategoria.Texts = value; }
         }
 
         public string BuscarCategoriaTxt
         {
-            get { return txtBuscarCategoria.Text.ToString(); }
-            set { txtBuscarCategoria.Text = value; }
+            get { return txtBuscarCategoria.Texts.ToString(); }
+            set { txtBuscarCategoria.Texts = value; }
         }
 
         public string EditarAgregarLbl

@@ -43,21 +43,21 @@ namespace cochinitoDeDulce.Views
         public string Marca { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Tipo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         // ------ [De la vista] ----- //
-        public string TxtBuscarGasto { get => txtBuscarGasto.Text; set => txtBuscarGasto.Text = value; }
-        public string TxtAgregarEditar { get => txtAgregarEditar.Text; set => txtAgregarEditar.Text = value; }
-        public string TxtPrecio { get => txtPrecio.Text; set => txtPrecio.Text = value; }
-        public string TxtCantidad { get => txtCantidad.Text; set => txtCantidad.Text = value; }
-        public string TxtDescuento { get => txtDescuento.Text; set => txtDescuento.Text = value; }
-        public string TxtComentario { get => txtDescuento.Text; set => txtDescuento.Text = value; }
+        public string TxtBuscarGasto { get => txtBuscarGasto.Texts; set => txtBuscarGasto.Texts = value; }
+        public string TxtAgregarEditar { get => txtAgregarEditar.Texts; set => txtAgregarEditar.Texts = value; }
+        public string TxtPrecio { get => txtPrecio.Texts; set => txtPrecio.Texts = value; }
+        public string TxtCantidad { get => txtCantidad.Texts; set => txtCantidad.Texts = value; }
+        public string TxtDescuento { get => txtDescuento.Texts; set => txtDescuento.Texts = value; }
+        public string TxtComentario { get => txtComentario.Texts; set => txtComentario.Texts = value; }
         // ------ [Solo en codigo] ----- //
         public bool EstoyEditando { get => estoyEditando; set => estoyEditando = value; }
         public bool FueExitoso { get => fueExitoso; set => fueExitoso = value; }
         public string Mensaje { get => mensaje; set => mensaje = value; }
-        public string CbUnidad { get => cbUnidades.Text; set => cbUnidades.Text = value; }
-        public string CbCategoria { get => cbCategorias.Text; set => cbCategorias.Text = value; }
-        public string CbMarca { get => cbMarcas.Text; set => cbMarcas.Text = value; }
-        public string CbLugar { get => cbLugares.Text; set => cbLugares.Text = value; }
-        public string CbTipo { get => cbTipos.Text; set => cbTipos.Text = value; }
+        public string CbUnidad { get => cbUnidades.Texts; set => cbUnidades.Texts = value; }
+        public string CbCategoria { get => cbCategorias.Texts; set => cbCategorias.Texts = value; }
+        public string CbMarca { get => cbMarcas.Texts; set => cbMarcas.Texts = value; }
+        public string CbLugar { get => cbLugares.Texts; set => cbLugares.Texts = value; }
+        public string CbTipo { get => cbTipos.Texts; set => cbTipos.Texts = value; }
         public bool Suscrito { get => suscrito; set => suscrito = value; }
 
 

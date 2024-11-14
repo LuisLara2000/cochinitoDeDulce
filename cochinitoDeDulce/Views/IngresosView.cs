@@ -23,9 +23,9 @@ namespace cochinitoDeDulce.Views
         public int IdIngreso { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public float Monto { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Origen { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string TxtBuscarIngreso { get => txtBuscarIngreso.Text; set => txtBuscarIngreso.Text=value; }
-        public string TxtAgregarMonto { get => txtAgregarMonto.Text; set => txtAgregarMonto.Text=value; }
-        public string TxtAgregarOrigen { get => txtAgregarOrigen.Text; set => txtAgregarOrigen.Text=value; }
+        public string TxtBuscarIngreso { get => txtBuscarIngreso.Texts; set => txtBuscarIngreso.Texts=value; }
+        public string TxtAgregarMonto { get => txtAgregarMonto.Texts; set => txtAgregarMonto.Texts=value; }
+        public string TxtAgregarOrigen { get => txtAgregarOrigen.Texts; set => txtAgregarOrigen.Texts=value; }
         public string LblAgregarEditar { get => lblAgregarEditar.Text; set => lblAgregarEditar.Text=value; }
         public bool Editando { get => editando; set => editando=value; }
         public bool Exitoso { get => exitoso; set => exitoso=value; }
