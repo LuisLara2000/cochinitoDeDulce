@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using cochinitoDeDulce.Models;
+using System.Data.SQLite;
 namespace cochinitoDeDulce._DataBase
 {
     public class TiposDatabase: Conexion, ITiposDatabase
@@ -19,182 +20,181 @@ namespace cochinitoDeDulce._DataBase
         }
 
         // Buscar //
-        public IEnumerable<TiposModel> BuscarTipos(string tiposNombre)
+        public IEnumerable<TiposModel> BuscarTipos(string tiposNombre)//sqlite
         {
             // creo una lista de categoriaModels
             List<TiposModel> lTipos = new List<TiposModel>();
-            // crear la conexion
-            using (var conexion = new SqlConnection(cadenaConexion))
-            // creo un objeto comando para poder ejecutar los comandos
-            using (var command = new SqlCommand("spBuscarTipos"))
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
             {
-                // abrir la conexion
+                // abro la conexion
                 conexion.Open();
-                // establecemos la conexion al objeto comando
-                command.Connection = conexion;
-                // determino el tipo de comando
-                command.CommandType = CommandType.StoredProcedure;
-                // pasar parametros
-                command.Parameters.Add("@nombreBuscar", SqlDbType.VarChar).Value = tiposNombre;
-                // ejecutar comando
-                command.ExecuteNonQuery();
+                // creo la consulta
+                string consulta = "select * from Tipos where nombreTipo like '%' || @nombreBuscar || '%'";
+                // creo el objeto que ejecuta la consulta
+                SQLiteCommand comando = new SQLiteCommand(consulta, conexion);
+                // le paso los parametros
+                comando.Parameters.Add(new SQLiteParameter("@nombreBuscar", tiposNombre));
+
+                comando.CommandType = CommandType.Text;
+                // ejecuto la consulta
+                comando.ExecuteNonQuery();
                 // creo un lector
-                using (var lector = command.ExecuteReader())
+                using (SQLiteDataReader lector = comando.ExecuteReader())
                 {
+                    // leo el contenido de la consulta 
                     while (lector.Read())
                     {
                         // creamos un nuevo modelo categoria
                         var vTipo = new TiposModel();
                         // leemos los datos que regresa la consulta
-                        vTipo.IdTipo = (int)lector[0];
+                        vTipo.IdTipo = Convert.ToInt32(lector[0]);
                         vTipo.NombreTipo = lector[1].ToString();
                         // los agregamos a la lista de categorias
                         lTipos.Add(vTipo);
                     }
+
                 }
-                // como uso using la conexion se cierra automaticamente
             }
-            // retorno la lista
             return lTipos;
         }
         // Agregar //
-        public void AgregarTipo(TiposModel tiposModel)
+        public void AgregarTipo(TiposModel tiposModel)//sqlite
         {
             // crear la conexion
-            using (var conexion = new SqlConnection(cadenaConexion))
-
-            // creo un objeto comando para poder ejecutar los comandos
-            using (var command = new SqlCommand("spAgregarTipo"))
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
             {
-                // abrir la conexion
+                // abro la conexion
                 conexion.Open();
-                // establecemos la conexion al objeto comando
-                command.Connection = conexion;
-                // determino el tipo de comando
-                command.CommandType = CommandType.StoredProcedure;
-                // pasar parametros
-                command.Parameters.Add("@nombreTipo", SqlDbType.NVarChar).Value = tiposModel.NombreTipo;
-                // ejecutar comando
-                command.ExecuteNonQuery();
-                // como uso using la conexion se cierra automaticamente
+                // creo la consulta
+                string consulta = "insert into Tipos (nombreTipo) values (@nombreTipo)";
+                // creo el objeto que ejecuta la consulta
+                SQLiteCommand comando = new SQLiteCommand(consulta, conexion);
+                // le paso los parametros
+                comando.Parameters.Add(new SQLiteParameter("@nombreTipo", tiposModel.NombreTipo));
+                // especifico el tipo de comando
+                comando.CommandType = CommandType.Text;
+                // ejecuto la consulta
+                comando.ExecuteNonQuery();
+
             }
         }
-
-        // Editar //
-        public void EditarTipo(string nombreActualTipo, string nombreNuevoTipo)
-        {
-            // crear la conexion
-            using (var conexion = new SqlConnection(cadenaConexion))
-            // creo un objeto comando para poder ejecutar los comandos
-            using (var command = new SqlCommand("spEditarTipo"))
-            {
-                // abrir la conexion
-                conexion.Open();
-                // establecemos la conexion al objeto comando
-                command.Connection = conexion;
-                // determino el tipo de comando
-                command.CommandType = CommandType.StoredProcedure;
-                // pasar parametros
-                command.Parameters.Add("@nombreActualTipo", SqlDbType.VarChar).Value = nombreActualTipo;
-                command.Parameters.Add("@nombreTipoNuevo", SqlDbType.VarChar).Value = nombreNuevoTipo;
-                // ejecutar comando
-                command.ExecuteNonQuery();
-
-                // como uso using la conexion se cierra automaticamente
-            }
-        }
-
-        // Agregar y Editar
-        public int ValidarNoRepetido(string nombreTipo)
+        public int ValidarNoRepetido(string nombreTipo)//sqlite
         {
             int resultado = 2;
             // crear la conexion
-            using (var conexion = new SqlConnection(cadenaConexion))
-            // creo un objeto comando para poder ejecutar los comandos
-            using (var command = new SqlCommand("spValidarNoRepetidoTipo"))
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
             {
-                // abrir la conexion
+                // abro la conexion
                 conexion.Open();
-                // establecemos la conexion al objeto comando
-                command.Connection = conexion;
-                // determino el tipo de comando
-                command.CommandType = CommandType.StoredProcedure;
-                // pasar parametros
-                command.Parameters.Add("@nombreTipo", SqlDbType.VarChar).Value = nombreTipo;
-                // ejecutar comando
-                command.ExecuteNonQuery();
-                using (var lector = command.ExecuteReader())
+                // creo la consulta
+                string consulta = "select COUNT(*) from Tipos where nombreTipo=@nombreTipo";
+                // creo el objeto que ejecuta la consulta
+                SQLiteCommand comando = new SQLiteCommand(consulta, conexion);
+                // le paso los parametros
+                comando.Parameters.Add(new SQLiteParameter("@nombreTipo", nombreTipo));
+                // especifico el tipo de comando
+                comando.CommandType = CommandType.Text;
+                // ejecuto la consulta
+                comando.ExecuteNonQuery();
+                using (var lector = comando.ExecuteReader())
                 {
                     while (lector.Read())
                     {
-                        resultado = (int)lector[0];
+                        resultado = Convert.ToInt32(lector[0]);
                     }
 
                 }
-                // como uso using la conexion se cierra automaticamente
+                return resultado;
             }
-            return resultado;
         }
-
-        // Eliminar //
-        public void EliminarTipo(int IdTipoEliminar, string nombreTipoReemplazar)
+        // Editar //
+        public void EditarTipo(string nombreActualTipo, string nombreNuevoTipo)//sqlite
         {
             // crear la conexion
-            using (var conexion = new SqlConnection(cadenaConexion))
-            // creo un objeto comando para poder ejecutar los comandos
-            using (var command = new SqlCommand("spEliminarTipo"))
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
             {
-                // abrir la conexion
+                // abro la conexion
                 conexion.Open();
-                // establecemos la conexion al objeto comando
-                command.Connection = conexion;
-                // determino el tipo de comando
-                command.CommandType = CommandType.StoredProcedure;
-                // pasar parametros
-                command.Parameters.Add("@idTipoEliminar", SqlDbType.Int).Value = IdTipoEliminar;
-                command.Parameters.Add("@idTipoReemplazar", SqlDbType.VarChar).Value = nombreTipoReemplazar;
-                // ejecutar comando
-                command.ExecuteNonQuery();
-
-                // como uso using la conexion se cierra automaticamente
+                // creo la consulta
+                string consulta = "update Tipos set nombreTipo=@nombreTipoNuevo where idTipo=(select idTipo from Tipos where nombreTipo=@nombreActualTipo)";
+                // creo el objeto que ejecuta la consulta
+                SQLiteCommand comando = new SQLiteCommand(consulta, conexion);
+                // le paso los parametros
+                comando.Parameters.Add(new SQLiteParameter("@nombreTipoNuevo", nombreNuevoTipo));
+                comando.Parameters.Add(new SQLiteParameter("@nombreActualTipo", nombreActualTipo));
+                // especifico el tipo de comando
+                comando.CommandType = CommandType.Text;
+                // ejecuto la consulta
+                comando.ExecuteNonQuery();
             }
         }
-        public IEnumerable<TiposModel> BuscarTipoExepto(int IdTipo)
+        // Eliminar //
+        public void EliminarTipo(int IdTipoEliminar, string nombreTipoReemplazar)//sqlite
+        {
+            // crear la conexion
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
+            {
+                // abro la conexion
+                conexion.Open();
+                // creo la consulta UPDATE
+                string consulta = "update gastos set idTipo=(select idTipo from Tipos where nombreTipo = @idTipoReemplazar) where idTipo=@idTipoEliminar";
+                // creo el objeto que ejecuta la consulta
+                SQLiteCommand comando = new SQLiteCommand(consulta, conexion);
+                // le paso los parametros
+                comando.Parameters.Add(new SQLiteParameter("@idTipoReemplazar", nombreTipoReemplazar));
+                comando.Parameters.Add(new SQLiteParameter("@idTipoEliminar", IdTipoEliminar));
+                // especifico el tipo de comando
+                comando.CommandType = CommandType.Text;
+                // ejecuto la consulta
+                comando.ExecuteNonQuery();
+
+                // creo consulta DELETE
+                consulta = "delete from Tipos where idTipo = @idTipoEliminar";
+                // actualizo los parametros
+                comando = new SQLiteCommand(consulta, conexion);
+                // le paso los parametros
+                comando.Parameters.Add(new SQLiteParameter("@idTipoEliminar", IdTipoEliminar));
+                // especifico el tipo de comando
+                comando.CommandType = CommandType.Text;
+                // ejecuto la consulta
+                comando.ExecuteNonQuery();
+            }
+        }
+        public IEnumerable<TiposModel> BuscarTipoExepto(int IdTipo)//sqlite
         {
             // creo una lista de categoriaModels
             List<TiposModel> lTipos = new List<TiposModel>();
-            // crear la conexion
-            using (var conexion = new SqlConnection(cadenaConexion))
-            // creo un objeto comando para poder ejecutar los comandos
-            using (var command = new SqlCommand("spMostrarTipoExepto"))
+            using (SQLiteConnection conexion = new SQLiteConnection(cadenaConexion))
             {
-                // abrir la conexion
+                // abro la conexion
                 conexion.Open();
-                // establecemos la conexion al objeto comando
-                command.Connection = conexion;
-                // determino el tipo de comando
-                command.CommandType = CommandType.StoredProcedure;
-                // pasar parametros
-                command.Parameters.Add("@idTipoExepcion", SqlDbType.Int).Value = IdTipo;
-                // ejecutar comando
-                command.ExecuteNonQuery();
+                // creo la consulta
+                string consulta = "select * from Tipos where idTipo != @idTipoExepcion";
+                // creo el objeto que ejecuta la consulta
+                SQLiteCommand comando = new SQLiteCommand(consulta, conexion);
+                // le paso los parametros
+                comando.Parameters.Add(new SQLiteParameter("@idTipoExepcion", IdTipo));
+
+                comando.CommandType = CommandType.Text;
+                // ejecuto la consulta
+                comando.ExecuteNonQuery();
                 // creo un lector
-                using (var lector = command.ExecuteReader())
+                using (SQLiteDataReader lector = comando.ExecuteReader())
                 {
+                    // leo el contenido de la consulta 
                     while (lector.Read())
                     {
                         // creamos un nuevo modelo categoria
                         var vTipo = new TiposModel();
                         // leemos los datos que regresa la consulta
-                        vTipo.IdTipo = (int)lector[0];
+                        vTipo.IdTipo = Convert.ToInt32(lector[0]);
                         vTipo.NombreTipo = lector[1].ToString();
                         // los agregamos a la lista de categorias
                         lTipos.Add(vTipo);
                     }
+
                 }
-                // como uso using la conexion se cierra automaticamente
             }
-            // retorno la lista
             return lTipos;
         }
 

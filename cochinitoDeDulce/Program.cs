@@ -19,7 +19,7 @@ namespace cochinitoDeDulce
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //
-            string SqlCadenaConexion = ConfigurationManager.ConnectionStrings["SqlCadenaConexion"].ConnectionString;
+            string SqlCadenaConexion = ConfigurationManager.ConnectionStrings["SqliteCadenaConexion"].ConnectionString;
             IPrincipalView vista = new PrincipalView();
             new PrincipalPresenter(vista, SqlCadenaConexion);
             //
