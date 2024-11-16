@@ -62,7 +62,7 @@
             // 
             // btnParametros
             // 
-            btnParametros.Location = new Point(0, 274);
+            btnParametros.Location = new Point(0, 275);
             btnParametros.Name = "btnParametros";
             btnParametros.Size = new Size(150, 50);
             btnParametros.TabIndex = 10;
@@ -101,7 +101,7 @@
             // 
             // btnIngresos
             // 
-            btnIngresos.Location = new Point(0, 224);
+            btnIngresos.Location = new Point(0, 225);
             btnIngresos.Name = "btnIngresos";
             btnIngresos.Size = new Size(150, 50);
             btnIngresos.TabIndex = 4;
@@ -131,7 +131,7 @@
             // btnGastos
             // 
             btnGastos.BackColor = SystemColors.ControlLightLight;
-            btnGastos.Location = new Point(0, 174);
+            btnGastos.Location = new Point(0, 175);
             btnGastos.Name = "btnGastos";
             btnGastos.Size = new Size(150, 50);
             btnGastos.TabIndex = 3;
@@ -141,9 +141,9 @@
             // 
             // btnInicio
             // 
-            btnInicio.Location = new Point(0, 125);
+            btnInicio.Location = new Point(-1, 126);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(150, 50);
+            btnInicio.Size = new Size(152, 50);
             btnInicio.TabIndex = 2;
             btnInicio.Text = "Inicio";
             btnInicio.UseVisualStyleBackColor = true;

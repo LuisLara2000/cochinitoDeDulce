@@ -174,7 +174,7 @@
             // lblAgregarEditar
             // 
             lblAgregarEditar.AutoSize = true;
-            lblAgregarEditar.Location = new Point(607, 317);
+            lblAgregarEditar.Location = new Point(566, 317);
             lblAgregarEditar.Name = "lblAgregarEditar";
             lblAgregarEditar.Size = new Size(38, 15);
             lblAgregarEditar.TabIndex = 2;
@@ -185,7 +185,7 @@
             // 
             btnRegresarEditarGuardar.Location = new Point(631, 382);
             btnRegresarEditarGuardar.Name = "btnRegresarEditarGuardar";
-            btnRegresarEditarGuardar.Size = new Size(364, 37);
+            btnRegresarEditarGuardar.Size = new Size(354, 37);
             btnRegresarEditarGuardar.TabIndex = 1;
             btnRegresarEditarGuardar.Text = "Cancelar";
             btnRegresarEditarGuardar.UseVisualStyleBackColor = true;
@@ -257,7 +257,7 @@
             // lblEliminarTipo
             // 
             lblEliminarTipo.AutoSize = true;
-            lblEliminarTipo.Location = new Point(579, 352);
+            lblEliminarTipo.Location = new Point(555, 352);
             lblEliminarTipo.Name = "lblEliminarTipo";
             lblEliminarTipo.Size = new Size(38, 15);
             lblEliminarTipo.TabIndex = 0;

@@ -166,14 +166,14 @@
             txtAgregarEditar.Padding = new Padding(7);
             txtAgregarEditar.PasswordChar = false;
             txtAgregarEditar.Size = new Size(598, 30);
-            txtAgregarEditar.TabIndex = 4;
+            txtAgregarEditar.TabIndex = 1;
             txtAgregarEditar.Texts = "";
             txtAgregarEditar.UnderlinedStyle = false;
             // 
             // lblAgregarEditar
             // 
             lblAgregarEditar.AutoSize = true;
-            lblAgregarEditar.Location = new Point(579, 334);
+            lblAgregarEditar.Location = new Point(553, 334);
             lblAgregarEditar.Name = "lblAgregarEditar";
             lblAgregarEditar.Size = new Size(38, 15);
             lblAgregarEditar.TabIndex = 2;
@@ -184,7 +184,7 @@
             btnRegresarEditarGuardar.Location = new Point(597, 406);
             btnRegresarEditarGuardar.Name = "btnRegresarEditarGuardar";
             btnRegresarEditarGuardar.Size = new Size(296, 22);
-            btnRegresarEditarGuardar.TabIndex = 1;
+            btnRegresarEditarGuardar.TabIndex = 3;
             btnRegresarEditarGuardar.Text = "Cancelar";
             btnRegresarEditarGuardar.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,7 @@
             btnGuardarEditar.Location = new Point(295, 406);
             btnGuardarEditar.Name = "btnGuardarEditar";
             btnGuardarEditar.Size = new Size(296, 22);
-            btnGuardarEditar.TabIndex = 0;
+            btnGuardarEditar.TabIndex = 2;
             btnGuardarEditar.Text = "button5";
             btnGuardarEditar.UseVisualStyleBackColor = true;
             // 

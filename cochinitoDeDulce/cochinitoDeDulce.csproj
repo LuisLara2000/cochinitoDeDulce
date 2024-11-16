@@ -6,6 +6,9 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>True</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +19,7 @@
     <Content Include="CochinitoDeDulceDb.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="icono.ico" />
   </ItemGroup>
 
   <ItemGroup>
